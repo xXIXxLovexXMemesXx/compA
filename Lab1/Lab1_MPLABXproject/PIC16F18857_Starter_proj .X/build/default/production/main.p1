@@ -1,14 +1,22 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"450 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+[v _PORTB `Vuc ~T0 @X0 0 e@13 ]
+[v F14158 `(v ~T0 @X0 1 tf1`ul ]
+"152 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic.h
+[v __delay `JF14158 ~T0 @X0 0 e ]
+[p i __delay ]
+"657 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+[v _TRISB `Vuc ~T0 @X0 0 e@18 ]
 [p mainexit ]
 "67 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.43\include\stdio.h
+"195 C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f18857.h: 50: extern volatile unsigned char INDF0 @ 0x000;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f18857.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
 [; ;pic16f18857.h: 52: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f18857.h: 55: typedef union {
@@ -13027,32 +13035,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.h: 73: void PIN_MANAGER_Initialize (void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdint.h: 38: typedef signed long int int32_t;
+[; ;stdint.h: 45: typedef unsigned char uint8_t;
+[; ;stdint.h: 51: typedef unsigned int uint16_t;
+[; ;stdint.h: 67: typedef unsigned long int uint32_t;
+[; ;stdint.h: 75: typedef signed char int_least8_t;
+[; ;stdint.h: 82: typedef signed int int_least16_t;
+[; ;stdint.h: 104: typedef signed long int int_least32_t;
+[; ;stdint.h: 111: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 117: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 136: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 145: typedef signed char int_fast8_t;
+[; ;stdint.h: 152: typedef signed int int_fast16_t;
+[; ;stdint.h: 174: typedef signed long int int_fast32_t;
+[; ;stdint.h: 181: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 187: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 206: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 212: typedef int32_t intmax_t;
+[; ;stdint.h: 217: typedef uint32_t uintmax_t;
+[; ;stdint.h: 222: typedef int16_t intptr_t;
+[; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
@@ -13089,85 +13091,269 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 135: void EUSART_Write(uint8_t txData);
 [; ;mcc.h: 67: void SYSTEM_Initialize(void);
 [; ;mcc.h: 80: void OSCILLATOR_Initialize(void);
-"15 main.c
+"14 main.c
 [v _Timer2_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 15: void Timer2_Init(void) {}
+[; ;main.c: 14: void Timer2_Init(void) {}
 [e :U _Timer2_Init ]
 [f ]
 [e :UE 1558 ]
 }
-"36
+"35
 [v _PWM_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 36: void PWM_Init(void) {}
+[; ;main.c: 35: void PWM_Init(void) {
 [e :U _PWM_Init ]
 [f ]
+[; ;main.c: 37: }
+"37
 [e :UE 1559 ]
 }
-"52
+"53
 [v _ADC_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 52: void ADC_Init(void) {}
+[; ;main.c: 53: void ADC_Init(void) {}
 [e :U _ADC_Init ]
 [f ]
 [e :UE 1560 ]
 }
-"73
+"74
 [v _PWM_signal_out `(v ~T0 @X0 1 ef1`ui ]
-"74
+"75
 {
-[; ;main.c: 73: void PWM_signal_out(unsigned duty_cycle)
-[; ;main.c: 74: {
+[; ;main.c: 74: void PWM_signal_out(unsigned duty_cycle)
+[; ;main.c: 75: {
 [e :U _PWM_signal_out ]
-"73
-[v _duty_cycle `ui ~T0 @X0 1 r1 ]
 "74
+[v _duty_cycle `ui ~T0 @X0 1 r1 ]
+"75
 [f ]
-[; ;main.c: 76: }
-"76
+[; ;main.c: 77: }
+"77
 [e :UE 1561 ]
 }
-"84
+"85
 [v _ADC_conversion_results `(uc ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 84: uint8_t ADC_conversion_results(unsigned ch) {}
+[; ;main.c: 85: uint8_t ADC_conversion_results(unsigned ch) {}
 [e :U _ADC_conversion_results ]
 [v _ch `ui ~T0 @X0 1 r1 ]
 [f ]
 [e :UE 1562 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
 "99
-[v _main `(v ~T0 @X0 1 ef ]
+[v _servoRotate0 `(v ~T0 @X0 1 ef ]
 "100
 {
-[; ;main.c: 99: void main(void)
+[; ;main.c: 99: void servoRotate0()
 [; ;main.c: 100: {
+[e :U _servoRotate0 ]
+[f ]
+"101
+[v _i `ui ~T0 @X0 1 a ]
+[; ;main.c: 101: unsigned int i;
+[; ;main.c: 102: for(i=0;i<50;i++)
+"102
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1564  ]
+[e $U 1565  ]
+"103
+[e :U 1564 ]
+[; ;main.c: 103: {
+{
+[; ;main.c: 104: PORTB = 1;
+"104
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 105: _delay((unsigned long)((1.5)*(1000000/4000.0)));
+"105
+[e ( __delay (1 -> * .1.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 106: PORTB = 0;
+"106
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 107: _delay((unsigned long)((18.5)*(1000000/4000.0)));
+"107
+[e ( __delay (1 -> * .18.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+"108
+}
+"102
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1564  ]
+[e :U 1565 ]
+"108
+}
+[; ;main.c: 108: }
+[; ;main.c: 109: }
+"109
+[e :UE 1563 ]
+}
+"111
+[v _servoRotate90 `(v ~T0 @X0 1 ef ]
+"112
+{
+[; ;main.c: 111: void servoRotate90()
+[; ;main.c: 112: {
+[e :U _servoRotate90 ]
+[f ]
+"113
+[v _i `ui ~T0 @X0 1 a ]
+[; ;main.c: 113: unsigned int i;
+[; ;main.c: 114: for(i=0;i<50;i++)
+"114
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1568  ]
+[e $U 1569  ]
+"115
+[e :U 1568 ]
+[; ;main.c: 115: {
+{
+[; ;main.c: 116: PORTB = 1;
+"116
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 117: _delay((unsigned long)((2)*(1000000/4000.0)));
+"117
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 118: PORTB = 0;
+"118
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 119: _delay((unsigned long)((18)*(1000000/4000.0)));
+"119
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"120
+}
+"114
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1568  ]
+[e :U 1569 ]
+"120
+}
+[; ;main.c: 120: }
+[; ;main.c: 121: }
+"121
+[e :UE 1567 ]
+}
+"123
+[v _servoRotate180 `(v ~T0 @X0 1 ef ]
+"124
+{
+[; ;main.c: 123: void servoRotate180()
+[; ;main.c: 124: {
+[e :U _servoRotate180 ]
+[f ]
+"125
+[v _i `ui ~T0 @X0 1 a ]
+[; ;main.c: 125: unsigned int i;
+[; ;main.c: 126: for(i=0;i<50;i++)
+"126
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1572  ]
+[e $U 1573  ]
+"127
+[e :U 1572 ]
+[; ;main.c: 127: {
+{
+[; ;main.c: 128: PORTB = 1;
+"128
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 129: _delay((unsigned long)((1)*(1000000/4000.0)));
+"129
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 130: PORTB = 0;
+"130
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 131: _delay((unsigned long)((19)*(1000000/4000.0)));
+"131
+[e ( __delay (1 -> * -> -> 19 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"132
+}
+"126
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 50 `i `ui 1572  ]
+[e :U 1573 ]
+"132
+}
+[; ;main.c: 132: }
+[; ;main.c: 133: }
+"133
+[e :UE 1571 ]
+}
+"134
+[v _testMain `(v ~T0 @X0 1 ef ]
+"136
+{
+[; ;main.c: 134: void testMain(void)
+[; ;main.c: 136: {
+[e :U _testMain ]
+[f ]
+[; ;main.c: 137: TRISB = 0;
+"137
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 138: do
+"138
+[e :U 1578 ]
+[; ;main.c: 139: {
+"139
+{
+[; ;main.c: 140: servoRotate0();
+"140
+[e ( _servoRotate0 ..  ]
+[; ;main.c: 141: _delay((unsigned long)((2000)*(1000000/4000.0)));
+"141
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 142: servoRotate90();
+"142
+[e ( _servoRotate90 ..  ]
+[; ;main.c: 143: _delay((unsigned long)((2000)*(1000000/4000.0)));
+"143
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 144: servoRotate180();
+"144
+[e ( _servoRotate180 ..  ]
+"145
+}
+[; ;main.c: 145: }while(1);
+[e $ != -> 1 `i -> 0 `i 1578  ]
+[e :U 1577 ]
+[; ;main.c: 163: }
+"163
+[e :UE 1575 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"164
+[v _main `(v ~T0 @X0 1 ef ]
+"165
+{
+[; ;main.c: 164: void main(void)
+[; ;main.c: 165: {
 [e :U _main ]
 [f ]
-[; ;main.c: 102: SYSTEM_Initialize();
-"102
+[; ;main.c: 167: SYSTEM_Initialize();
+"167
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 110: while (1)
-"110
-[e :U 1565 ]
-[; ;main.c: 111: {
-"111
+[; ;main.c: 173: testMain();
+"173
+[e ( _testMain ..  ]
+[; ;main.c: 175: while (1)
+"175
+[e :U 1581 ]
+[; ;main.c: 176: {
+"176
 {
-[; ;main.c: 119: printf("Hello Lab 1 \n\r");
-"119
+[; ;main.c: 184: printf("Hello Lab 1 \n\r");
+"184
 [e ( _printf :s 1C ]
-"123
+"188
 }
-[e :U 1564 ]
-"110
-[e $U 1565  ]
-[e :U 1566 ]
-[; ;main.c: 123: }
-[; ;main.c: 126: }
-"126
-[e :UE 1563 ]
+[e :U 1580 ]
+"175
+[e $U 1581  ]
+[e :U 1582 ]
+[; ;main.c: 188: }
+[; ;main.c: 191: }
+"191
+[e :UE 1579 ]
 }
 [p f _printf 8388608 ]
 [a 1C 72 101 108 108 111 32 76 97 98 32 49 32 10 13 0 ]
