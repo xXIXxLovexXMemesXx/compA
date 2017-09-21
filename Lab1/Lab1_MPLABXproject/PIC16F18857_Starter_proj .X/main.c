@@ -1,14 +1,8 @@
 
 #include "mcc_generated_files/mcc.h" //default library 
 
-
-// ++++++++++++ Helpful Notes ++++++++++++++++
-
-
-/*
- include or set any library or definition you think you will need
- */
-
+#define ADC_CHAN 1
+#define ADC_THRESH 0x7F
 // ====================  prototype functions: ====================
 
 /* Configure Timer 2 and start it
@@ -32,12 +26,8 @@ void Timer2_Init(void)
     T2CON |= 0x80;  //turn timer 2 on.
 }   
 
-
-
 void PWM_Init(void)  {
-    
-}  
- /*  Configure CCP1 module in PWM mode (PWM channel = RC3 by default, Timer selection)
+   /*  Configure CCP1 module in PWM mode (PWM channel = RC3 by default, Timer selection)
   Registers:
  * 
  * --- Set the Registers below: ---
@@ -48,11 +38,10 @@ void PWM_Init(void)  {
  * 4. Selecting Timer 2 - for PWM in CCP1 module
  * 
  * ---------------
-  */ 
+  */   
+}  
 
-
-
-void ADC_Init(void)  {}   
+void ADC_Init(void)  {
  /*  Configure ADC module  
 
  ----- Set the Registers below::
@@ -68,35 +57,38 @@ void ADC_Init(void)  {}
  * 10 Set ADC positive and negative references
  * 11. ADC channel - Analog Input
  * 12. Set ADC result alignment, Enable ADC module, Clock Selection Bit, Disable ADC Continuous Operation, Keep ADC inactive
- 
-  */ 
-
-
+  
+  */
+    
+    ADCON1 = 0;
+    ADCON2 = 0;
+    ADCON3 = 0;
+    ADACT = 0;
+    ADERR = 0;
+    ADCAP = 0;
+    ADPRE = 0;
+    ADCON0 = 0b00001001; 
+}   
 
 void PWM_signal_out(unsigned duty_cycle) 
 {
-    
-}
- /*
+   /*
  *- you set 10bits value for the duty cycle being careful with the MSB/LSB alignment 
  *- Set the appropriate Registers in the right sequence
- */
+ */  
+}
 
-
-
-uint8_t ADC_conversion_results(unsigned ch) {}
- /* 
+ /**
  * - set your ADC channel , activate the ADC module , and get the ADC result to a value , then deactivate again the ADC module
  * - Set the appropriate Registers in the right sequence
  */
+uint8_t ADC_conversion_results(unsigned ch) {}
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-/*
-Develop your Application logic below
+/** 
+ * Connect servo lines as following
+ * Red: v+
+ * Brown: ground
+ * Orange: Port B0
 */
 void servoRotate0() //0 Degree
 {
@@ -133,47 +125,34 @@ void servoRotate180() //-90 Degree
     __delay_ms(19);
   }
 }
-void testMain(void)
 
+/**
+ * Test whatever we're working on atm
+ */
+void testMain(void)
 {
   TRISB = 0; // PORTB as Ouput Port
-  do
+  while(1)
   {
     servoRotate0(); //0 Degree
-    __delay_ms(2000);
+    __delay_ms(200);
     servoRotate90(); //90 Degree
-    __delay_ms(2000);
+    __delay_ms(200);
     servoRotate180(); //180 Degree
-  }while(1);
-    /*TRISA = 0x00; //all output
-
-    PORTA = 0x01; //start with it on
-
-    while(1)
-
-    {
-
-        __delay_ms(10);
-
-        PORTA = 0xFF; //toggle
-        
-        __delay_ms(10);
-        PORTA = 0x00; //off
-
-    }
-*/
+  }
 }
+
 void main(void)
 {
     // Initialize PIC device
     SYSTEM_Initialize();
-
+    testMain();
     // Initialize the required modules 
     Timer2_Init(); //starts the timer.
     ADC_Init();
     PWM_Init();
     // **** write your code 
-       
+    
     bool servo_rotates_up = true;
     while (1) // keep your application in a loop
     {
@@ -184,12 +163,12 @@ void main(void)
             PORTA = 0x00;
         
         //if the timer is done, rotate the servo the right direction
-        if(0 && servo_rotates_up/* && timer is triggered*/)
+        if(0 && servo_rotates_up)
         {
             servoRotate180();
             servo_rotates_up = false;
         } 
-        else if(0 && !servo_rotates_up /** && timer is triggered*/)
+        else if(0 && !servo_rotates_up)
         {
             servoRotate0();
             servo_rotates_up = true;

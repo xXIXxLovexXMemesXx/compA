@@ -3,8 +3,6 @@
 [d edition pro ]
 [d chip 16F18857 ]
 [d frameptr 6 ]
-"464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
-[v _printf printf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
@@ -13,31 +11,39 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"99 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+"10 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+[v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]
+"29
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+"44
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"85
+[v _ADC_conversion_results ADC_conversion_results `(uc  1 e 1 0 ]
+"93
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
-"111
+"105
 [v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
-"123
+"117
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"134
+"132
 [v _testMain testMain `(v  1 e 1 0 ]
-"164
+"145
 [v _main main `(v  1 e 1 0 ]
-"55 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+"55 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "77
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
 "97
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-"111
-[v _putch putch `(v  1 e 1 0 ]
-"82 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+"82 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "90
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"50 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+"50 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"450 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+"388 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"450
 [v _PORTB PORTB `VEuc  1 e 1 @13 ]
 "595
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
@@ -51,6 +57,22 @@
 [v _LATB LATB `VEuc  1 e 1 @23 ]
 "905
 [v _LATC LATC `VEuc  1 e 1 @24 ]
+"1863
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @147 ]
+"1962
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @148 ]
+"2001
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @149 ]
+"2078
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @150 ]
+"2277
+[v _ADACT ADACT `VEuc  1 e 1 @153 ]
+"2370
+[v _ADCAP ADCAP `VEuc  1 e 1 @155 ]
+"2422
+[v _ADPRE ADPRE `VEuc  1 e 1 @156 ]
+"3348
+[v _ADERR ADERR `VEus  1 e 2 @278 ]
 "3495
 [v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
 "3549
@@ -77,6 +99,16 @@
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
 "4094
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
+"9118
+[v _PR2 PR2 `VEuc  1 e 1 @653 ]
+"9151
+[v _T2CON T2CON `VEuc  1 e 1 @654 ]
+"9297
+[v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
+"9430
+[v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
+"9583
+[v _T2RST T2RST `VEuc  1 e 1 @657 ]
 [s S45 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
@@ -87,6 +119,8 @@
 "21223
 [u S52 . 1 `S45 1 . 1 0 ]
 [v _PIR3bits PIR3bits `VES52  1 e 1 @1807 ]
+"21258
+[v _PIR4 PIR4 `VEuc  1 e 1 @1808 ]
 "23284
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "23424
@@ -127,84 +161,78 @@
 "36565
 "36565
 [v _GIE GIE `VEb  1 e 0 @95 ]
-"164 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+"145 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"191
+"156
+[v main@servo_rotates_up servo_rotates_up `uc  1 a 1 5 ]
+"177
 } 0
-"134
+"132
 [v _testMain testMain `(v  1 e 1 0 ]
 {
-"163
+"143
 } 0
-"111
+"105
 [v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
 {
-"113
+"107
 [v servoRotate90@i i `ui  1 a 2 1 ]
-"121
+"115
 } 0
-"123
+"117
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
-"125
+"119
 [v servoRotate180@i i `ui  1 a 2 1 ]
-"133
+"127
 } 0
-"99
+"93
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
 {
-"101
+"95
 [v servoRotate0@i i `ui  1 a 2 1 ]
-"109
+"103
 } 0
-"464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
-[v _printf printf `(i  1 e 2 0 ]
+"10
+[v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]
 {
-"499
-[v printf@c c `c  1 a 1 8 ]
-"466
-[v printf@ap ap `[1]*.1v  1 a 1 7 ]
-"464
-[v printf@f f `*.25DCCuc  1 p 2 2 ]
-"1541
+"27
 } 0
-"111 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-[v putch@txData txData `uc  1 a 1 wreg ]
-[v putch@txData txData `uc  1 a 1 wreg ]
-"113
-[v putch@txData txData `uc  1 a 1 1 ]
-"114
-} 0
-"97
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-{
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 0 ]
-"104
-} 0
-"82 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+"82 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"50 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+"50 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "68
 [v PIN_MANAGER_Initialize@state state `uc  1 a 1 0 ]
 "85
 } 0
-"90 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+"90 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "106
 } 0
-"55 C:\Users\Andrew_MacGregor\Documents\TeamRoughRiders\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+"55 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "74
+} 0
+"29 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
+{
+"42
+} 0
+"85
+[v _ADC_conversion_results ADC_conversion_results `(uc  1 e 1 0 ]
+{
+[v ADC_conversion_results@ch ch `ui  1 p 2 0 ]
+} 0
+"44
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+{
+"71
 } 0

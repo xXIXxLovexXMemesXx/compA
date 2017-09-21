@@ -17422,27 +17422,54 @@ void SYSTEM_Initialize(void);
 # 80
 void OSCILLATOR_Initialize(void);
 
-# 14 "main.c"
-void Timer2_Init(void) {}
+# 10 "main.c"
+void Timer2_Init(void)
+{
 
-# 35
-void PWM_Init(void) {
 
+T2CLKCON = 0x06;
+
+T2HLT = 0x00;
+
+T2RST = 0x00;
+
+PR2 = 255;
+
+T2CON |= 0x00;
+
+PIR4 &= 0x01;
+
+T2CON |= 0x80;
 }
 
-# 53
-void ADC_Init(void) {}
+void PWM_Init(void) {
 
-# 74
+# 42
+}
+
+void ADC_Init(void) {
+
+# 63
+ADCON1 = 0;
+ADCON2 = 0;
+ADCON3 = 0;
+ADACT = 0;
+ADERR = 0;
+ADCAP = 0;
+ADPRE = 0;
+ADCON0 = 0b00001001;
+}
+
 void PWM_signal_out(unsigned duty_cycle)
 {
 
+# 79
 }
 
 # 85
 uint8_t ADC_conversion_results(unsigned ch) {}
 
-# 99
+# 93
 void servoRotate0()
 {
 unsigned int i;
@@ -17478,39 +17505,52 @@ PORTB = 0;
 _delay((unsigned long)((19)*(1000000/4000.0)));
 }
 }
-void testMain(void)
 
+# 132
+void testMain(void)
 {
 TRISB = 0;
-do
+while(1)
 {
 servoRotate0();
-_delay((unsigned long)((2000)*(1000000/4000.0)));
+_delay((unsigned long)((200)*(1000000/4000.0)));
 servoRotate90();
-_delay((unsigned long)((2000)*(1000000/4000.0)));
+_delay((unsigned long)((200)*(1000000/4000.0)));
 servoRotate180();
-}while(1);
-
-# 163
 }
+}
+
 void main(void)
 {
 
 SYSTEM_Initialize();
-
-# 173
 testMain();
 
+Timer2_Init();
+ADC_Init();
+PWM_Init();
+
+
+bool servo_rotates_up = 1;
 while (1)
 {
 
-# 184
-printf("Hello Lab 1 \n\r");
+if(ADC_conversion_results(1) > 0x7F)
+PORTA = 0x01;
+else
+PORTA = 0x00;
 
 
-
+if(0 && servo_rotates_up)
+{
+servoRotate180();
+servo_rotates_up = 0;
 }
-
-
+else if(0 && !servo_rotates_up)
+{
+servoRotate0();
+servo_rotates_up = 1;
+}
+}
 }
 
