@@ -14,20 +14,18 @@
 "10 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]
 "29
-[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
-"44
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"85
+"67
 [v _ADC_conversion_results ADC_conversion_results `(uc  1 e 1 0 ]
-"93
+"69
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
-"105
+"81
 [v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
-"117
+"93
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"132
+"108
 [v _testMain testMain `(v  1 e 1 0 ]
-"145
+"121
 [v _main main `(v  1 e 1 0 ]
 "55 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -47,6 +45,18 @@
 [v _PORTB PORTB `VEuc  1 e 1 @13 ]
 "595
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
+[s S139 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"612
+[u S148 . 1 `S139 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES148  1 e 1 @17 ]
 "657
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
 "719
@@ -65,14 +75,16 @@
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @149 ]
 "2078
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @150 ]
+"2149
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @151 ]
 "2277
 [v _ADACT ADACT `VEuc  1 e 1 @153 ]
+"2329
+[v _ADREF ADREF `VEuc  1 e 1 @154 ]
 "2370
 [v _ADCAP ADCAP `VEuc  1 e 1 @155 ]
 "2422
 [v _ADPRE ADPRE `VEuc  1 e 1 @156 ]
-"3348
-[v _ADERR ADERR `VEus  1 e 2 @278 ]
 "3495
 [v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
 "3549
@@ -148,6 +160,20 @@
 [v _RC6PPS RC6PPS `VEuc  1 e 1 @7974 ]
 "32779
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+[s S160 . 1 `uc 1 ANSA0 1 0 :1:0 
+`uc 1 ANSA1 1 0 :1:1 
+`uc 1 ANSA2 1 0 :1:2 
+`uc 1 ANSA3 1 0 :1:3 
+`uc 1 ANSA4 1 0 :1:4 
+`uc 1 ANSA5 1 0 :1:5 
+`uc 1 ANSA6 1 0 :1:6 
+`uc 1 ANSA7 1 0 :1:7 
+]
+"32796
+[u S169 . 1 `S160 1 . 1 0 ]
+"32796
+"32796
+[v _ANSELAbits ANSELAbits `VES169  1 e 1 @7992 ]
 "32841
 [v _WPUA WPUA `VEuc  1 e 1 @7993 ]
 "33399
@@ -161,38 +187,38 @@
 "36565
 "36565
 [v _GIE GIE `VEb  1 e 0 @95 ]
-"145 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+"121 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"156
+"131
 [v main@servo_rotates_up servo_rotates_up `uc  1 a 1 5 ]
-"177
+"152
 } 0
-"132
+"108
 [v _testMain testMain `(v  1 e 1 0 ]
 {
-"143
+"119
 } 0
-"105
+"81
 [v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
 {
-"107
+"83
 [v servoRotate90@i i `ui  1 a 2 1 ]
-"115
-} 0
-"117
-[v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-{
-"119
-[v servoRotate180@i i `ui  1 a 2 1 ]
-"127
+"91
 } 0
 "93
-[v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
+[v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
 "95
-[v servoRotate0@i i `ui  1 a 2 1 ]
+[v servoRotate180@i i `ui  1 a 2 1 ]
 "103
+} 0
+"69
+[v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
+{
+"71
+[v servoRotate0@i i `ui  1 a 2 1 ]
+"79
 } 0
 "10
 [v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]
@@ -221,18 +247,13 @@
 {
 "74
 } 0
-"29 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
-[v _PWM_Init PWM_Init `(v  1 e 1 0 ]
-{
-"42
-} 0
-"85
+"67 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _ADC_conversion_results ADC_conversion_results `(uc  1 e 1 0 ]
 {
 [v ADC_conversion_results@ch ch `ui  1 p 2 0 ]
 } 0
-"44
+"29
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
-"71
+"60
 } 0

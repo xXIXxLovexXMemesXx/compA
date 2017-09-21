@@ -17442,34 +17442,27 @@ PIR4 &= 0x01;
 T2CON |= 0x80;
 }
 
-void PWM_Init(void) {
-
-# 42
-}
-
 void ADC_Init(void) {
 
-# 63
+# 47
+TRISA = 0xFF;
+TRISAbits.TRISA2 = 1;
+ANSELAbits.ANSA2 = 1;
 ADCON1 = 0;
 ADCON2 = 0;
 ADCON3 = 0;
 ADACT = 0;
-ADERR = 0;
+ADSTAT = 0;
 ADCAP = 0;
 ADPRE = 0;
 ADCON0 = 0b00001001;
+ADREF = 0;
+
 }
 
-void PWM_signal_out(unsigned duty_cycle)
-{
-
-# 79
-}
-
-# 85
+# 67
 uint8_t ADC_conversion_results(unsigned ch) {}
 
-# 93
 void servoRotate0()
 {
 unsigned int i;
@@ -17506,7 +17499,7 @@ _delay((unsigned long)((19)*(1000000/4000.0)));
 }
 }
 
-# 132
+# 108
 void testMain(void)
 {
 TRISB = 0;
@@ -17528,7 +17521,6 @@ testMain();
 
 Timer2_Init();
 ADC_Init();
-PWM_Init();
 
 
 bool servo_rotates_up = 1;

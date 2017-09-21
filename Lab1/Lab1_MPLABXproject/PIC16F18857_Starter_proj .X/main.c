@@ -26,21 +26,6 @@ void Timer2_Init(void)
     T2CON |= 0x80;  //turn timer 2 on.
 }   
 
-void PWM_Init(void)  {
-   /*  Configure CCP1 module in PWM mode (PWM channel = RC3 by default, Timer selection)
-  Registers:
- * 
- * --- Set the Registers below: ---
- * 
- * 1. Set up CCP1 module register in PWM mode and bits alignment
- * 2. Set RH to 0; 
- * 3. Set RL to 0; 
- * 4. Selecting Timer 2 - for PWM in CCP1 module
- * 
- * ---------------
-  */   
-}  
-
 void ADC_Init(void)  {
  /*  Configure ADC module  
 
@@ -59,24 +44,21 @@ void ADC_Init(void)  {
  * 12. Set ADC result alignment, Enable ADC module, Clock Selection Bit, Disable ADC Continuous Operation, Keep ADC inactive
   
   */
-    
+    TRISA = 0xFF;   //set PORTA to input
+    TRISAbits.TRISA2 = 1;   //set pin A2 to input
+    ANSELAbits.ANSA2 = 1;   //set as analog input
     ADCON1 = 0;
     ADCON2 = 0;
     ADCON3 = 0;
     ADACT = 0;
-    ADERR = 0;
+    ADSTAT = 0;
     ADCAP = 0;
     ADPRE = 0;
     ADCON0 = 0b00001001; 
+    ADREF = 0;
+    
 }   
 
-void PWM_signal_out(unsigned duty_cycle) 
-{
-   /*
- *- you set 10bits value for the duty cycle being careful with the MSB/LSB alignment 
- *- Set the appropriate Registers in the right sequence
- */  
-}
 
  /**
  * - set your ADC channel , activate the ADC module , and get the ADC result to a value , then deactivate again the ADC module
@@ -84,12 +66,6 @@ void PWM_signal_out(unsigned duty_cycle)
  */
 uint8_t ADC_conversion_results(unsigned ch) {}
 
-/** 
- * Connect servo lines as following
- * Red: v+
- * Brown: ground
- * Orange: Port B0
-*/
 void servoRotate0() //0 Degree
 {
   unsigned int i;
@@ -150,13 +126,12 @@ void main(void)
     // Initialize the required modules 
     Timer2_Init(); //starts the timer.
     ADC_Init();
-    PWM_Init();
     // **** write your code 
     
     bool servo_rotates_up = true;
     while (1) // keep your application in a loop
     {
-        //If the photoresister is above a certain threshold, turn on the LED (or not))
+        //If the photoresistor is above a certain threshold, turn on the LED (or not))
         if(ADC_conversion_results(ADC_CHAN) > ADC_THRESH)
             PORTA = 0x01;
         else
