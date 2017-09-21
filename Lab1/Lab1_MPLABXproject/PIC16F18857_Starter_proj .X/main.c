@@ -1,7 +1,8 @@
 
 #include "mcc_generated_files/mcc.h" //default library 
 
-
+#define ADC_CHAN 1
+#define ADC_THRESH 0x7F
 // ++++++++++++ Helpful Notes ++++++++++++++++
 
 
@@ -19,11 +20,11 @@ void Timer2_Init(void)
  //* 2. Set the Clock Source in relation with system Oscillator frequency 
     T2CLKCON  = 0x06; //sets CS to SOSC freq (pg 440))
  //* 3. T2PSYNC Not Synchronized; T2MODE Software control; T2CKPOL Rising Edge; T2CKSYNC Not Synchronized; Timer Mode
-    T2HLT = 0x00; //sets mode to free running with software gate.  (424))
+    T2HLT = 0x08; //sets mode to One shot timer.  (424))
  //* 4. T2RSEL set reset source to Pin selected by T2INPPS (pg 443_)
     T2RST = 0x00;
  //* 5. Set PR2 255; 
-    PR2 = 255; //Timer2 Module Period Register
+    T2PR = 0xFF; //Timer2 Module Period Register
  //* 6. Set TMR2  Prescale Value to 0 
     T2CON |= 0x00; //Prescale is 0
  //* 7. Clearing IF for timer 2
@@ -32,7 +33,46 @@ void Timer2_Init(void)
     T2CON |= 0x80;  //turn timer 2 on.
 }   
 
+/**
+ * Timer2 is triggered if TMR2 == T2PR2
+ */
+bool isTimer2Triggered(void)
+{
+   return TMR2 == T2PR; //TMR2 = timer count, T2PR = period register
+}
 
+/**
+ * Restart the timer
+ */
+void restartTimer2(void)
+{
+    //reset count
+    TMR2 = 0;
+    //clear ON bit
+    T2CON &= !0x80;
+    //set ON bit
+    T2CON |= 0x80;
+}
+
+/**
+ * Tests that the timer works in single shot mode
+ */
+
+void testTimerMain(void)
+{
+    //port A-pin0 is the LED.
+    restartTimer2();
+    while(1)
+    {
+        if(isTimer2Triggered())
+        {
+            PORTA ^= 0x01;
+            restartTimer2();
+        } else {
+            __delay_ms(1);
+        }
+    }
+}
 
 void PWM_Init(void)  {
     
@@ -172,8 +212,8 @@ void main(void)
     Timer2_Init(); //starts the timer.
     ADC_Init();
     PWM_Init();
-    // **** write your code 
-       
+    
+    testTimerMain();
     bool servo_rotates_up = true;
     while (1) // keep your application in a loop
     {
@@ -184,12 +224,12 @@ void main(void)
             PORTA = 0x00;
         
         //if the timer is done, rotate the servo the right direction
-        if(0 && servo_rotates_up/* && timer is triggered*/)
+        if(servo_rotates_up && isTimer2Triggered() )
         {
             servoRotate180();
             servo_rotates_up = false;
         } 
-        else if(0 && !servo_rotates_up /** && timer is triggered*/)
+        else if(!servo_rotates_up && isTimer2Triggered() )
         {
             servoRotate0();
             servo_rotates_up = true;
