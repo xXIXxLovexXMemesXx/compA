@@ -17440,7 +17440,18 @@ void SYSTEM_Initialize(void);
 # 80
 void OSCILLATOR_Initialize(void);
 
-# 17 "main.c"
+# 8 "main.c"
+unsigned cnt = 0;
+
+
+
+void interrupt timer_set()
+{
+cnt++;
+
+}
+
+# 19
 void Timer2_Init(void)
 {
 
@@ -17449,11 +17460,9 @@ T2CLKCON = 0x06;
 
 T2HLT = 0x08;
 
-T2RST = 0x00;
-
 T2PR = 0xFF;
 
-T2CON |= 0x00;
+T2CON = 0b01100000 | 0b00001111;
 
 PIR4 &= 0x01;
 

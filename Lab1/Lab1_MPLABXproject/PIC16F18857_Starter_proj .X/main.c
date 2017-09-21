@@ -3,15 +3,17 @@
 
 #define ADC_CHAN 1
 #define ADC_THRESH 0x7F
-// ++++++++++++ Helpful Notes ++++++++++++++++
 
-
-/*
- include or set any library or definition you think you will need
- */
+#define CNT_THRESH 400
+unsigned cnt = 0; //timer overflow count
 
 // ====================  prototype functions: ====================
 
+void interrupt timer_set()
+{
+    cnt++;
+    
+}
 /* Configure Timer 2 and start it
  */
 void Timer2_Init(void)  
@@ -21,12 +23,10 @@ void Timer2_Init(void)
     T2CLKCON  = 0x06; //sets CS to SOSC freq (pg 440))
  //* 3. T2PSYNC Not Synchronized; T2MODE Software control; T2CKPOL Rising Edge; T2CKSYNC Not Synchronized; Timer Mode
     T2HLT = 0x08; //sets mode to One shot timer.  (424))
- //* 4. T2RSEL set reset source to Pin selected by T2INPPS (pg 443_)
-    T2RST = 0x00;
  //* 5. Set PR2 255; 
     T2PR = 0xFF; //Timer2 Module Period Register
  //* 6. Set TMR2  Prescale Value to 0 
-    T2CON |= 0x00; //Prescale is 0
+    T2CON = 0b01100000 | 0b00001111; //1:64 prescaler and 1:16 postscaler
  //* 7. Clearing IF for timer 2
     PIR4 &= 0x01; //clears only the Timer2 interrupt flag
  //* 8. Start Timer2
