@@ -4,15 +4,18 @@
 #define ADC_CHAN 1
 #define ADC_THRESH 0x7F
 
-#define CNT_THRESH 400
-unsigned cnt = 0; //timer overflow count
-
+#define COUNT_THRESH 100
 // ====================  prototype functions: ====================
 
-void interrupt timer_set()
+
+void timer0Init(void)
 {
-    cnt++;
-    
+    //Timer0 enabled with 16 bit timer and a 1:16 postscaler
+    T0CON0 = 0b10011111;
+    //set source to FOSC/4 and 1:1 prescaler
+    T0CON1 = 0b01000000; 
+    //enable Timer0 interupts
+    PIE0 = 0xFF;
 }
 /* Configure Timer 2 and start it
  */
@@ -39,6 +42,7 @@ void Timer2_Init(void)
 bool isTimer2Triggered(void)
 {
    return TMR2 == T2PR; //TMR2 = timer count, T2PR = period register
+   //DOES NOT WORK
 }
 
 /**
@@ -58,7 +62,7 @@ void restartTimer2(void)
  * Tests that the timer works in single shot mode
  */
 
-void testTimerMain(void)
+void testTimer2Main(void)
 {
     //port A-pin0 is the LED.
     restartTimer2();
@@ -212,27 +216,29 @@ void main(void)
     Timer2_Init(); //starts the timer.
     ADC_Init();
     PWM_Init();
-    
-    testTimerMain();
+    TRISA = OUTPUT;
+    TRISB = 0;
+    //testTimer2Main();
     bool servo_rotates_up = true;
+    unsigned count = 0;
     while (1) // keep your application in a loop
     {
-        //If the photoresister is above a certain threshold, turn on the LED (or not))
-        if(ADC_conversion_results(ADC_CHAN) > ADC_THRESH)
-            PORTA = 0x01;
-        else
-            PORTA = 0x00;
+        count++;
         
         //if the timer is done, rotate the servo the right direction
-        if(servo_rotates_up && isTimer2Triggered() )
+        if(servo_rotates_up && (count >= COUNT_THRESH) )
         {
             servoRotate180();
             servo_rotates_up = false;
+            PORTA = 0x01;
+            count = 0;
         } 
-        else if(!servo_rotates_up && isTimer2Triggered() )
+        else if(!servo_rotates_up && (count >= COUNT_THRESH) )
         {
             servoRotate0();
             servo_rotates_up = true;
+            PORTA = 0x00;
+            count = 0;
         }        
     } 
 }

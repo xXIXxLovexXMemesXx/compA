@@ -1,5 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"9430 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f18857.h
+"1359 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+[v _T0CON0 `Vuc ~T0 @X0 0 e@30 ]
+"1424
+[v _T0CON1 `Vuc ~T0 @X0 0 e@31 ]
+"21525
+[v _PIE0 `Vuc ~T0 @X0 0 e@1814 ]
+"9430
 [v _T2CLKCON `Vuc ~T0 @X0 0 e@656 ]
 "9297
 [v _T2HLT `Vuc ~T0 @X0 0 e@655 ]
@@ -14,21 +20,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 "388
 [v _PORTA `Vuc ~T0 @X0 0 e@12 ]
 [v F14158 `(v ~T0 @X0 1 tf1`ul ]
-"152 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic.h
+"152 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic.h
 [v __delay `JF14158 ~T0 @X0 0 e ]
 [p i __delay ]
-"450 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f18857.h
+"450 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
 [v _PORTB `Vuc ~T0 @X0 0 e@13 ]
 "657
 [v _TRISB `Vuc ~T0 @X0 0 e@18 ]
 [p mainexit ]
 "67 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"595 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+[v _TRISA `Vuc ~T0 @X0 0 e@17 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f18857.h: 50: extern volatile unsigned char INDF0 @ 0x000;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic16f18857.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
 [; ;pic16f18857.h: 52: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f18857.h: 55: typedef union {
@@ -13047,32 +13055,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.h: 73: void PIN_MANAGER_Initialize (void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdint.h: 38: typedef signed long int int32_t;
+[; ;stdint.h: 45: typedef unsigned char uint8_t;
+[; ;stdint.h: 51: typedef unsigned int uint16_t;
+[; ;stdint.h: 67: typedef unsigned long int uint32_t;
+[; ;stdint.h: 75: typedef signed char int_least8_t;
+[; ;stdint.h: 82: typedef signed int int_least16_t;
+[; ;stdint.h: 104: typedef signed long int int_least32_t;
+[; ;stdint.h: 111: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 117: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 136: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 145: typedef signed char int_fast8_t;
+[; ;stdint.h: 152: typedef signed int int_fast16_t;
+[; ;stdint.h: 174: typedef signed long int int_fast32_t;
+[; ;stdint.h: 181: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 187: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 206: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 212: typedef int32_t intmax_t;
+[; ;stdint.h: 217: typedef uint32_t uintmax_t;
+[; ;stdint.h: 222: typedef int16_t intptr_t;
+[; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
@@ -13109,460 +13111,466 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 135: void EUSART_Write(uint8_t txData);
 [; ;mcc.h: 67: void SYSTEM_Initialize(void);
 [; ;mcc.h: 80: void OSCILLATOR_Initialize(void);
-"8 main.c
-[v _cnt `ui ~T0 @X0 1 e ]
-[i _cnt
--> -> 0 `i `ui
-]
-[; ;main.c: 8: unsigned cnt = 0;
-[v $root$_timer_set `(v ~T0 @X0 0 e ]
-[v F14270 `(v ~T0 @X0 1 tf ]
+"11 main.c
+[v _timer0Init `(v ~T0 @X0 1 ef ]
 "12
-[v _timer_set `IF14270 ~T0 @X0 1 e ]
-"13
 {
-[; ;main.c: 12: void interrupt timer_set()
-[; ;main.c: 13: {
-[e :U _timer_set ]
+[; ;main.c: 11: void timer0Init(void)
+[; ;main.c: 12: {
+[e :U _timer0Init ]
 [f ]
-[; ;main.c: 14: cnt++;
+[; ;main.c: 14: T0CON0 = 0b10011111;
 "14
-[e ++ _cnt -> -> 1 `i `ui ]
-[; ;main.c: 16: }
+[e = _T0CON0 -> -> 159 `i `uc ]
+[; ;main.c: 16: T0CON1 = 0b01000000;
 "16
+[e = _T0CON1 -> -> 64 `i `uc ]
+[; ;main.c: 18: PIE0 = 0xFF;
+"18
+[e = _PIE0 -> -> 255 `i `uc ]
+[; ;main.c: 19: }
+"19
 [e :UE 1558 ]
 }
-"19
+"22
 [v _Timer2_Init `(v ~T0 @X0 1 ef ]
-"20
+"23
 {
-[; ;main.c: 19: void Timer2_Init(void)
-[; ;main.c: 20: {
+[; ;main.c: 22: void Timer2_Init(void)
+[; ;main.c: 23: {
 [e :U _Timer2_Init ]
 [f ]
-[; ;main.c: 23: T2CLKCON = 0x06;
-"23
+[; ;main.c: 26: T2CLKCON = 0x06;
+"26
 [e = _T2CLKCON -> -> 6 `i `uc ]
-[; ;main.c: 25: T2HLT = 0x08;
-"25
+[; ;main.c: 28: T2HLT = 0x08;
+"28
 [e = _T2HLT -> -> 8 `i `uc ]
-[; ;main.c: 27: T2PR = 0xFF;
-"27
+[; ;main.c: 30: T2PR = 0xFF;
+"30
 [e = _T2PR -> -> 255 `i `uc ]
-[; ;main.c: 29: T2CON = 0b01100000 | 0b00001111;
-"29
+[; ;main.c: 32: T2CON = 0b01100000 | 0b00001111;
+"32
 [e = _T2CON -> | -> 96 `i -> 15 `i `uc ]
-[; ;main.c: 31: PIR4 &= 0x01;
-"31
-[e =& _PIR4 -> -> 1 `i `uc ]
-[; ;main.c: 33: T2CON |= 0x80;
-"33
-[e =| _T2CON -> -> 128 `i `uc ]
-[; ;main.c: 34: }
+[; ;main.c: 34: PIR4 &= 0x01;
 "34
+[e =& _PIR4 -> -> 1 `i `uc ]
+[; ;main.c: 36: T2CON |= 0x80;
+"36
+[e =| _T2CON -> -> 128 `i `uc ]
+[; ;main.c: 37: }
+"37
 [e :UE 1559 ]
 }
-"39
+"42
 [v _isTimer2Triggered `(uc ~T0 @X0 1 ef ]
-"40
+"43
 {
-[; ;main.c: 39: bool isTimer2Triggered(void)
-[; ;main.c: 40: {
+[; ;main.c: 42: bool isTimer2Triggered(void)
+[; ;main.c: 43: {
 [e :U _isTimer2Triggered ]
 [f ]
-[; ;main.c: 41: return TMR2 == T2PR;
-"41
+[; ;main.c: 44: return TMR2 == T2PR;
+"44
 [e ) -> -> == -> _TMR2 `i -> _T2PR `i `i `uc ]
 [e $UE 1560  ]
-[; ;main.c: 42: }
-"42
+[; ;main.c: 46: }
+"46
 [e :UE 1560 ]
 }
-"47
+"51
 [v _restartTimer2 `(v ~T0 @X0 1 ef ]
-"48
+"52
 {
-[; ;main.c: 47: void restartTimer2(void)
-[; ;main.c: 48: {
+[; ;main.c: 51: void restartTimer2(void)
+[; ;main.c: 52: {
 [e :U _restartTimer2 ]
 [f ]
-[; ;main.c: 50: TMR2 = 0;
-"50
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;main.c: 52: T2CON &= !0x80;
-"52
-[e =& _T2CON -> -> ! != -> 128 `i -> 0 `i `i `uc ]
-[; ;main.c: 54: T2CON |= 0x80;
+[; ;main.c: 54: TMR2 = 0;
 "54
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;main.c: 56: T2CON &= !0x80;
+"56
+[e =& _T2CON -> -> ! != -> 128 `i -> 0 `i `i `uc ]
+[; ;main.c: 58: T2CON |= 0x80;
+"58
 [e =| _T2CON -> -> 128 `i `uc ]
-[; ;main.c: 55: }
-"55
+[; ;main.c: 59: }
+"59
 [e :UE 1561 ]
 }
-"61
-[v _testTimerMain `(v ~T0 @X0 1 ef ]
-"62
-{
-[; ;main.c: 61: void testTimerMain(void)
-[; ;main.c: 62: {
-[e :U _testTimerMain ]
-[f ]
-[; ;main.c: 64: restartTimer2();
-"64
-[e ( _restartTimer2 ..  ]
-[; ;main.c: 65: while(1)
 "65
-[e :U 1564 ]
-[; ;main.c: 66: {
+[v _testTimer2Main `(v ~T0 @X0 1 ef ]
 "66
 {
-[; ;main.c: 67: if(isTimer2Triggered())
-"67
-[e $ ! != -> ( _isTimer2Triggered ..  `i -> -> -> 0 `i `uc `i 1566  ]
-[; ;main.c: 68: {
+[; ;main.c: 65: void testTimer2Main(void)
+[; ;main.c: 66: {
+[e :U _testTimer2Main ]
+[f ]
+[; ;main.c: 68: restartTimer2();
 "68
-{
-[; ;main.c: 69: PORTA ^= 0x01;
-"69
-[e =^ _PORTA -> -> 1 `i `uc ]
-[; ;main.c: 70: restartTimer2();
-"70
 [e ( _restartTimer2 ..  ]
+[; ;main.c: 69: while(1)
+"69
+[e :U 1564 ]
+[; ;main.c: 70: {
+"70
+{
+[; ;main.c: 71: if(isTimer2Triggered())
 "71
+[e $ ! != -> ( _isTimer2Triggered ..  `i -> -> -> 0 `i `uc `i 1566  ]
+[; ;main.c: 72: {
+"72
+{
+[; ;main.c: 73: PORTA ^= 0x01;
+"73
+[e =^ _PORTA -> -> 1 `i `uc ]
+[; ;main.c: 74: restartTimer2();
+"74
+[e ( _restartTimer2 ..  ]
+"75
 }
-[; ;main.c: 71: } else {
+[; ;main.c: 75: } else {
 [e $U 1567  ]
 [e :U 1566 ]
 {
-[; ;main.c: 72: _delay((unsigned long)((1)*(1000000/4000.0)));
-"72
+[; ;main.c: 76: _delay((unsigned long)((1)*(1000000/4000.0)));
+"76
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"73
+"77
 }
 [e :U 1567 ]
-"74
+"78
 }
 [e :U 1563 ]
-"65
+"69
 [e $U 1564  ]
 [e :U 1565 ]
-[; ;main.c: 73: }
-[; ;main.c: 74: }
-[; ;main.c: 75: }
-"75
-[e :UE 1562 ]
-}
-"77
-[v _PWM_Init `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 77: void PWM_Init(void) {
-[e :U _PWM_Init ]
-[f ]
+[; ;main.c: 77: }
+[; ;main.c: 78: }
 [; ;main.c: 79: }
 "79
+[e :UE 1562 ]
+}
+"81
+[v _PWM_Init `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 81: void PWM_Init(void) {
+[e :U _PWM_Init ]
+[f ]
+[; ;main.c: 83: }
+"83
 [e :UE 1568 ]
 }
-"95
+"99
 [v _ADC_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 95: void ADC_Init(void) {}
+[; ;main.c: 99: void ADC_Init(void) {}
 [e :U _ADC_Init ]
 [f ]
 [e :UE 1569 ]
 }
-"116
+"120
 [v _PWM_signal_out `(v ~T0 @X0 1 ef1`ui ]
-"117
+"121
 {
-[; ;main.c: 116: void PWM_signal_out(unsigned duty_cycle)
-[; ;main.c: 117: {
+[; ;main.c: 120: void PWM_signal_out(unsigned duty_cycle)
+[; ;main.c: 121: {
 [e :U _PWM_signal_out ]
-"116
+"120
 [v _duty_cycle `ui ~T0 @X0 1 r1 ]
-"117
+"121
 [f ]
-[; ;main.c: 119: }
-"119
+[; ;main.c: 123: }
+"123
 [e :UE 1570 ]
 }
-"127
+"131
 [v _ADC_conversion_results `(uc ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 127: uint8_t ADC_conversion_results(unsigned ch) {}
+[; ;main.c: 131: uint8_t ADC_conversion_results(unsigned ch) {}
 [e :U _ADC_conversion_results ]
 [v _ch `ui ~T0 @X0 1 r1 ]
 [f ]
 [e :UE 1571 ]
 }
-"141
+"145
 [v _servoRotate0 `(v ~T0 @X0 1 ef ]
-"142
+"146
 {
-[; ;main.c: 141: void servoRotate0()
-[; ;main.c: 142: {
+[; ;main.c: 145: void servoRotate0()
+[; ;main.c: 146: {
 [e :U _servoRotate0 ]
 [f ]
-"143
+"147
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 143: unsigned int i;
-[; ;main.c: 144: for(i=0;i<50;i++)
-"144
+[; ;main.c: 147: unsigned int i;
+[; ;main.c: 148: for(i=0;i<50;i++)
+"148
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1573  ]
 [e $U 1574  ]
-"145
-[e :U 1573 ]
-[; ;main.c: 145: {
-{
-[; ;main.c: 146: PORTB = 1;
-"146
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 147: _delay((unsigned long)((1.5)*(1000000/4000.0)));
-"147
-[e ( __delay (1 -> * .1.5 / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 148: PORTB = 0;
-"148
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 149: _delay((unsigned long)((18.5)*(1000000/4000.0)));
 "149
-[e ( __delay (1 -> * .18.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[e :U 1573 ]
+[; ;main.c: 149: {
+{
+[; ;main.c: 150: PORTB = 1;
 "150
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 151: _delay((unsigned long)((1.5)*(1000000/4000.0)));
+"151
+[e ( __delay (1 -> * .1.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 152: PORTB = 0;
+"152
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 153: _delay((unsigned long)((18.5)*(1000000/4000.0)));
+"153
+[e ( __delay (1 -> * .18.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+"154
 }
-"144
+"148
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1573  ]
 [e :U 1574 ]
-"150
+"154
 }
-[; ;main.c: 150: }
-[; ;main.c: 151: }
-"151
+[; ;main.c: 154: }
+[; ;main.c: 155: }
+"155
 [e :UE 1572 ]
 }
-"153
+"157
 [v _servoRotate90 `(v ~T0 @X0 1 ef ]
-"154
+"158
 {
-[; ;main.c: 153: void servoRotate90()
-[; ;main.c: 154: {
+[; ;main.c: 157: void servoRotate90()
+[; ;main.c: 158: {
 [e :U _servoRotate90 ]
 [f ]
-"155
+"159
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 155: unsigned int i;
-[; ;main.c: 156: for(i=0;i<50;i++)
-"156
+[; ;main.c: 159: unsigned int i;
+[; ;main.c: 160: for(i=0;i<50;i++)
+"160
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1577  ]
 [e $U 1578  ]
-"157
-[e :U 1577 ]
-[; ;main.c: 157: {
-{
-[; ;main.c: 158: PORTB = 1;
-"158
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 159: _delay((unsigned long)((2)*(1000000/4000.0)));
-"159
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 160: PORTB = 0;
-"160
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 161: _delay((unsigned long)((18)*(1000000/4000.0)));
 "161
-[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e :U 1577 ]
+[; ;main.c: 161: {
+{
+[; ;main.c: 162: PORTB = 1;
 "162
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 163: _delay((unsigned long)((2)*(1000000/4000.0)));
+"163
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 164: PORTB = 0;
+"164
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 165: _delay((unsigned long)((18)*(1000000/4000.0)));
+"165
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"166
 }
-"156
+"160
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1577  ]
 [e :U 1578 ]
-"162
+"166
 }
-[; ;main.c: 162: }
-[; ;main.c: 163: }
-"163
+[; ;main.c: 166: }
+[; ;main.c: 167: }
+"167
 [e :UE 1576 ]
 }
-"165
+"169
 [v _servoRotate180 `(v ~T0 @X0 1 ef ]
-"166
+"170
 {
-[; ;main.c: 165: void servoRotate180()
-[; ;main.c: 166: {
+[; ;main.c: 169: void servoRotate180()
+[; ;main.c: 170: {
 [e :U _servoRotate180 ]
 [f ]
-"167
+"171
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 167: unsigned int i;
-[; ;main.c: 168: for(i=0;i<50;i++)
-"168
+[; ;main.c: 171: unsigned int i;
+[; ;main.c: 172: for(i=0;i<50;i++)
+"172
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1581  ]
 [e $U 1582  ]
-"169
-[e :U 1581 ]
-[; ;main.c: 169: {
-{
-[; ;main.c: 170: PORTB = 1;
-"170
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 171: _delay((unsigned long)((1)*(1000000/4000.0)));
-"171
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 172: PORTB = 0;
-"172
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 173: _delay((unsigned long)((19)*(1000000/4000.0)));
 "173
-[e ( __delay (1 -> * -> -> 19 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e :U 1581 ]
+[; ;main.c: 173: {
+{
+[; ;main.c: 174: PORTB = 1;
 "174
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 175: _delay((unsigned long)((1)*(1000000/4000.0)));
+"175
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 176: PORTB = 0;
+"176
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 177: _delay((unsigned long)((19)*(1000000/4000.0)));
+"177
+[e ( __delay (1 -> * -> -> 19 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"178
 }
-"168
+"172
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1581  ]
 [e :U 1582 ]
-"174
+"178
 }
-[; ;main.c: 174: }
-[; ;main.c: 175: }
-"175
+[; ;main.c: 178: }
+[; ;main.c: 179: }
+"179
 [e :UE 1580 ]
 }
-"176
+"180
 [v _testMain `(v ~T0 @X0 1 ef ]
-"178
+"182
 {
-[; ;main.c: 176: void testMain(void)
-[; ;main.c: 178: {
+[; ;main.c: 180: void testMain(void)
+[; ;main.c: 182: {
 [e :U _testMain ]
 [f ]
-[; ;main.c: 179: TRISB = 0;
-"179
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 180: do
-"180
-[e :U 1587 ]
-[; ;main.c: 181: {
-"181
-{
-[; ;main.c: 182: servoRotate0();
-"182
-[e ( _servoRotate0 ..  ]
-[; ;main.c: 183: _delay((unsigned long)((2000)*(1000000/4000.0)));
+[; ;main.c: 183: TRISB = 0;
 "183
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 184: servoRotate90();
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 184: do
 "184
-[e ( _servoRotate90 ..  ]
-[; ;main.c: 185: _delay((unsigned long)((2000)*(1000000/4000.0)));
+[e :U 1587 ]
+[; ;main.c: 185: {
 "185
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 186: servoRotate180();
+{
+[; ;main.c: 186: servoRotate0();
 "186
-[e ( _servoRotate180 ..  ]
+[e ( _servoRotate0 ..  ]
+[; ;main.c: 187: _delay((unsigned long)((2000)*(1000000/4000.0)));
 "187
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 188: servoRotate90();
+"188
+[e ( _servoRotate90 ..  ]
+[; ;main.c: 189: _delay((unsigned long)((2000)*(1000000/4000.0)));
+"189
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 190: servoRotate180();
+"190
+[e ( _servoRotate180 ..  ]
+"191
 }
-[; ;main.c: 187: }while(1);
+[; ;main.c: 191: }while(1);
 [e $ != -> 1 `i -> 0 `i 1587  ]
 [e :U 1586 ]
-[; ;main.c: 205: }
-"205
+[; ;main.c: 209: }
+"209
 [e :UE 1584 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"206
+"210
 [v _main `(v ~T0 @X0 1 ef ]
-"207
+"211
 {
-[; ;main.c: 206: void main(void)
-[; ;main.c: 207: {
+[; ;main.c: 210: void main(void)
+[; ;main.c: 211: {
 [e :U _main ]
 [f ]
-[; ;main.c: 209: SYSTEM_Initialize();
-"209
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 212: Timer2_Init();
-"212
-[e ( _Timer2_Init ..  ]
-[; ;main.c: 213: ADC_Init();
+[; ;main.c: 213: SYSTEM_Initialize();
 "213
-[e ( _ADC_Init ..  ]
-[; ;main.c: 214: PWM_Init();
-"214
-[e ( _PWM_Init ..  ]
-[; ;main.c: 216: testTimerMain();
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 216: Timer2_Init();
 "216
-[e ( _testTimerMain ..  ]
+[e ( _Timer2_Init ..  ]
+[; ;main.c: 217: ADC_Init();
 "217
-[v _servo_rotates_up `uc ~T0 @X0 1 a ]
-[; ;main.c: 217: bool servo_rotates_up = 1;
-[e = _servo_rotates_up -> -> 1 `i `uc ]
-[; ;main.c: 218: while (1)
+[e ( _ADC_Init ..  ]
+[; ;main.c: 218: PWM_Init();
 "218
-[e :U 1590 ]
-[; ;main.c: 219: {
+[e ( _PWM_Init ..  ]
+[; ;main.c: 219: TRISA = 0;
 "219
-{
-[; ;main.c: 221: if(ADC_conversion_results(1) > 0x7F)
-"221
-[e $ ! > -> ( _ADC_conversion_results (1 -> -> 1 `i `ui `i -> 127 `i 1592  ]
-[; ;main.c: 222: PORTA = 0x01;
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 220: TRISB = 0;
+"220
+[e = _TRISB -> -> 0 `i `uc ]
 "222
-[e = _PORTA -> -> 1 `i `uc ]
-[e $U 1593  ]
-"223
-[e :U 1592 ]
-[; ;main.c: 223: else
-[; ;main.c: 224: PORTA = 0x00;
-"224
-[e = _PORTA -> -> 0 `i `uc ]
-[e :U 1593 ]
-[; ;main.c: 227: if(servo_rotates_up && isTimer2Triggered() )
-"227
-[e $ ! && != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i != -> ( _isTimer2Triggered ..  `i -> -> -> 0 `i `uc `i 1594  ]
-[; ;main.c: 228: {
-"228
-{
-[; ;main.c: 229: servoRotate180();
-"229
-[e ( _servoRotate180 ..  ]
-[; ;main.c: 230: servo_rotates_up = 0;
-"230
-[e = _servo_rotates_up -> -> 0 `i `uc ]
-"231
-}
-[; ;main.c: 231: }
-[e $U 1595  ]
-"232
-[e :U 1594 ]
-[; ;main.c: 232: else if(!servo_rotates_up && isTimer2Triggered() )
-[e $ ! && ! != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i != -> ( _isTimer2Triggered ..  `i -> -> -> 0 `i `uc `i 1596  ]
-[; ;main.c: 233: {
-"233
-{
-[; ;main.c: 234: servoRotate0();
-"234
-[e ( _servoRotate0 ..  ]
-[; ;main.c: 235: servo_rotates_up = 1;
-"235
+[v _servo_rotates_up `uc ~T0 @X0 1 a ]
+[; ;main.c: 222: bool servo_rotates_up = 1;
 [e = _servo_rotates_up -> -> 1 `i `uc ]
-"236
+"223
+[v _count `ui ~T0 @X0 1 a ]
+[; ;main.c: 223: unsigned count = 0;
+[e = _count -> -> 0 `i `ui ]
+[; ;main.c: 224: while (1)
+"224
+[e :U 1590 ]
+[; ;main.c: 225: {
+"225
+{
+[; ;main.c: 226: count++;
+"226
+[e ++ _count -> -> 1 `i `ui ]
+[; ;main.c: 229: if(servo_rotates_up && (count >= 100) )
+"229
+[e $ ! && != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i >= _count -> -> 100 `i `ui 1592  ]
+[; ;main.c: 230: {
+"230
+{
+[; ;main.c: 231: servoRotate180();
+"231
+[e ( _servoRotate180 ..  ]
+[; ;main.c: 232: servo_rotates_up = 0;
+"232
+[e = _servo_rotates_up -> -> 0 `i `uc ]
+[; ;main.c: 233: PORTA = 0x01;
+"233
+[e = _PORTA -> -> 1 `i `uc ]
+[; ;main.c: 234: count = 0;
+"234
+[e = _count -> -> 0 `i `ui ]
+"235
 }
-[e :U 1596 ]
+[; ;main.c: 235: }
+[e $U 1593  ]
+"236
+[e :U 1592 ]
+[; ;main.c: 236: else if(!servo_rotates_up && (count >= 100) )
+[e $ ! && ! != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i >= _count -> -> 100 `i `ui 1594  ]
+[; ;main.c: 237: {
 "237
-[e :U 1595 ]
+{
+[; ;main.c: 238: servoRotate0();
+"238
+[e ( _servoRotate0 ..  ]
+[; ;main.c: 239: servo_rotates_up = 1;
+"239
+[e = _servo_rotates_up -> -> 1 `i `uc ]
+[; ;main.c: 240: PORTA = 0x00;
+"240
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 241: count = 0;
+"241
+[e = _count -> -> 0 `i `ui ]
+"242
+}
+[e :U 1594 ]
+"243
+[e :U 1593 ]
 }
 [e :U 1589 ]
-"218
+"224
 [e $U 1590  ]
 [e :U 1591 ]
-[; ;main.c: 236: }
-[; ;main.c: 237: }
-[; ;main.c: 238: }
-"238
+[; ;main.c: 242: }
+[; ;main.c: 243: }
+[; ;main.c: 244: }
+"244
 [e :UE 1588 ]
 }
