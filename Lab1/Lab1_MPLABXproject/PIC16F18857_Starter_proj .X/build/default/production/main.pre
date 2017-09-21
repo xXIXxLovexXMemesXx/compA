@@ -17509,9 +17509,9 @@ unsigned int i;
 for(i=0;i<50;i++)
 {
 PORTB = 1;
-_delay((unsigned long)((1.5)*(1000000/4000.0)));
+_delay((unsigned long)((1.4)*(1000000/4000.0)));
 PORTB = 0;
-_delay((unsigned long)((18.5)*(1000000/4000.0)));
+_delay((unsigned long)((18.6)*(1000000/4000.0)));
 }
 }
 
@@ -17521,9 +17521,9 @@ unsigned int i;
 for(i=0;i<50;i++)
 {
 PORTB = 1;
-_delay((unsigned long)((2)*(1000000/4000.0)));
+_delay((unsigned long)((4)*(1000000/4000.0)));
 PORTB = 0;
-_delay((unsigned long)((18)*(1000000/4000.0)));
+_delay((unsigned long)((16)*(1000000/4000.0)));
 }
 }
 
@@ -17533,9 +17533,9 @@ unsigned int i;
 for(i=0;i<50;i++)
 {
 PORTB = 1;
-_delay((unsigned long)((1)*(1000000/4000.0)));
+_delay((unsigned long)((0.5)*(1000000/4000.0)));
 PORTB = 0;
-_delay((unsigned long)((19)*(1000000/4000.0)));
+_delay((unsigned long)((19.5)*(1000000/4000.0)));
 }
 }
 void testMain(void)
@@ -17581,7 +17581,7 @@ count = 0;
 }
 else if(!servo_rotates_up && (count >= 100) )
 {
-servoRotate0();
+servoRotate90();
 servo_rotates_up = 1;
 PORTA = 0x00;
 count = 0;

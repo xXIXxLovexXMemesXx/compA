@@ -160,19 +160,19 @@
 [v main@servo_rotates_up servo_rotates_up `uc  1 a 1 5 ]
 "244
 } 0
+"157
+[v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
+{
+"159
+[v servoRotate90@i i `ui  1 a 2 1 ]
+"167
+} 0
 "169
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
 "171
 [v servoRotate180@i i `ui  1 a 2 1 ]
 "179
-} 0
-"145
-[v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
-{
-"147
-[v servoRotate0@i i `ui  1 a 2 1 ]
-"155
 } 0
 "22
 [v _Timer2_Init Timer2_Init `(v  1 e 1 0 ]

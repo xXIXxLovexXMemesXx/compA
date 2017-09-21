@@ -13318,15 +13318,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 150: PORTB = 1;
 "150
 [e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 151: _delay((unsigned long)((1.5)*(1000000/4000.0)));
+[; ;main.c: 151: _delay((unsigned long)((1.4)*(1000000/4000.0)));
 "151
-[e ( __delay (1 -> * .1.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * .1.4 / -> -> 1000000 `l `d .4000.0 `ul ]
 [; ;main.c: 152: PORTB = 0;
 "152
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 153: _delay((unsigned long)((18.5)*(1000000/4000.0)));
+[; ;main.c: 153: _delay((unsigned long)((18.6)*(1000000/4000.0)));
 "153
-[e ( __delay (1 -> * .18.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * .18.6 / -> -> 1000000 `l `d .4000.0 `ul ]
 "154
 }
 "148
@@ -13364,15 +13364,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 162: PORTB = 1;
 "162
 [e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 163: _delay((unsigned long)((2)*(1000000/4000.0)));
+[; ;main.c: 163: _delay((unsigned long)((4)*(1000000/4000.0)));
 "163
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 [; ;main.c: 164: PORTB = 0;
 "164
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 165: _delay((unsigned long)((18)*(1000000/4000.0)));
+[; ;main.c: 165: _delay((unsigned long)((16)*(1000000/4000.0)));
 "165
-[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "166
 }
 "160
@@ -13410,15 +13410,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 174: PORTB = 1;
 "174
 [e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 175: _delay((unsigned long)((1)*(1000000/4000.0)));
+[; ;main.c: 175: _delay((unsigned long)((0.5)*(1000000/4000.0)));
 "175
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * .0.5 / -> -> 1000000 `l `d .4000.0 `ul ]
 [; ;main.c: 176: PORTB = 0;
 "176
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 177: _delay((unsigned long)((19)*(1000000/4000.0)));
+[; ;main.c: 177: _delay((unsigned long)((19.5)*(1000000/4000.0)));
 "177
-[e ( __delay (1 -> * -> -> 19 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * .19.5 / -> -> 1000000 `l `d .4000.0 `ul ]
 "178
 }
 "172
@@ -13546,9 +13546,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 237: {
 "237
 {
-[; ;main.c: 238: servoRotate0();
+[; ;main.c: 238: servoRotate90();
 "238
-[e ( _servoRotate0 ..  ]
+[e ( _servoRotate90 ..  ]
 [; ;main.c: 239: servo_rotates_up = 1;
 "239
 [e = _servo_rotates_up -> -> 1 `i `uc ]

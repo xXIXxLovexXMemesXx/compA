@@ -43,9 +43,8 @@ __Lbigram 0 0 ABS 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __CFG_STVREN$ON 0 0 ABS 0
-_ADC_Init 721 0 CODE 0
-servoRotate0@i 71 0 COMMON 1
-_PWM_Init 722 0 CODE 0
+_ADC_Init 720 0 CODE 0
+_PWM_Init 721 0 CODE 0
 __Hfunctab 0 0 CODE 0
 __Lfunctab 0 0 CODE 0
 _T0CON0 1E 0 ABS 0
@@ -58,7 +57,6 @@ _PIR3bits 70F 0 ABS 0
 ___int_sp 0 0 STACK 2
 __CFG_CLKOUTEN$OFF 0 0 ABS 0
 _ANSELA 1F38 0 ABS 0
-_servoRotate0 770 0 CODE 0
 _ANSELB 1F43 0 ABS 0
 _RC1REG 119 0 ABS 0
 _ANSELC 1F4E 0 ABS 0
@@ -92,13 +90,15 @@ __Lsfr7 0 0 ABS 0
 __CFG_ZCD$ON 0 0 ABS 0
 __Hsfr8 0 0 ABS 0
 __Lsfr8 0 0 ABS 0
+_servoRotate90 770 0 CODE 0
 __Hsfr9 0 0 ABS 0
 __Lsfr9 0 0 ABS 0
-__end_of_servoRotate0 78F 0 CODE 0
+servoRotate90@i 71 0 COMMON 1
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
+__end_of_servoRotate90 78F 0 CODE 0
 stackhi 2FEF 0 ABS 0
-_Timer2_Init 741 0 CODE 0
+_Timer2_Init 740 0 CODE 0
 stacklo 2000 0 ABS 0
 __Hinit 2 0 CODE 0
 __Linit 2 0 CODE 0
@@ -225,11 +225,11 @@ __Lsfr59 0 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 _SP1BRGH 11C 0 ABS 0
-_SYSTEM_Initialize 723 0 CODE 0
+_SYSTEM_Initialize 722 0 CODE 0
 _PPSLOCK 1E8F 0 ABS 0
 _SP1BRGL 11B 0 ABS 0
 _OSCTUNE 892 0 ABS 0
-_EUSART_Initialize 736 0 CODE 0
+_EUSART_Initialize 735 0 CODE 0
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
@@ -239,7 +239,7 @@ __Lbank2 0 0 ABS 0
 __Hbank3 0 0 ABS 0
 __Lbank3 0 0 ABS 0
 ___latbits 4 0 ABS 0
-_servoRotate180 752 0 CODE 0
+_servoRotate180 751 0 CODE 0
 __Hbank4 0 0 ABS 0
 __Lbank4 0 0 ABS 0
 _OSCSTAT 890 0 ABS 0
@@ -256,16 +256,16 @@ __Hbank8 0 0 ABS 0
 __Lbank8 0 0 ABS 0
 __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
-__ptext1 752 0 CODE 0
-__ptext2 770 0 CODE 0
-__ptext3 741 0 CODE 0
-__ptext4 723 0 CODE 0
+__ptext1 770 0 CODE 0
+__ptext2 751 0 CODE 0
+__ptext3 740 0 CODE 0
+__ptext4 722 0 CODE 0
 __ptext5 78F 0 CODE 0
-__ptext6 72C 0 CODE 0
-__ptext7 736 0 CODE 0
-__end_of_EUSART_Initialize 741 0 CODE 0
-__ptext8 722 0 CODE 0
-__ptext9 721 0 CODE 0
+__ptext6 72B 0 CODE 0
+__ptext7 735 0 CODE 0
+__end_of_EUSART_Initialize 740 0 CODE 0
+__ptext8 721 0 CODE 0
+__ptext9 720 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 _PPSLOCKbits 1E8F 0 ABS 0
@@ -302,14 +302,14 @@ __Hbank40 0 0 ABS 0
 __Hbank21 0 0 ABS 0
 __Lbank40 0 0 ABS 0
 __Lbank21 0 0 ABS 0
-__end_of_OSCILLATOR_Initialize 736 0 CODE 0
+__end_of_OSCILLATOR_Initialize 735 0 CODE 0
 __Hbank50 0 0 ABS 0
 __Hbank31 0 0 ABS 0
 __Hbank12 0 0 ABS 0
 __Lbank50 0 0 ABS 0
 __Lbank31 0 0 ABS 0
 __Lbank12 0 0 ABS 0
-__end_of_SYSTEM_Initialize 72C 0 CODE 0
+__end_of_SYSTEM_Initialize 72B 0 CODE 0
 __Hbank60 0 0 BANK60 1
 __Hbank41 0 0 ABS 0
 __Hbank22 0 0 ABS 0
@@ -402,17 +402,17 @@ __Hbank59 0 0 BANK59 1
 __Lbank59 0 0 BANK59 1
 _RC1STAbits 11D 0 ABS 0
 __CFG_PWRTE$OFF 0 0 ABS 0
-__size_of_servoRotate0 0 0 ABS 0
 __CFG_PPS1WAY$ON 0 0 ABS 0
 __Hend_init 4 0 CODE 0
 __Lend_init 2 0 CODE 0
-_OSCILLATOR_Initialize 72C 0 CODE 0
+_OSCILLATOR_Initialize 72B 0 CODE 0
 __Hreset_vec 2 0 CODE 0
-__end_of_Timer2_Init 752 0 CODE 0
+__end_of_Timer2_Init 751 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0
 _BAUD1CON 11F 0 ABS 0
 _T2CLKCON 290 0 ABS 0
+__size_of_servoRotate90 0 0 ABS 0
 intlevel0 0 0 CODE 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 CODE 0
@@ -426,8 +426,8 @@ __size_of_Timer2_Init 0 0 ABS 0
 __pcstackCOMMON 70 0 COMMON 1
 __CFG_CPD$OFF 0 0 ABS 0
 start_initialization 7FD 0 CODE 0
-__end_of_PWM_Init 723 0 CODE 0
-__end_of_ADC_Init 722 0 CODE 0
+__end_of_PWM_Init 722 0 CODE 0
+__end_of_ADC_Init 721 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __pmaintext 7C2 0 CODE 0
@@ -446,17 +446,17 @@ config 1000E 10017 CONFIG 1000E 0
 cstackCOMMON 70 75 COMMON 70 1
 maintext F84 FF9 CODE F84 0
 text5 F1E F83 CODE F1E 0
-text2 EE0 F1D CODE EE0 0
-text1 EA4 EDF CODE EA4 0
-text3 E82 EA3 CODE E82 0
-text7 E6C E81 CODE E6C 0
-text6 E58 E6B CODE E58 0
-text4 E46 E57 CODE E46 0
-text8 E44 E45 CODE E44 0
-text9 E42 E43 CODE E42 0
+text1 EE0 F1D CODE EE0 0
+text2 EA2 EDF CODE EA2 0
+text3 E80 EA1 CODE E80 0
+text7 E6A E7F CODE E6A 0
+text6 E56 E69 CODE E56 0
+text4 E44 E55 CODE E44 0
+text8 E42 E43 CODE E42 0
+text9 E40 E41 CODE E40 0
 %locals
 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
-C:\Users\ANDREW~1\AppData\Local\Temp\s73c.
+C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.
 4298 7FD 0 CODE 0
 4301 7FD 0 CODE 0
 4307 7FD 0 CODE 0
@@ -482,34 +482,34 @@ main.c
 238 7F5 0 CODE 0
 239 7F8 0 CODE 0
 240 7FA 0 CODE 0
-169 752 0 CODE 0
-172 752 0 CODE 0
-174 75B 0 CODE 0
-175 75E 0 CODE 0
-176 762 0 CODE 0
-177 764 0 CODE 0
+157 770 0 CODE 0
+160 770 0 CODE 0
+162 779 0 CODE 0
+163 77C 0 CODE 0
+164 780 0 CODE 0
+165 782 0 CODE 0
+160 78A 0 CODE 0
+169 751 0 CODE 0
+172 751 0 CODE 0
+174 75A 0 CODE 0
+175 75D 0 CODE 0
+176 761 0 CODE 0
+177 763 0 CODE 0
 172 76B 0 CODE 0
-145 770 0 CODE 0
-148 770 0 CODE 0
-150 779 0 CODE 0
-151 77C 0 CODE 0
-152 77F 0 CODE 0
-153 781 0 CODE 0
-148 78A 0 CODE 0
-22 741 0 CODE 0
-26 741 0 CODE 0
-28 744 0 CODE 0
-30 746 0 CODE 0
-32 748 0 CODE 0
-34 74A 0 CODE 0
-36 74F 0 CODE 0
-37 751 0 CODE 0
+22 740 0 CODE 0
+26 740 0 CODE 0
+28 743 0 CODE 0
+30 745 0 CODE 0
+32 747 0 CODE 0
+34 749 0 CODE 0
+36 74E 0 CODE 0
+37 750 0 CODE 0
 mcc_generated_files/mcc.c
-82 723 0 CODE 0
-85 723 0 CODE 0
-86 726 0 CODE 0
-87 729 0 CODE 0
-88 72B 0 CODE 0
+82 722 0 CODE 0
+85 722 0 CODE 0
+86 725 0 CODE 0
+87 728 0 CODE 0
+88 72A 0 CODE 0
 mcc_generated_files/pin_manager.c
 50 78F 0 CODE 0
 52 78F 0 CODE 0
@@ -538,23 +538,23 @@ mcc_generated_files/pin_manager.c
 83 7BC 0 CODE 0
 85 7C1 0 CODE 0
 mcc_generated_files/mcc.c
-90 72C 0 CODE 0
-93 72C 0 CODE 0
-95 72F 0 CODE 0
-97 730 0 CODE 0
-99 731 0 CODE 0
-101 733 0 CODE 0
-103 734 0 CODE 0
-106 735 0 CODE 0
+90 72B 0 CODE 0
+93 72B 0 CODE 0
+95 72E 0 CODE 0
+97 72F 0 CODE 0
+99 730 0 CODE 0
+101 732 0 CODE 0
+103 733 0 CODE 0
+106 734 0 CODE 0
 mcc_generated_files/eusart.c
-55 736 0 CODE 0
-60 736 0 CODE 0
-63 739 0 CODE 0
-66 73B 0 CODE 0
-69 73D 0 CODE 0
-72 73F 0 CODE 0
-74 740 0 CODE 0
+55 735 0 CODE 0
+60 735 0 CODE 0
+63 738 0 CODE 0
+66 73A 0 CODE 0
+69 73C 0 CODE 0
+72 73E 0 CODE 0
+74 73F 0 CODE 0
 main.c
-81 722 0 CODE 0
-83 722 0 CODE 0
-99 721 0 CODE 0
+81 721 0 CODE 0
+83 721 0 CODE 0
+99 720 0 CODE 0

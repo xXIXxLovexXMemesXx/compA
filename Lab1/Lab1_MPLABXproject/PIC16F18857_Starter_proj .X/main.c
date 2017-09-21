@@ -148,9 +148,9 @@ void servoRotate0() //0 Degree
   for(i=0;i<50;i++)
   {
     PORTB = 1;
-    __delay_ms(1.5);
+    __delay_ms(1.4);
     PORTB = 0;
-    __delay_ms(18.5);
+    __delay_ms(18.6);
   }
 }
 
@@ -160,9 +160,9 @@ void servoRotate90() //90 Degree
   for(i=0;i<50;i++)
   {
     PORTB = 1;
-    __delay_ms(2);
+    __delay_ms(4);
     PORTB = 0;
-    __delay_ms(18);
+    __delay_ms(16);
   }
 }
 
@@ -172,9 +172,9 @@ void servoRotate180() //-90 Degree
   for(i=0;i<50;i++)
   {
     PORTB = 1;
-    __delay_ms(1);
+    __delay_ms(0.5);
     PORTB = 0;
-    __delay_ms(19);
+    __delay_ms(19.5);
   }
 }
 void testMain(void)
@@ -235,7 +235,7 @@ void main(void)
         } 
         else if(!servo_rotates_up && (count >= COUNT_THRESH) )
         {
-            servoRotate0();
+            servoRotate90();
             servo_rotates_up = true;
             PORTA = 0x00;
             count = 0;
