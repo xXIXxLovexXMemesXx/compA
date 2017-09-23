@@ -5,6 +5,7 @@
 #define ADC_THRESH 0x7F
 
 #define COUNT_THRESH 100
+
 // ====================  prototype functions: ====================
 
 
@@ -36,48 +37,6 @@ void Timer2_Init(void)
     T2CON |= 0x80;  //turn timer 2 on.
 }   
 
-/**
- * Timer2 is triggered if TMR2 == T2PR2
- */
-bool isTimer2Triggered(void)
-{
-   return TMR2 == T2PR; //TMR2 = timer count, T2PR = period register
-   //DOES NOT WORK
-}
-
-/**
- * Restart the timer
- */
-void restartTimer2(void)
-{
-    //reset count
-    TMR2 = 0;
-    //clear ON bit
-    T2CON &= !0x80;
-    //set ON bit
-    T2CON |= 0x80;
-}
-
-/**
- * Tests that the timer works in single shot mode
- */
-
-void testTimer2Main(void)
-{
-    //port A-pin0 is the LED.
-    restartTimer2();
-    while(1)
-    {
-        if(isTimer2Triggered())
-        {
-            PORTA ^= 0x01;
-            restartTimer2();
-        } else {
-            __delay_ms(1);
-        }
-    }
-}
-
 void PWM_Init(void)  {
     
 }  
@@ -94,9 +53,7 @@ void PWM_Init(void)  {
  * ---------------
   */ 
 
-
-
-void ADC_Init(void)  {}   
+void ADC_Init(void)  {
  /*  Configure ADC module  
 
  ----- Set the Registers below::
@@ -112,36 +69,30 @@ void ADC_Init(void)  {}
  * 10 Set ADC positive and negative references
  * 11. ADC channel - Analog Input
  * 12. Set ADC result alignment, Enable ADC module, Clock Selection Bit, Disable ADC Continuous Operation, Keep ADC inactive
- 
-  */ 
+  
+  */
+    TRISA = 0xFF;   //set PORTA to input
+    TRISAbits.TRISA2 = 1;   //set pin A2 to input
+    ANSELAbits.ANSA2 = 1;   //set as analog input
+    ADCON1 = 0;
+    ADCON2 = 0;
+    ADCON3 = 0;
+    ADACT = 0;
+    ADSTAT = 0;
+    ADCAP = 0;
+    ADPRE = 0;
+    ADCON0 = 0b00001001; 
+    ADREF = 0;
+
+}   
 
 
-
-void PWM_signal_out(unsigned duty_cycle) 
-{
-    
-}
- /*
- *- you set 10bits value for the duty cycle being careful with the MSB/LSB alignment 
- *- Set the appropriate Registers in the right sequence
- */
-
-
-
-uint8_t ADC_conversion_results(unsigned ch) {}
- /* 
+ /**
  * - set your ADC channel , activate the ADC module , and get the ADC result to a value , then deactivate again the ADC module
  * - Set the appropriate Registers in the right sequence
  */
+uint8_t ADC_conversion_results(unsigned ch) {}
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-/*
-Develop your Application logic below
-*/
 void servoRotate0() //0 Degree
 {
   unsigned int i;
@@ -177,53 +128,45 @@ void servoRotate180() //-90 Degree
     __delay_ms(19.5);
   }
 }
-void testMain(void)
 
+/**
+ * Test whatever we're working on atm
+ */
+void testMain(void)
 {
   TRISB = 0; // PORTB as Ouput Port
-  do
+  while(1)
   {
     servoRotate0(); //0 Degree
-    __delay_ms(2000);
+    __delay_ms(200);
     servoRotate90(); //90 Degree
-    __delay_ms(2000);
+    __delay_ms(200);
     servoRotate180(); //180 Degree
-  }while(1);
-    /*TRISA = 0x00; //all output
-
-    PORTA = 0x01; //start with it on
-
-    while(1)
-
-    {
-
-        __delay_ms(10);
-
-        PORTA = 0xFF; //toggle
-        
-        __delay_ms(10);
-        PORTA = 0x00; //off
-
-    }
-*/
+  }
 }
+
 void main(void)
 {
     // Initialize PIC device
     SYSTEM_Initialize();
-
+    testMain();
     // Initialize the required modules 
     Timer2_Init(); //starts the timer.
     ADC_Init();
-    PWM_Init();
     TRISA = OUTPUT;
     TRISB = 0;
-    //testTimer2Main();
+    // **** write your code 
     bool servo_rotates_up = true;
     unsigned count = 0;
     while (1) // keep your application in a loop
     {
         count++;
+
+        //If the photoresistor is above a certain threshold, turn on the LED (or not))
+        if(ADC_conversion_results(ADC_CHAN) > ADC_THRESH)
+            PORTA = 0x01;
+        else
+            PORTA = 0x00;
         
         //if the timer is done, rotate the servo the right direction
         if(servo_rotates_up && (count >= COUNT_THRESH) )

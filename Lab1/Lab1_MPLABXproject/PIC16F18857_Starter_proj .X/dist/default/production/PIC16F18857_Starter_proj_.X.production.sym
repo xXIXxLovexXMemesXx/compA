@@ -1,5 +1,6 @@
 __CFG_WDTCCS$SC 0 0 ABS 0
 __CFG_WRT$OFF 0 0 ABS 0
+_PR2 28D 0 ABS 0
 __S0 800C 0 ABS 0
 __S1 76 0 ABS 0
 __S2 0 0 ABS 0
@@ -8,9 +9,14 @@ _GIE 5F 0 ABS 0
 __Hintentry 2 0 CODE 0
 __Lintentry 2 0 CODE 0
 __CFG_BOREN$ON 0 0 ABS 0
+<<<<<<< HEAD
 _PIE0 716 0 ABS 0
 _TMR2 28C 0 ABS 0
 _PIR4 710 0 ABS 0
+=======
+_PIR4 710 0 ABS 0
+__size_of_testMain 0 0 ABS 0
+>>>>>>> master
 _LATA 16 0 ABS 0
 _LATB 17 0 ABS 0
 _LATC 18 0 ABS 0
@@ -20,35 +26,70 @@ _WPUC 1F4F 0 ABS 0
 _T2PR 28D 0 ABS 0
 __end_of_PIN_MANAGER_Initialize 7C2 0 CODE 0
 __CFG_CSWEN$ON 0 0 ABS 0
+<<<<<<< HEAD
 _main 7C2 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 2 0 CODE 0
 main@servo_rotates_up 75 0 COMMON 1
+=======
+_main 7A8 0 CODE 0
+___sp 0 0 STACK 2
+btemp 7E 0 ABS 0
+start 2 0 CODE 0
+__size_of_ADC_conversion_results 0 0 ABS 0
+main@servo_rotates_up 75 0 COMMON 1
+_ADREF 9A 0 ABS 0
+>>>>>>> master
 _TRISA 11 0 ABS 0
 _TRISB 12 0 ABS 0
+_ADCAP 9B 0 ABS 0
 _TRISC 13 0 ABS 0
 _PORTA C 0 ABS 0
+<<<<<<< HEAD
+=======
+_ADPRE 9C 0 ABS 0
+>>>>>>> master
 reset_vec 0 0 CODE 0
 _PORTB D 0 ABS 0
 _OSCEN 891 0 ABS 0
 _T2CON 28E 0 ABS 0
+<<<<<<< HEAD
+=======
+_ADACT 99 0 ABS 0
+>>>>>>> master
 _T2HLT 28F 0 ABS 0
 wtemp0 7E 0 ABS 0
+_T2RST 291 0 ABS 0
 _RXPPS 1ECB 0 ABS 0
 __Hconfig 800C 0 CONFIG 0
 __Lconfig 8007 0 CONFIG 0
+<<<<<<< HEAD
+=======
+_testMain 730 0 CODE 0
+>>>>>>> master
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __CFG_STVREN$ON 0 0 ABS 0
+<<<<<<< HEAD
 _ADC_Init 720 0 CODE 0
 _PWM_Init 721 0 CODE 0
 __Hfunctab 0 0 CODE 0
 __Lfunctab 0 0 CODE 0
 _T0CON0 1E 0 ABS 0
 _T0CON1 1F 0 ABS 0
+=======
+_ADC_Init 71E 0 CODE 0
+servoRotate0@i 71 0 COMMON 1
+__Hfunctab 0 0 CODE 0
+__Lfunctab 0 0 CODE 0
+_ADCON0 93 0 ABS 0
+_ADCON1 94 0 ABS 0
+_ADCON2 95 0 ABS 0
+_ADCON3 96 0 ABS 0
+>>>>>>> master
 __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
@@ -72,6 +113,7 @@ __Hsfr0 0 0 ABS 0
 __Lsfr0 0 0 ABS 0
 __Hsfr1 0 0 ABS 0
 __Lsfr1 0 0 ABS 0
+_ADSTAT 97 0 ABS 0
 __Hsfr2 0 0 ABS 0
 __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
@@ -90,21 +132,39 @@ __Lsfr7 0 0 ABS 0
 __CFG_ZCD$ON 0 0 ABS 0
 __Hsfr8 0 0 ABS 0
 __Lsfr8 0 0 ABS 0
+<<<<<<< HEAD
 _servoRotate90 770 0 CODE 0
 __Hsfr9 0 0 ABS 0
 __Lsfr9 0 0 ABS 0
 servoRotate90@i 71 0 COMMON 1
+=======
+_servoRotate90 789 0 CODE 0
+__Hsfr9 0 0 ABS 0
+__Lsfr9 0 0 ABS 0
+servoRotate90@i 71 0 COMMON 1
+__end_of_servoRotate0 789 0 CODE 0
+__end_of_testMain 74C 0 CODE 0
+>>>>>>> master
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 __end_of_servoRotate90 78F 0 CODE 0
 stackhi 2FEF 0 ABS 0
+<<<<<<< HEAD
 _Timer2_Init 740 0 CODE 0
 stacklo 2000 0 ABS 0
 __Hinit 2 0 CODE 0
 __Linit 2 0 CODE 0
 __end_of_main 7FD 0 CODE 0
+=======
+_Timer2_Init 70E 0 CODE 0
+stacklo 2000 0 ABS 0
+__Hinit 2 0 CODE 0
+__Linit 2 0 CODE 0
+__end_of_main 7CA 0 CODE 0
+>>>>>>> master
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
+_ADC_conversion_results 6EF 0 CODE 0
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0
 __CFG_LVP$ON 0 0 ABS 0
 end_of_initialization 7FD 0 CODE 0
@@ -188,7 +248,10 @@ __Hsfr17 0 0 ABS 0
 __Lsfr55 0 0 ABS 0
 __Lsfr36 0 0 ABS 0
 __Lsfr17 0 0 ABS 0
+<<<<<<< HEAD
 __size_of_PWM_Init 0 0 ABS 0
+=======
+>>>>>>> master
 __size_of_ADC_Init 0 0 ABS 0
 __Hsfr46 0 0 ABS 0
 __Hsfr27 0 0 ABS 0
@@ -222,14 +285,23 @@ __Hsfr49 0 0 ABS 0
 __Lsfr49 0 0 ABS 0
 __Hsfr59 0 0 ABS 0
 __Lsfr59 0 0 ABS 0
+_TRISAbits 11 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 _SP1BRGH 11C 0 ABS 0
+<<<<<<< HEAD
 _SYSTEM_Initialize 722 0 CODE 0
 _PPSLOCK 1E8F 0 ABS 0
 _SP1BRGL 11B 0 ABS 0
 _OSCTUNE 892 0 ABS 0
 _EUSART_Initialize 735 0 CODE 0
+=======
+_SYSTEM_Initialize 6F0 0 CODE 0
+_PPSLOCK 1E8F 0 ABS 0
+_SP1BRGL 11B 0 ABS 0
+_OSCTUNE 892 0 ABS 0
+_EUSART_Initialize 703 0 CODE 0
+>>>>>>> master
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
@@ -256,6 +328,7 @@ __Hbank8 0 0 ABS 0
 __Lbank8 0 0 ABS 0
 __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
+<<<<<<< HEAD
 __ptext1 770 0 CODE 0
 __ptext2 751 0 CODE 0
 __ptext3 740 0 CODE 0
@@ -266,6 +339,18 @@ __ptext7 735 0 CODE 0
 __end_of_EUSART_Initialize 740 0 CODE 0
 __ptext8 721 0 CODE 0
 __ptext9 720 0 CODE 0
+=======
+__ptext1 730 0 CODE 0
+__ptext2 789 0 CODE 0
+__ptext3 74C 0 CODE 0
+__ptext4 76A 0 CODE 0
+__ptext5 70E 0 CODE 0
+__ptext6 6F0 0 CODE 0
+__ptext7 7CA 0 CODE 0
+__end_of_EUSART_Initialize 70E 0 CODE 0
+__ptext8 6F9 0 CODE 0
+__ptext9 703 0 CODE 0
+>>>>>>> master
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 _PPSLOCKbits 1E8F 0 ABS 0
@@ -302,14 +387,22 @@ __Hbank40 0 0 ABS 0
 __Hbank21 0 0 ABS 0
 __Lbank40 0 0 ABS 0
 __Lbank21 0 0 ABS 0
+<<<<<<< HEAD
 __end_of_OSCILLATOR_Initialize 735 0 CODE 0
+=======
+__end_of_OSCILLATOR_Initialize 703 0 CODE 0
+>>>>>>> master
 __Hbank50 0 0 ABS 0
 __Hbank31 0 0 ABS 0
 __Hbank12 0 0 ABS 0
 __Lbank50 0 0 ABS 0
 __Lbank31 0 0 ABS 0
 __Lbank12 0 0 ABS 0
+<<<<<<< HEAD
 __end_of_SYSTEM_Initialize 72B 0 CODE 0
+=======
+__end_of_SYSTEM_Initialize 6F9 0 CODE 0
+>>>>>>> master
 __Hbank60 0 0 BANK60 1
 __Hbank41 0 0 ABS 0
 __Hbank22 0 0 ABS 0
@@ -340,6 +433,10 @@ __Hbank24 0 0 ABS 0
 __Lbank62 0 0 BANK62 1
 __Lbank43 0 0 ABS 0
 __Lbank24 0 0 ABS 0
+<<<<<<< HEAD
+=======
+__ptext10 6EF 0 CODE 0
+>>>>>>> master
 __Hbank53 0 0 BANK53 1
 __Hbank34 0 0 ABS 0
 __Hbank15 0 0 ABS 0
@@ -352,6 +449,10 @@ __Hbank25 0 0 ABS 0
 __Lbank63 0 0 BANK63 1
 __Lbank44 0 0 ABS 0
 __Lbank25 0 0 ABS 0
+<<<<<<< HEAD
+=======
+__ptext11 71E 0 CODE 0
+>>>>>>> master
 __Hbank54 0 0 BANK54 1
 __Hbank35 0 0 ABS 0
 __Hbank16 0 0 ABS 0
@@ -378,6 +479,7 @@ __Hbank18 0 0 ABS 0
 __Lbank56 0 0 BANK56 1
 __Lbank37 0 0 ABS 0
 __Lbank18 0 0 ABS 0
+__end_of_ADC_conversion_results 6F0 0 CODE 0
 __Hbank47 0 0 ABS 0
 __Hbank28 0 0 ABS 0
 __Lbank47 0 0 ABS 0
@@ -400,14 +502,24 @@ __Hbank49 0 0 ABS 0
 __Lbank49 0 0 ABS 0
 __Hbank59 0 0 BANK59 1
 __Lbank59 0 0 BANK59 1
+<<<<<<< HEAD
+=======
+_ANSELAbits 1F38 0 ABS 0
+>>>>>>> master
 _RC1STAbits 11D 0 ABS 0
 __CFG_PWRTE$OFF 0 0 ABS 0
 __CFG_PPS1WAY$ON 0 0 ABS 0
 __Hend_init 4 0 CODE 0
 __Lend_init 2 0 CODE 0
+<<<<<<< HEAD
 _OSCILLATOR_Initialize 72B 0 CODE 0
 __Hreset_vec 2 0 CODE 0
 __end_of_Timer2_Init 751 0 CODE 0
+=======
+_OSCILLATOR_Initialize 6F9 0 CODE 0
+__Hreset_vec 2 0 CODE 0
+__end_of_Timer2_Init 71E 0 CODE 0
+>>>>>>> master
 __Lreset_vec 0 0 CODE 0
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0
 _BAUD1CON 11F 0 ABS 0
@@ -426,11 +538,18 @@ __size_of_Timer2_Init 0 0 ABS 0
 __pcstackCOMMON 70 0 COMMON 1
 __CFG_CPD$OFF 0 0 ABS 0
 start_initialization 7FD 0 CODE 0
+<<<<<<< HEAD
 __end_of_PWM_Init 722 0 CODE 0
 __end_of_ADC_Init 721 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __pmaintext 7C2 0 CODE 0
+=======
+__end_of_ADC_Init 730 0 CODE 0
+__Hmaintext 0 0 ABS 0
+__Lmaintext 0 0 ABS 0
+__pmaintext 7A8 0 CODE 0
+>>>>>>> master
 __CFG_MCLRE$ON 0 0 ABS 0
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0
 __CFG_SCANE$available 0 0 ABS 0
@@ -439,11 +558,13 @@ __size_of_servoRotate180 0 0 ABS 0
 servoRotate180@i 71 0 COMMON 1
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_FCMEN$ON 0 0 ABS 0
+ADC_conversion_results@ch 70 0 COMMON 1
 %segments
 reset_vec 0 7 CODE 0 0
 cinit FFA FFF CODE FFA 0
 config 1000E 10017 CONFIG 1000E 0
 cstackCOMMON 70 75 COMMON 70 1
+<<<<<<< HEAD
 maintext F84 FF9 CODE F84 0
 text5 F1E F83 CODE F1E 0
 text1 EE0 F1D CODE EE0 0
@@ -510,6 +631,85 @@ mcc_generated_files/mcc.c
 86 725 0 CODE 0
 87 728 0 CODE 0
 88 72A 0 CODE 0
+=======
+text7 F94 FF9 CODE F94 0
+maintext F50 F93 CODE F50 0
+text2 F12 F4F CODE F12 0
+text4 ED4 F11 CODE ED4 0
+text3 E98 ED3 CODE E98 0
+text1 E60 E97 CODE E60 0
+text11 E3C E5F CODE E3C 0
+text5 E1C E3B CODE E1C 0
+text9 E06 E1B CODE E06 0
+text8 DF2 E05 CODE DF2 0
+text6 DE0 DF1 CODE DE0 0
+text10 DDE DDF CODE DDE 0
+%locals
+dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.
+4318 7FD 0 CODE 0
+4321 7FD 0 CODE 0
+4327 7FD 0 CODE 0
+4329 7FD 0 CODE 0
+4330 7FE 0 CODE 0
+main.c
+121 7A8 0 CODE 0
+124 7A8 0 CODE 0
+125 7AB 0 CODE 0
+127 7AE 0 CODE 0
+128 7B1 0 CODE 0
+136 7B5 0 CODE 0
+135 7B8 0 CODE 0
+138 7C4 0 CODE 0
+141 7C6 0 CODE 0
+148 7C7 0 CODE 0
+149 7C7 0 CODE 0
+132 7C9 0 CODE 0
+108 730 0 CODE 0
+110 730 0 CODE 0
+113 732 0 CODE 0
+114 735 0 CODE 0
+115 73D 0 CODE 0
+116 740 0 CODE 0
+117 748 0 CODE 0
+111 74B 0 CODE 0
+81 789 0 CODE 0
+84 789 0 CODE 0
+86 792 0 CODE 0
+87 795 0 CODE 0
+88 799 0 CODE 0
+89 79B 0 CODE 0
+84 7A3 0 CODE 0
+93 74C 0 CODE 0
+96 74C 0 CODE 0
+98 755 0 CODE 0
+99 758 0 CODE 0
+100 75C 0 CODE 0
+101 75E 0 CODE 0
+96 765 0 CODE 0
+69 76A 0 CODE 0
+72 76A 0 CODE 0
+74 773 0 CODE 0
+75 776 0 CODE 0
+76 779 0 CODE 0
+77 77B 0 CODE 0
+72 784 0 CODE 0
+10 70E 0 CODE 0
+14 70E 0 CODE 0
+16 711 0 CODE 0
+18 712 0 CODE 0
+20 713 0 CODE 0
+22 715 0 CODE 0
+24 716 0 CODE 0
+26 71B 0 CODE 0
+27 71D 0 CODE 0
+mcc_generated_files/mcc.c
+82 6F0 0 CODE 0
+85 6F0 0 CODE 0
+86 6F3 0 CODE 0
+87 6F6 0 CODE 0
+88 6F8 0 CODE 0
+>>>>>>> master
 mcc_generated_files/pin_manager.c
 50 78F 0 CODE 0
 52 78F 0 CODE 0
@@ -538,6 +738,7 @@ mcc_generated_files/pin_manager.c
 83 7BC 0 CODE 0
 85 7C1 0 CODE 0
 mcc_generated_files/mcc.c
+<<<<<<< HEAD
 90 72B 0 CODE 0
 93 72B 0 CODE 0
 95 72E 0 CODE 0
@@ -558,3 +759,37 @@ main.c
 81 721 0 CODE 0
 83 721 0 CODE 0
 99 720 0 CODE 0
+=======
+90 6F9 0 CODE 0
+93 6F9 0 CODE 0
+95 6FC 0 CODE 0
+97 6FD 0 CODE 0
+99 6FE 0 CODE 0
+101 700 0 CODE 0
+103 701 0 CODE 0
+106 702 0 CODE 0
+mcc_generated_files/eusart.c
+55 703 0 CODE 0
+60 703 0 CODE 0
+63 706 0 CODE 0
+66 708 0 CODE 0
+69 70A 0 CODE 0
+72 70C 0 CODE 0
+74 70D 0 CODE 0
+main.c
+67 6EF 0 CODE 0
+29 71E 0 CODE 0
+47 71E 0 CODE 0
+48 721 0 CODE 0
+49 722 0 CODE 0
+50 724 0 CODE 0
+51 726 0 CODE 0
+52 727 0 CODE 0
+53 728 0 CODE 0
+54 729 0 CODE 0
+55 72A 0 CODE 0
+56 72B 0 CODE 0
+57 72C 0 CODE 0
+58 72E 0 CODE 0
+60 72F 0 CODE 0
+>>>>>>> master

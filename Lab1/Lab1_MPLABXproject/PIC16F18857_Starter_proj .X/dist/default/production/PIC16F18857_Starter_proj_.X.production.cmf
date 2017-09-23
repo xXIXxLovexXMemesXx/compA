@@ -11,12 +11,17 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+<<<<<<< HEAD
 $C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
+=======
+$C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+>>>>>>> master
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 5 2
 $dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 cinit CODE 0 7FD 7FD 3 2
+<<<<<<< HEAD
 text1 CODE 0 770 770 1F 2
 text2 CODE 0 751 751 1F 2
 text3 CODE 0 740 740 11 2
@@ -27,6 +32,20 @@ text7 CODE 0 735 735 B 2
 text8 CODE 0 721 721 1 2
 text9 CODE 0 720 720 1 2
 maintext CODE 0 7C2 7C2 3B 2
+=======
+text1 CODE 0 730 730 1C 2
+text2 CODE 0 789 789 1F 2
+text3 CODE 0 74C 74C 1E 2
+text4 CODE 0 76A 76A 1F 2
+text5 CODE 0 70E 70E 10 2
+text6 CODE 0 6F0 6F0 9 2
+text7 CODE 0 7CA 7CA 33 2
+text8 CODE 0 6F9 6F9 A 2
+text9 CODE 0 703 703 B 2
+text10 CODE 0 6EF 6EF 1 2
+text11 CODE 0 71E 71E 12 2
+maintext CODE 0 7A8 7A8 22 2
+>>>>>>> master
 cstackCOMMON COMMON 1 70 70 6 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -95,9 +114,15 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
+<<<<<<< HEAD
 CONST 4-71F 2
 CONST 800-7FFF 2
 ENTRY 4-71F 2
+=======
+CONST 4-6EE 2
+CONST 800-7FFF 2
+ENTRY 4-6EE 2
+>>>>>>> master
 ENTRY 800-7FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -155,7 +180,11 @@ SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
 STACK 2000-2FEF 1
+<<<<<<< HEAD
 CODE 4-71F 2
+=======
+CODE 4-6EE 2
+>>>>>>> master
 CODE 800-7FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -211,9 +240,15 @@ BANK50 1920-196F 1
 BIGRAM 2000-2FEF 1
 COMMON 76-7D 1
 EEDATA F000-F0FF 2
+<<<<<<< HEAD
 STRCODE 4-71F 2
 STRCODE 800-7FFF 2
 STRING 4-71F 2
+=======
+STRCODE 4-6EE 2
+STRCODE 800-7FFF 2
+STRING 4-6EE 2
+>>>>>>> master
 STRING 800-7FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -229,6 +264,7 @@ STRING 800-7FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 7FD cinit CODE >4298:C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.
 7FD cinit CODE >4301:C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.
 7FD cinit CODE >4307:C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.
@@ -324,6 +360,124 @@ $dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 7F5 maintext CODE >238:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 7F8 maintext CODE >239:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 7FA maintext CODE >240:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+=======
+7FD cinit CODE >4318:C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.
+7FD cinit CODE >4321:C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.
+7FD cinit CODE >4327:C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.
+7FD cinit CODE >4329:C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.
+7FE cinit CODE >4330:C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.
+71E text11 CODE >29:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+71E text11 CODE >47:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+721 text11 CODE >48:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+722 text11 CODE >49:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+724 text11 CODE >50:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+726 text11 CODE >51:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+727 text11 CODE >52:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+728 text11 CODE >53:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+729 text11 CODE >54:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+72A text11 CODE >55:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+72B text11 CODE >56:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+72C text11 CODE >57:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+72E text11 CODE >58:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+72F text11 CODE >60:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+6EF text10 CODE >67:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+703 text9 CODE >55:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+703 text9 CODE >60:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+706 text9 CODE >63:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+708 text9 CODE >66:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+70A text9 CODE >69:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+70C text9 CODE >72:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+70D text9 CODE >74:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+6F9 text8 CODE >90:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6F9 text8 CODE >93:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6FC text8 CODE >95:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6FD text8 CODE >97:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6FE text8 CODE >99:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+700 text8 CODE >101:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+701 text8 CODE >103:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+702 text8 CODE >106:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+7CA text7 CODE >50:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7CA text7 CODE >52:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7CC text7 CODE >53:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7CD text7 CODE >54:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7CE text7 CODE >55:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7D0 text7 CODE >56:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7D1 text7 CODE >57:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7D2 text7 CODE >58:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7D4 text7 CODE >59:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7D6 text7 CODE >60:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7D8 text7 CODE >61:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7DB text7 CODE >62:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7DD text7 CODE >63:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7DF text7 CODE >68:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7E3 text7 CODE >69:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7E4 text7 CODE >70:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7E7 text7 CODE >71:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7E9 text7 CODE >72:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7EA text7 CODE >74:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7EC text7 CODE >75:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7EF text7 CODE >77:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7F1 text7 CODE >79:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7F4 text7 CODE >80:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7F6 text7 CODE >81:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7F7 text7 CODE >83:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+7FC text7 CODE >85:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/pin_manager.c
+6F0 text6 CODE >82:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6F0 text6 CODE >85:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6F3 text6 CODE >86:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6F6 text6 CODE >87:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+6F8 text6 CODE >88:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
+70E text5 CODE >10:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+70E text5 CODE >14:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+711 text5 CODE >16:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+712 text5 CODE >18:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+713 text5 CODE >20:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+715 text5 CODE >22:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+716 text5 CODE >24:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+71B text5 CODE >26:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+71D text5 CODE >27:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+76A text4 CODE >69:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+76A text4 CODE >72:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+773 text4 CODE >74:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+776 text4 CODE >75:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+779 text4 CODE >76:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+77B text4 CODE >77:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+784 text4 CODE >72:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+74C text3 CODE >93:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+74C text3 CODE >96:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+755 text3 CODE >98:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+758 text3 CODE >99:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+75C text3 CODE >100:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+75E text3 CODE >101:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+765 text3 CODE >96:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+789 text2 CODE >81:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+789 text2 CODE >84:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+792 text2 CODE >86:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+795 text2 CODE >87:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+799 text2 CODE >88:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+79B text2 CODE >89:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7A3 text2 CODE >84:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+730 text1 CODE >108:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+730 text1 CODE >110:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+732 text1 CODE >113:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+735 text1 CODE >114:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+73D text1 CODE >115:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+740 text1 CODE >116:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+748 text1 CODE >117:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+74B text1 CODE >111:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7A8 maintext CODE >121:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7A8 maintext CODE >124:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7AB maintext CODE >125:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7AE maintext CODE >127:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7B1 maintext CODE >128:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7B5 maintext CODE >136:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7B8 maintext CODE >135:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7C4 maintext CODE >138:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7C6 maintext CODE >141:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7C7 maintext CODE >148:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7C7 maintext CODE >149:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+7C9 maintext CODE >132:C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+>>>>>>> master
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -341,6 +495,7 @@ __Hspace_0 800C 0 ABS 0 - -
 __Hspace_1 76 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
+ADC_conversion_results@ch 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
@@ -348,6 +503,7 @@ __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.
 _LATA 16 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _LATB 17 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _LATC 18 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 _PIE0 716 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _PIR4 710 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _T2PR 28D 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -372,12 +528,37 @@ intlevel2 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
 intlevel3 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
 intlevel4 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
 intlevel5 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
+=======
+_PIR4 710 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_WPUA 1F39 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_WPUB 1F44 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_WPUC 1F4F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+_main F50 0 CODE 0 maintext dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+start 4 0 CODE 0 init C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__CFG_SCANE$available 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__size_of_servoRotate90 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__end_of_EUSART_Initialize E1C 0 CODE 0 text9 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+_servoRotate0 ED4 0 CODE 0 text4 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__size_of_ADC_Init 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+intlevel1 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+intlevel2 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+intlevel3 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+intlevel4 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+intlevel5 0 0 CODE 0 functab C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+>>>>>>> master
 wtemp0 7E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 _RC1STAbits 11D 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 servoRotate90@i 71 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __size_of_Timer2_Init 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
+<<<<<<< HEAD
 __end_of_servoRotate90 F1E 0 CODE 0 text1 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _ANSELA 1F38 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _ANSELB 1F43 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -390,13 +571,37 @@ __end_of_ADC_Init E42 0 CODE 0 text9 dist/default/production\PIC16F18857_Starter
 PIN_MANAGER_Initialize@state 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _EUSART_Initialize E6A 0 CODE 0 text7 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _PIN_MANAGER_Initialize F1E 0 CODE 0 text5 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+__end_of_servoRotate90 F50 0 CODE 0 text2 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__size_of_ADC_conversion_results 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADCON0 93 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADCON1 94 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADCON2 95 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADCON3 96 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADSTAT 97 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ANSELA 1F38 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ANSELB 1F43 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ANSELC 1F4E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__size_of_servoRotate0 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+__size_of_servoRotate180 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADC_Init E3C 0 CODE 0 text11 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__end_of_ADC_Init E60 0 CODE 0 text11 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+PIN_MANAGER_Initialize@state 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__end_of_servoRotate0 F12 0 CODE 0 text4 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_EUSART_Initialize E06 0 CODE 0 text9 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_PIN_MANAGER_Initialize F94 0 CODE 0 text7 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 start_initialization FFA 0 CODE 0 cinit dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _OSCFRQ 893 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_TRISAbits 11 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _RC1REG 119 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _RC1STA 11D 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _RC3PPS 1F23 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _RC6PPS 1F26 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 __end_of_SYSTEM_Initialize E56 0 CODE 0 text4 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _T0CON0 1E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _T0CON1 1F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -404,6 +609,13 @@ _T2CLKCON 290 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.prod
 _TX1REG 11A 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _TX1STA 11E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 ___int_sp 0 0 STACK 2 stack C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
+=======
+__end_of_SYSTEM_Initialize DF2 0 CODE 0 text6 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_T2CLKCON 290 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_TX1REG 11A 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_TX1STA 11E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+>>>>>>> master
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -630,17 +842,32 @@ __Ltext 0 0 ABS 0 text -
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_PR2 28D 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __S0 800C 0 ABS 0 - -
 __S1 76 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+<<<<<<< HEAD
 _Timer2_Init E80 0 CODE 0 text3 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _SYSTEM_Initialize E44 0 CODE 0 text4 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+_Timer2_Init E1C 0 CODE 0 text5 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_SYSTEM_Initialize DE0 0 CODE 0 text6 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Lintentry 4 0 CODE 0 intentry -
+<<<<<<< HEAD
 reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __end_of_PIN_MANAGER_Initialize F84 0 CODE 0 text5 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+_ADC_conversion_results DDE 0 CODE 0 text10 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext10 DDE 0 CODE 0 text10 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext11 E3C 0 CODE 0 text11 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__end_of_PIN_MANAGER_Initialize FFA 0 CODE 0 text7 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -695,7 +922,11 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
+<<<<<<< HEAD
 __pmaintext F84 0 CODE 0 maintext dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+__pmaintext F50 0 CODE 0 maintext dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __CFG_RSTOSC$HFINT1 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -703,9 +934,15 @@ __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 main@count 73 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 stackhi 2FEF 0 ABS 0 - C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
 stacklo 2000 0 ABS 0 - C:\Users\ANDREW~1\AppData\Local\Temp\s8vo.obj
+=======
+_testMain E60 0 CODE 0 text1 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+stackhi 2FEF 0 ABS 0 - C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+stacklo 2000 0 ABS 0 - C:\Users\ANDREW~1\AppData\Local\Temp\s8jo.obj
+>>>>>>> master
 _OSCCON1 88D 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _OSCCON3 88F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _OSCSTAT 890 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -716,6 +953,10 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
+=======
+__end_of_testMain E98 0 CODE 0 text1 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 _PIR3bits 70F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Lend_init 4 0 CODE 0 end_init -
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -727,6 +968,7 @@ __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.
 _PPSLOCKbits 1E8F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
+<<<<<<< HEAD
 __size_of_PWM_Init 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __ptext1 EE0 0 CODE 0 text1 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __ptext2 EA2 0 CODE 0 text2 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -737,6 +979,17 @@ __ptext6 E56 0 CODE 0 text6 dist/default/production\PIC16F18857_Starter_proj_.X.
 __ptext7 E6A 0 CODE 0 text7 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __ptext8 E42 0 CODE 0 text8 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __ptext9 E40 0 CODE 0 text9 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+__ptext1 E60 0 CODE 0 text1 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext2 F12 0 CODE 0 text2 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext3 E98 0 CODE 0 text3 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext4 ED4 0 CODE 0 text4 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext5 E1C 0 CODE 0 text5 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext6 DE0 0 CODE 0 text6 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext7 F94 0 CODE 0 text7 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext8 DF2 0 CODE 0 text8 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__ptext9 E06 0 CODE 0 text9 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __end_of_servoRotate180 EE0 0 CODE 0 text2 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
@@ -748,35 +1001,63 @@ __Lfunctab 0 0 CODE 0 functab -
 _SP1BRGH 11C 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _SP1BRGL 11B 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
+__end_of_ADC_conversion_results DE0 0 CODE 0 text10 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _PWM_Init E42 0 CODE 0 text8 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __Hend_init 8 0 CODE 0 end_init -
+<<<<<<< HEAD
 __end_of_Timer2_Init EA2 0 CODE 0 text3 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _servoRotate90 EE0 0 CODE 0 text1 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __end_of_main FFA 0 CODE 0 maintext dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+__end_of_Timer2_Init E3C 0 CODE 0 text5 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_servoRotate90 F12 0 CODE 0 text2 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+__end_of_main F94 0 CODE 0 maintext dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADACT 99 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADCAP 9B 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADPRE 9C 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_ADREF 9A 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 _OSCEN 891 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _PORTA C 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _PORTB D 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _RXPPS 1ECB 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _T2CON 28E 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _T2HLT 28F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 _TRISA 11 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _TRISB 12 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _TRISC 13 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __end_of_PWM_Init E44 0 CODE 0 text8 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+_T2RST 291 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_TRISA 11 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_TRISB 12 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_TRISC 13 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 __end_of_OSCILLATOR_Initialize E6A 0 CODE 0 text6 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+__end_of_OSCILLATOR_Initialize E06 0 CODE 0 text8 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __initialization FFA 0 CODE 0 cinit dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _PPSLOCK 1E8F 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+<<<<<<< HEAD
 main@servo_rotates_up 75 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
 _OSCILLATOR_Initialize E56 0 CODE 0 text6 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+=======
+_ANSELAbits 1F38 0 ABS 0 - dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+main@servo_rotates_up 75 0 COMMON 1 cstackCOMMON dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+_OSCILLATOR_Initialize DF2 0 CODE 0 text8 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
+>>>>>>> master
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -803,6 +1084,7 @@ _OSCILLATOR_Initialize E56 0 CODE 0 text6 dist/default/production\PIC16F18857_St
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FD FFA 3 2
+<<<<<<< HEAD
 text1 0 770 EE0 1F 2
 text2 0 751 EA2 1F 2
 text3 0 740 E80 11 2
@@ -813,6 +1095,20 @@ text7 0 735 E6A B 2
 text8 0 721 E42 1 2
 text9 0 720 E40 1 2
 maintext 0 7C2 F84 3B 2
+=======
+text1 0 730 E60 1C 2
+text2 0 789 F12 1F 2
+text3 0 74C E98 1E 2
+text4 0 76A ED4 1F 2
+text5 0 70E E1C 10 2
+text6 0 6F0 DE0 9 2
+text7 0 7CA F94 33 2
+text8 0 6F9 DF2 A 2
+text9 0 703 E06 B 2
+text10 0 6EF DDE 1 2
+text11 0 71E E3C 12 2
+maintext 0 7A8 F50 22 2
+>>>>>>> master
 cstackCOMMON 1 70 70 6 1
 reset_vec 0 0 0 4 2
 config 0 8007 1000E 5 2

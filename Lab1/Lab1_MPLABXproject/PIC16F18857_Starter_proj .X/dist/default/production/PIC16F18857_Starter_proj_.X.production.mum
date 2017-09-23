@@ -1,6 +1,10 @@
 
 Memory Summary:
+<<<<<<< HEAD
     Program space        used    E2h (   226) of  8000h words   (  0.7%)
+=======
+    Program space        used   113h (   275) of  8000h words   (  0.8%)
+>>>>>>> master
     Data space           used     8h (     8) of  1000h bytes   (  0.2%)
     EEPROM space         used     0h (     0) of   100h bytes   (  0.0%)
     Data stack space     used     0h (     0) of   FF0h bytes   (  0.0%)
