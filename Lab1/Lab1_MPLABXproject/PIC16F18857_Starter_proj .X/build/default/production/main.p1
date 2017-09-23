@@ -53,6 +53,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADREF `Vuc ~T0 @X0 0 e@154 ]
 "2562
 [v _ADPCH `Vuc ~T0 @X0 0 e@158 ]
+"3914
+[v _TX1STA `Vuc ~T0 @X0 0 e@286 ]
+"3734
+[v _RC1STA `Vuc ~T0 @X0 0 e@285 ]
 "36567
 [v _GO_nDONE `Vb ~T0 @X0 0 e@1176 ]
 "1562
@@ -65,12 +69,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "152 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic.h
 [v __delay `JF14158 ~T0 @X0 0 e ]
 [p i __delay ]
-"657 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
-[v _TRISB `Vuc ~T0 @X0 0 e@18 ]
+"195 C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 [p mainexit ]
 "67 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"388 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+"657 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+[v _TRISB `Vuc ~T0 @X0 0 e@18 ]
+"388
 [v _PORTA `Vuc ~T0 @X0 0 e@12 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -13257,214 +13263,205 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 86: ADPCH = 0b00000001;
 "86
 [e = _ADPCH -> -> 1 `i `uc ]
-[; ;main.c: 87: }
-"87
+[; ;main.c: 88: TX1STA = 0b00100000;
+"88
+[e = _TX1STA -> -> 32 `i `uc ]
+[; ;main.c: 89: RC1STA = 0b10000000;
+"89
+[e = _RC1STA -> -> 128 `i `uc ]
+[; ;main.c: 91: }
+"91
 [e :UE 1561 ]
 }
-"94
+"98
 [v _ADC_conversion_results `(ui ~T0 @X0 1 ef ]
 {
-[; ;main.c: 94: unsigned int ADC_conversion_results() {
+[; ;main.c: 98: unsigned int ADC_conversion_results() {
 [e :U _ADC_conversion_results ]
 [f ]
-[; ;main.c: 95: GO_nDONE = 1;
-"95
+[; ;main.c: 99: GO_nDONE = 1;
+"99
 [e = _GO_nDONE -> -> 1 `i `b ]
-[; ;main.c: 97: if(ADCON0 & GO_nDONE)
-"97
+[; ;main.c: 101: if(ADCON0 & GO_nDONE)
+"101
 [e $ ! != & -> _ADCON0 `i -> _GO_nDONE `i -> 0 `i 1563  ]
-[; ;main.c: 98: return;
-"98
+[; ;main.c: 102: return;
+"102
 [e $UE 1562  ]
 [e :U 1563 ]
-[; ;main.c: 101: ADPCH = 1;
-"101
+[; ;main.c: 105: ADPCH = 1;
+"105
 [e = _ADPCH -> -> 1 `i `uc ]
-[; ;main.c: 103: ADCON0 |= GO_nDONE;
-"103
-[e =| _ADCON0 -> -> _GO_nDONE `i `uc ]
-[; ;main.c: 107: return ((ADRESH << 8) + ADRESL);
+[; ;main.c: 107: ADCON0 |= GO_nDONE;
 "107
+[e =| _ADCON0 -> -> _GO_nDONE `i `uc ]
+[; ;main.c: 111: return ((ADRESH << 8) + ADRESL);
+"111
 [e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
 [e $UE 1562  ]
-[; ;main.c: 109: }
-"109
+[; ;main.c: 113: }
+"113
 [e :UE 1562 ]
 }
-"111
+"115
 [v _servoRotate0 `(v ~T0 @X0 1 ef ]
-"112
+"116
 {
-[; ;main.c: 111: void servoRotate0()
-[; ;main.c: 112: {
+[; ;main.c: 115: void servoRotate0()
+[; ;main.c: 116: {
 [e :U _servoRotate0 ]
 [f ]
-"113
+"117
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 113: unsigned int i;
-[; ;main.c: 114: for(i=0;i<50;i++)
-"114
+[; ;main.c: 117: unsigned int i;
+[; ;main.c: 118: for(i=0;i<50;i++)
+"118
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1565  ]
 [e $U 1566  ]
-"115
-[e :U 1565 ]
-[; ;main.c: 115: {
-{
-[; ;main.c: 116: PORTB = 1;
-"116
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 117: _delay((unsigned long)((1.4)*(1000000/4000.0)));
-"117
-[e ( __delay (1 -> * .1.4 / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 118: PORTB = 0;
-"118
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 119: _delay((unsigned long)((18.6)*(1000000/4000.0)));
 "119
-[e ( __delay (1 -> * .18.6 / -> -> 1000000 `l `d .4000.0 `ul ]
+[e :U 1565 ]
+[; ;main.c: 119: {
+{
+[; ;main.c: 120: PORTB = 1;
 "120
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 121: _delay((unsigned long)((1.4)*(1000000/4000.0)));
+"121
+[e ( __delay (1 -> * .1.4 / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 122: PORTB = 0;
+"122
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 123: _delay((unsigned long)((18.6)*(1000000/4000.0)));
+"123
+[e ( __delay (1 -> * .18.6 / -> -> 1000000 `l `d .4000.0 `ul ]
+"124
 }
-"114
+"118
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1565  ]
 [e :U 1566 ]
-"120
+"124
 }
-[; ;main.c: 120: }
-[; ;main.c: 121: }
-"121
+[; ;main.c: 124: }
+[; ;main.c: 125: }
+"125
 [e :UE 1564 ]
 }
-"123
+"127
 [v _servoRotate90 `(v ~T0 @X0 1 ef ]
-"124
+"128
 {
-[; ;main.c: 123: void servoRotate90()
-[; ;main.c: 124: {
+[; ;main.c: 127: void servoRotate90()
+[; ;main.c: 128: {
 [e :U _servoRotate90 ]
 [f ]
-"125
+"129
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 125: unsigned int i;
-[; ;main.c: 126: for(i=0;i<50;i++)
-"126
+[; ;main.c: 129: unsigned int i;
+[; ;main.c: 130: for(i=0;i<50;i++)
+"130
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1569  ]
 [e $U 1570  ]
-"127
-[e :U 1569 ]
-[; ;main.c: 127: {
-{
-[; ;main.c: 128: PORTB = 1;
-"128
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 129: _delay((unsigned long)((4)*(1000000/4000.0)));
-"129
-[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 130: PORTB = 0;
-"130
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 131: _delay((unsigned long)((16)*(1000000/4000.0)));
 "131
-[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e :U 1569 ]
+[; ;main.c: 131: {
+{
+[; ;main.c: 132: PORTB = 1;
 "132
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 133: _delay((unsigned long)((4)*(1000000/4000.0)));
+"133
+[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 134: PORTB = 0;
+"134
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 135: _delay((unsigned long)((16)*(1000000/4000.0)));
+"135
+[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"136
 }
-"126
+"130
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1569  ]
 [e :U 1570 ]
-"132
+"136
 }
-[; ;main.c: 132: }
-[; ;main.c: 133: }
-"133
+[; ;main.c: 136: }
+[; ;main.c: 137: }
+"137
 [e :UE 1568 ]
 }
-"135
+"139
 [v _servoRotate180 `(v ~T0 @X0 1 ef ]
-"136
+"140
 {
-[; ;main.c: 135: void servoRotate180()
-[; ;main.c: 136: {
+[; ;main.c: 139: void servoRotate180()
+[; ;main.c: 140: {
 [e :U _servoRotate180 ]
 [f ]
-"137
+"141
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 137: unsigned int i;
-[; ;main.c: 138: for(i=0;i<50;i++)
-"138
+[; ;main.c: 141: unsigned int i;
+[; ;main.c: 142: for(i=0;i<50;i++)
+"142
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1573  ]
 [e $U 1574  ]
-"139
-[e :U 1573 ]
-[; ;main.c: 139: {
-{
-[; ;main.c: 140: PORTB = 1;
-"140
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;main.c: 141: _delay((unsigned long)((0.5)*(1000000/4000.0)));
-"141
-[e ( __delay (1 -> * .0.5 / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 142: PORTB = 0;
-"142
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 143: _delay((unsigned long)((19.5)*(1000000/4000.0)));
 "143
-[e ( __delay (1 -> * .19.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[e :U 1573 ]
+[; ;main.c: 143: {
+{
+[; ;main.c: 144: PORTB = 1;
 "144
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;main.c: 145: _delay((unsigned long)((0.5)*(1000000/4000.0)));
+"145
+[e ( __delay (1 -> * .0.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 146: PORTB = 0;
+"146
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 147: _delay((unsigned long)((19.5)*(1000000/4000.0)));
+"147
+[e ( __delay (1 -> * .19.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+"148
 }
-"138
+"142
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 50 `i `ui 1573  ]
 [e :U 1574 ]
-"144
+"148
 }
-[; ;main.c: 144: }
-[; ;main.c: 145: }
-"145
+[; ;main.c: 148: }
+[; ;main.c: 149: }
+"149
 [e :UE 1572 ]
 }
-"150
+"154
 [v _testMain `(v ~T0 @X0 1 ef ]
-"151
+"155
 {
-[; ;main.c: 150: void testMain(void)
-[; ;main.c: 151: {
+[; ;main.c: 154: void testMain(void)
+[; ;main.c: 155: {
 [e :U _testMain ]
 [f ]
-[; ;main.c: 152: TRISB = 0;
-"152
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 153: while(1)
-"153
-[e :U 1578 ]
-[; ;main.c: 154: {
-"154
-{
-[; ;main.c: 155: servoRotate0();
-"155
-[e ( _servoRotate0 ..  ]
-[; ;main.c: 156: _delay((unsigned long)((200)*(1000000/4000.0)));
-"156
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 157: servoRotate90();
+[; ;main.c: 157: while(1)
 "157
-[e ( _servoRotate90 ..  ]
-[; ;main.c: 158: _delay((unsigned long)((200)*(1000000/4000.0)));
+[e :U 1578 ]
+[; ;main.c: 158: {
 "158
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;main.c: 159: servoRotate180();
+{
+[; ;main.c: 159: printf("Hello world");
 "159
-[e ( _servoRotate180 ..  ]
+[e ( _printf :s 1C ]
 "160
 }
 [e :U 1577 ]
-"153
+"157
 [e $U 1578  ]
 [e :U 1579 ]
 [; ;main.c: 160: }
@@ -13484,100 +13481,102 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 166: SYSTEM_Initialize();
 "166
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 168: ADC_Init();
-"168
-[e ( _ADC_Init ..  ]
-[; ;main.c: 169: TRISA = 0b11111110;
+[; ;main.c: 169: printf("hello world");
 "169
-[e = _TRISA -> -> 254 `i `uc ]
-[; ;main.c: 170: TRISB = 0;
+[e ( _printf :s 2C ]
+[; ;main.c: 170: ADC_Init();
 "170
-[e = _TRISB -> -> 0 `i `uc ]
+[e ( _ADC_Init ..  ]
+[; ;main.c: 171: TRISA = 0b11111110;
+"171
+[e = _TRISA -> -> 254 `i `uc ]
+[; ;main.c: 172: TRISB = 0;
 "172
-[v _servo_rotates_up `uc ~T0 @X0 1 a ]
-[; ;main.c: 172: bool servo_rotates_up = 1;
-[e = _servo_rotates_up -> -> 1 `i `uc ]
-"173
-[v _count `ui ~T0 @X0 1 a ]
-[; ;main.c: 173: unsigned count = 0;
-[e = _count -> -> 0 `i `ui ]
-[; ;main.c: 174: while (1)
+[e = _TRISB -> -> 0 `i `uc ]
 "174
-[e :U 1582 ]
-[; ;main.c: 175: {
-"175
-{
-[; ;main.c: 176: count++;
-"176
-[e ++ _count -> -> 1 `i `ui ]
-[; ;main.c: 179: if(ADC_conversion_results() > 0x3190)
-"179
-[e $ ! > ( _ADC_conversion_results ..  -> -> 12688 `i `ui 1584  ]
-[; ;main.c: 180: {
-"180
-{
-[; ;main.c: 181: PORTA = 0x01;
-"181
-[e = _PORTA -> -> 1 `i `uc ]
-"182
-}
-[; ;main.c: 182: }
-[e $U 1585  ]
-"183
-[e :U 1584 ]
-[; ;main.c: 183: else
-[; ;main.c: 184: PORTA = 0x00;
-"184
-[e = _PORTA -> -> 0 `i `uc ]
-[e :U 1585 ]
-[; ;main.c: 188: if(servo_rotates_up && (count >= 10000) )
-"188
-[e $ ! && != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i >= _count -> -> 10000 `i `ui 1586  ]
-[; ;main.c: 189: {
-"189
-{
-[; ;main.c: 190: servoRotate180();
-"190
-[e ( _servoRotate180 ..  ]
-[; ;main.c: 191: servo_rotates_up = 0;
-"191
-[e = _servo_rotates_up -> -> 0 `i `uc ]
-[; ;main.c: 193: count = 0;
-"193
-[e = _count -> -> 0 `i `ui ]
-"194
-}
-[; ;main.c: 194: }
-[e $U 1587  ]
-"195
-[e :U 1586 ]
-[; ;main.c: 195: else if(!servo_rotates_up && (count >= 10000) )
-[e $ ! && ! != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i >= _count -> -> 10000 `i `ui 1588  ]
-[; ;main.c: 196: {
-"196
-{
-[; ;main.c: 197: servoRotate90();
-"197
-[e ( _servoRotate90 ..  ]
-[; ;main.c: 198: servo_rotates_up = 1;
-"198
+[v _servo_rotates_up `uc ~T0 @X0 1 a ]
+[; ;main.c: 174: bool servo_rotates_up = 1;
 [e = _servo_rotates_up -> -> 1 `i `uc ]
-[; ;main.c: 200: count = 0;
-"200
+"175
+[v _count `ui ~T0 @X0 1 a ]
+[; ;main.c: 175: unsigned count = 0;
 [e = _count -> -> 0 `i `ui ]
-"201
+[; ;main.c: 177: while (1)
+"177
+[e :U 1582 ]
+[; ;main.c: 178: {
+"178
+{
+[; ;main.c: 179: count++;
+"179
+[e ++ _count -> -> 1 `i `ui ]
+[; ;main.c: 180: PORTA = 0x00;
+"180
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 183: if(ADC_conversion_results() > 0x0)
+"183
+[e $ ! > ( _ADC_conversion_results ..  -> -> 0 `i `ui 1584  ]
+[; ;main.c: 184: {
+"184
+{
+[; ;main.c: 185: PORTA = 0x01;
+"185
+[e = _PORTA -> -> 1 `i `uc ]
+"186
 }
-[e :U 1588 ]
+[e :U 1584 ]
+[; ;main.c: 186: }
+[; ;main.c: 190: if(servo_rotates_up && (count >= 10000) )
+"190
+[e $ ! && != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i >= _count -> -> 10000 `i `ui 1585  ]
+[; ;main.c: 191: {
+"191
+{
+[; ;main.c: 192: servoRotate180();
+"192
+[e ( _servoRotate180 ..  ]
+[; ;main.c: 193: servo_rotates_up = 0;
+"193
+[e = _servo_rotates_up -> -> 0 `i `uc ]
+[; ;main.c: 195: count = 0;
+"195
+[e = _count -> -> 0 `i `ui ]
+"196
+}
+[; ;main.c: 196: }
+[e $U 1586  ]
+"197
+[e :U 1585 ]
+[; ;main.c: 197: else if(!servo_rotates_up && (count >= 10000) )
+[e $ ! && ! != -> _servo_rotates_up `i -> -> -> 0 `i `uc `i >= _count -> -> 10000 `i `ui 1587  ]
+[; ;main.c: 198: {
+"198
+{
+[; ;main.c: 199: servoRotate90();
+"199
+[e ( _servoRotate90 ..  ]
+[; ;main.c: 200: servo_rotates_up = 1;
+"200
+[e = _servo_rotates_up -> -> 1 `i `uc ]
+[; ;main.c: 202: count = 0;
 "202
+[e = _count -> -> 0 `i `ui ]
+"203
+}
 [e :U 1587 ]
+"204
+[e :U 1586 ]
 }
 [e :U 1581 ]
-"174
+"177
 [e $U 1582  ]
 [e :U 1583 ]
-[; ;main.c: 201: }
-[; ;main.c: 202: }
 [; ;main.c: 203: }
-"203
+[; ;main.c: 204: }
+[; ;main.c: 205: }
+"205
 [e :UE 1580 ]
 }
+[p f _printf 8388608 ]
+[a 2C 104 101 108 108 111 32 119 111 114 108 100 0 ]
+[a 1C 72 101 108 108 111 32 119 111 114 108 100 0 ]

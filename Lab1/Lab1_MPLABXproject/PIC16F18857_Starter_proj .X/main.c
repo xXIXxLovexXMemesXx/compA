@@ -2,7 +2,7 @@
 #include "mcc_generated_files/mcc.h" //default library 
 
 
-#define ADC_THRESH 0x3190
+#define ADC_THRESH 0x0
 
 #define COUNT_THRESH 10000
 
@@ -84,6 +84,10 @@ void ADC_Init(void)  {
     ADCON0 = 0b10000101; 
     ADREF = 0;
     ADPCH = 0b00000001;
+    // transmit status and control register (UART CABLE)
+    TX1STA = 0b00100000;
+    RC1STA = 0b10000000;
+            
 }   
 
 
@@ -149,14 +153,10 @@ void servoRotate180() //-90 Degree
  */
 void testMain(void)
 {
-  TRISB = 0; // PORTB as Ouput Port
+  
   while(1)
   {
-    servoRotate0(); //0 Degree
-    __delay_ms(200);
-    servoRotate90(); //90 Degree
-    __delay_ms(200);
-    servoRotate180(); //180 Degree
+      printf("Hello world");
   }
 }
 
@@ -165,23 +165,25 @@ void main(void)
     // Initialize PIC device
     SYSTEM_Initialize();
     // Initialize the required modules 
+    //testMain();
+    printf("hello world");
     ADC_Init();
     TRISA = 0b11111110; //make sure pin A0 is output
     TRISB = 0;
     // **** write your code 
     bool servo_rotates_up = true;
     unsigned count = 0;
+    
     while (1) // keep your application in a loop
     {
         count++;
-
+        PORTA = 0x00;
+        
         //If the photoresistor is above a certain threshold, turn on the LED (or not))
         if(ADC_conversion_results() > ADC_THRESH)
         {
             PORTA = 0x01;
         }
-        else
-            PORTA = 0x00;
         
         
         //if the timer is done, rotate the servo the right direction

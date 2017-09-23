@@ -17472,9 +17472,13 @@ ADPRE = 0;
 ADCON0 = 0b10000101;
 ADREF = 0;
 ADPCH = 0b00000001;
+
+TX1STA = 0b00100000;
+RC1STA = 0b10000000;
+
 }
 
-# 94
+# 98
 unsigned int ADC_conversion_results() {
 GO_nDONE = 1;
 
@@ -17528,17 +17532,13 @@ _delay((unsigned long)((19.5)*(1000000/4000.0)));
 }
 }
 
-# 150
+# 154
 void testMain(void)
 {
-TRISB = 0;
+
 while(1)
 {
-servoRotate0();
-_delay((unsigned long)((200)*(1000000/4000.0)));
-servoRotate90();
-_delay((unsigned long)((200)*(1000000/4000.0)));
-servoRotate180();
+printf("Hello world");
 }
 }
 
@@ -17547,23 +17547,25 @@ void main(void)
 
 SYSTEM_Initialize();
 
+
+printf("hello world");
 ADC_Init();
 TRISA = 0b11111110;
 TRISB = 0;
 
 bool servo_rotates_up = 1;
 unsigned count = 0;
+
 while (1)
 {
 count++;
+PORTA = 0x00;
 
 
-if(ADC_conversion_results() > 0x3190)
+if(ADC_conversion_results() > 0x0)
 {
 PORTA = 0x01;
 }
-else
-PORTA = 0x00;
 
 
 

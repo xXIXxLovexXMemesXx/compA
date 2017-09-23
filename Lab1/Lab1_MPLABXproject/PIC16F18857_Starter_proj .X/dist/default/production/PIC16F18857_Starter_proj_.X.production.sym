@@ -1,7 +1,7 @@
 __CFG_WDTCCS$SC 0 0 ABS 0
 __CFG_WRT$OFF 0 0 ABS 0
 __S0 800C 0 ABS 0
-__S1 76 0 ABS 0
+__S1 7C 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
 _GIE 5F 0 ABS 0
@@ -17,16 +17,18 @@ _WPUA 1F39 0 ABS 0
 _WPUB 1F44 0 ABS 0
 _WPUC 1F4F 0 ABS 0
 _T2PR 28D 0 ABS 0
-__end_of_PIN_MANAGER_Initialize 7BE 0 CODE 0
+__end_of_PIN_MANAGER_Initialize 7BB 0 CODE 0
 __CFG_CSWEN$ON 0 0 ABS 0
-_main 7BE 0 CODE 0
+_main 7BB 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 2 0 CODE 0
 __size_of_ADC_conversion_results 0 0 ABS 0
-main@servo_rotates_up 75 0 COMMON 1
+main@servo_rotates_up 7B 0 COMMON 1
+printf@ap 77 0 COMMON 1
 _ADREF 9A 0 ABS 0
 _ADPCH 9E 0 ABS 0
+_EUSART_Write 6DB 0 CODE 0
 _TRISA 11 0 ABS 0
 _TRISB 12 0 ABS 0
 _ADCAP 9B 0 ABS 0
@@ -43,12 +45,16 @@ wtemp0 7E 0 ABS 0
 _RXPPS 1ECB 0 ABS 0
 __Hconfig 800C 0 CONFIG 0
 __Lconfig 8007 0 CONFIG 0
+__Hstringtext1 0 0 ABS 0
+__Lstringtext1 0 0 ABS 0
+__pstringtext1 800 0 STRCODE 0
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
+_putch 6D6 0 CODE 0
 __CFG_STVREN$ON 0 0 ABS 0
-_ADC_Init 724 0 CODE 0
+_ADC_Init 716 0 CODE 0
 __Hfunctab 0 0 CODE 0
 __Lfunctab 0 0 CODE 0
 _T0CON0 1E 0 ABS 0
@@ -57,6 +63,7 @@ _T0CON1 1F 0 ABS 0
 _ADCON1 94 0 ABS 0
 _ADCON2 95 0 ABS 0
 _ADCON3 96 0 ABS 0
+__end_of_putch 6DB 0 CODE 0
 __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
@@ -101,21 +108,26 @@ __Lsfr7 0 0 ABS 0
 __CFG_ZCD$ON 0 0 ABS 0
 __Hsfr8 0 0 ABS 0
 __Lsfr8 0 0 ABS 0
-_servoRotate90 76C 0 CODE 0
+_servoRotate90 769 0 CODE 0
+__end_of_EUSART_Write 6E3 0 CODE 0
 __Hsfr9 0 0 ABS 0
 __Lsfr9 0 0 ABS 0
 servoRotate90@i 71 0 COMMON 1
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
-__end_of_servoRotate90 78B 0 CODE 0
+__end_of_servoRotate90 788 0 CODE 0
 stackhi 2FEF 0 ABS 0
+_printf 72F 0 CODE 0
 stacklo 2000 0 ABS 0
+__Hstringtext2 0 0 ABS 0
+__Lstringtext2 0 0 ABS 0
 __Hinit 2 0 CODE 0
 __Linit 2 0 CODE 0
+__pstringtext2 80C 0 STRCODE 0
 __end_of_main 7FD 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-_ADC_conversion_results 738 0 CODE 0
+_ADC_conversion_results 701 0 CODE 0
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0
 __CFG_LVP$ON 0 0 ABS 0
 end_of_initialization 7FD 0 CODE 0
@@ -124,7 +136,7 @@ _OSCCON1 88D 0 ABS 0
 __Hsfr10 0 0 ABS 0
 __Lsfr10 0 0 ABS 0
 __Hsfr20 0 0 ABS 0
-__end_of_servoRotate180 76C 0 CODE 0
+__end_of_servoRotate180 769 0 CODE 0
 __Lsfr20 0 0 ABS 0
 __Hsfr30 0 0 ABS 0
 __Hsfr11 0 0 ABS 0
@@ -193,6 +205,7 @@ __Hsfr45 0 0 ABS 0
 __Hsfr26 0 0 ABS 0
 __Lsfr45 0 0 ABS 0
 __Lsfr26 0 0 ABS 0
+__size_of_putch 0 0 ABS 0
 __Hsfr55 0 0 ABS 0
 __Hsfr36 0 0 ABS 0
 __Hsfr17 0 0 ABS 0
@@ -236,11 +249,11 @@ _TRISAbits 11 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 _SP1BRGH 11C 0 ABS 0
-_SYSTEM_Initialize 706 0 CODE 0
+_SYSTEM_Initialize 6E3 0 CODE 0
 _PPSLOCK 1E8F 0 ABS 0
 _SP1BRGL 11B 0 ABS 0
 _OSCTUNE 892 0 ABS 0
-_EUSART_Initialize 719 0 CODE 0
+_EUSART_Initialize 6F6 0 CODE 0
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
@@ -250,7 +263,7 @@ __Lbank2 0 0 ABS 0
 __Hbank3 0 0 ABS 0
 __Lbank3 0 0 ABS 0
 ___latbits 4 0 ABS 0
-_servoRotate180 74D 0 CODE 0
+_servoRotate180 74A 0 CODE 0
 __Hbank4 0 0 ABS 0
 __Lbank4 0 0 ABS 0
 _OSCSTAT 890 0 ABS 0
@@ -258,7 +271,7 @@ __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-main@count 73 0 COMMON 1
+main@count 79 0 COMMON 1
 __Hbank6 0 0 ABS 0
 __Lbank6 0 0 ABS 0
 __Hbank7 0 0 ABS 0
@@ -267,19 +280,26 @@ __Hbank8 0 0 ABS 0
 __Lbank8 0 0 ABS 0
 __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
-__ptext1 76C 0 CODE 0
-__ptext2 74D 0 CODE 0
-__ptext3 706 0 CODE 0
-__ptext4 78B 0 CODE 0
-__ptext5 70F 0 CODE 0
-__ptext6 719 0 CODE 0
-__ptext7 738 0 CODE 0
-__end_of_EUSART_Initialize 724 0 CODE 0
-__ptext8 724 0 CODE 0
+__ptext1 769 0 CODE 0
+__ptext2 74A 0 CODE 0
+__ptext3 72F 0 CODE 0
+__ptext4 6D6 0 CODE 0
+__ptext5 6DB 0 CODE 0
+__ptext6 6E3 0 CODE 0
+__ptext7 788 0 CODE 0
+__end_of_EUSART_Initialize 701 0 CODE 0
+__ptext8 6EC 0 CODE 0
+__ptext9 6F6 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
+__Hstringtext3 0 0 ABS 0
+__Lstringtext3 0 0 ABS 0
+__pstringtext3 0 0 STRCODE 0
+__size_of_printf 0 0 ABS 0
 _PPSLOCKbits 1E8F 0 ABS 0
+printf@c 78 0 COMMON 1
 __end_of__initialization 7FD 0 CODE 0
+printf@f 72 0 COMMON 1
 PIN_MANAGER_Initialize@state 70 0 COMMON 1
 __Hidloc 0 0 IDLOC 0
 __Lidloc 0 0 IDLOC 0
@@ -287,8 +307,10 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hspace_0 800C 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__Hspace_1 76 0 ABS 0
+?_printf 72 0 COMMON 1
+__Hspace_1 7C 0 ABS 0
 __Lspace_1 0 0 ABS 0
+EUSART_Write@txData 70 0 COMMON 1
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
 __Hcinit 800 0 CODE 0
@@ -298,8 +320,9 @@ __CFG_LPBOREN$OFF 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 __CFG_BORV$LO 0 0 ABS 0
-_PIN_MANAGER_Initialize 78B 0 CODE 0
+_PIN_MANAGER_Initialize 788 0 CODE 0
 __size_of_SYSTEM_Initialize 0 0 ABS 0
+putch@txData 71 0 COMMON 1
 __Hbank10 0 0 ABS 0
 __Lbank10 0 0 ABS 0
 __Hbank20 0 0 ABS 0
@@ -312,14 +335,14 @@ __Hbank40 0 0 ABS 0
 __Hbank21 0 0 ABS 0
 __Lbank40 0 0 ABS 0
 __Lbank21 0 0 ABS 0
-__end_of_OSCILLATOR_Initialize 719 0 CODE 0
+__end_of_OSCILLATOR_Initialize 6F6 0 CODE 0
 __Hbank50 0 0 ABS 0
 __Hbank31 0 0 ABS 0
 __Hbank12 0 0 ABS 0
 __Lbank50 0 0 ABS 0
 __Lbank31 0 0 ABS 0
 __Lbank12 0 0 ABS 0
-__end_of_SYSTEM_Initialize 70F 0 CODE 0
+__end_of_SYSTEM_Initialize 6EC 0 CODE 0
 __Hbank60 0 0 BANK60 1
 __Hbank41 0 0 ABS 0
 __Hbank22 0 0 ABS 0
@@ -350,6 +373,7 @@ __Hbank24 0 0 ABS 0
 __Lbank62 0 0 BANK62 1
 __Lbank43 0 0 ABS 0
 __Lbank24 0 0 ABS 0
+__ptext10 701 0 CODE 0
 __Hbank53 0 0 BANK53 1
 __Hbank34 0 0 ABS 0
 __Hbank15 0 0 ABS 0
@@ -362,6 +386,7 @@ __Hbank25 0 0 ABS 0
 __Lbank63 0 0 BANK63 1
 __Lbank44 0 0 ABS 0
 __Lbank25 0 0 ABS 0
+__ptext11 716 0 CODE 0
 __Hbank54 0 0 BANK54 1
 __Hbank35 0 0 ABS 0
 __Hbank16 0 0 ABS 0
@@ -388,7 +413,7 @@ __Hbank18 0 0 ABS 0
 __Lbank56 0 0 BANK56 1
 __Lbank37 0 0 ABS 0
 __Lbank18 0 0 ABS 0
-__end_of_ADC_conversion_results 74D 0 CODE 0
+__end_of_ADC_conversion_results 716 0 CODE 0
 __Hbank47 0 0 ABS 0
 __Hbank28 0 0 ABS 0
 __Lbank47 0 0 ABS 0
@@ -411,13 +436,15 @@ __Hbank49 0 0 ABS 0
 __Lbank49 0 0 ABS 0
 __Hbank59 0 0 BANK59 1
 __Lbank59 0 0 BANK59 1
+__size_of_EUSART_Write 0 0 ABS 0
+__end_of_printf 74A 0 CODE 0
 _ANSELAbits 1F38 0 ABS 0
 _RC1STAbits 11D 0 ABS 0
 __CFG_PWRTE$OFF 0 0 ABS 0
 __CFG_PPS1WAY$ON 0 0 ABS 0
 __Hend_init 4 0 CODE 0
 __Lend_init 2 0 CODE 0
-_OSCILLATOR_Initialize 70F 0 CODE 0
+_OSCILLATOR_Initialize 6EC 0 CODE 0
 _GO_nDONE 498 0 ABS 0
 __Hreset_vec 2 0 CODE 0
 __Lreset_vec 0 0 CODE 0
@@ -438,10 +465,10 @@ __pcstackCOMMON 70 0 COMMON 1
 ?_ADC_conversion_results 70 0 COMMON 1
 __CFG_CPD$OFF 0 0 ABS 0
 start_initialization 7FD 0 CODE 0
-__end_of_ADC_Init 738 0 CODE 0
+__end_of_ADC_Init 72F 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__pmaintext 7BE 0 CODE 0
+__pmaintext 7BB 0 CODE 0
 __CFG_MCLRE$ON 0 0 ABS 0
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0
 __CFG_SCANE$available 0 0 ABS 0
@@ -454,125 +481,146 @@ __CFG_FCMEN$ON 0 0 ABS 0
 reset_vec 0 7 CODE 0 0
 cinit FFA FFF CODE FFA 0
 config 1000E 10017 CONFIG 1000E 0
-cstackCOMMON 70 75 COMMON 70 1
-maintext F7C FF9 CODE F7C 0
-text4 F16 F7B CODE F16 0
-text1 ED8 F15 CODE ED8 0
-text2 E9A ED7 CODE E9A 0
-text7 E70 E99 CODE E70 0
-text8 E48 E6F CODE E48 0
-text6 E32 E47 CODE E32 0
-text5 E1E E31 CODE E1E 0
-text3 E0C E1D CODE E0C 0
+cstackCOMMON 70 7B COMMON 70 1
+maintext F76 FF9 CODE F76 0
+text7 F10 F75 CODE F10 0
+text1 ED2 F0F CODE ED2 0
+text2 E94 ED1 CODE E94 0
+text3 E5E E93 CODE E5E 0
+text11 E2C E5D CODE E2C 0
+text10 E02 E2B CODE E02 0
+stringtext1 1000 102F STRCODE 1000 0
+text9 DEC E01 CODE DEC 0
+text8 DD8 DEB CODE DD8 0
+text6 DC6 DD7 CODE DC6 0
+text5 DB6 DC5 CODE DB6 0
+text4 DAC DB5 CODE DAC 0
 %locals
 dist/default/production\PIC16F18857_Starter_proj_.X.production.obj
-C:\Users\ANDREW~1\AppData\Local\Temp\s95g.
-4325 7FD 0 CODE 0
-4328 7FD 0 CODE 0
-4334 7FD 0 CODE 0
-4336 7FD 0 CODE 0
-4337 7FE 0 CODE 0
+C:\Users\ANDREW~1\AppData\Local\Temp\saes.
+4365 7FD 0 CODE 0
+4368 7FD 0 CODE 0
+4374 7FD 0 CODE 0
+4376 7FD 0 CODE 0
+4377 7FE 0 CODE 0
 main.c
-163 7BE 0 CODE 0
-166 7BE 0 CODE 0
-168 7C1 0 CODE 0
-169 7C4 0 CODE 0
-170 7C7 0 CODE 0
-172 7C8 0 CODE 0
-173 7CA 0 CODE 0
-176 7CC 0 CODE 0
+163 7BB 0 CODE 0
+166 7BB 0 CODE 0
+169 7BE 0 CODE 0
+170 7C5 0 CODE 0
+171 7C8 0 CODE 0
+172 7CB 0 CODE 0
+174 7CC 0 CODE 0
+175 7CE 0 CODE 0
 179 7D0 0 CODE 0
-181 7DA 0 CODE 0
-182 7DD 0 CODE 0
-184 7DE 0 CODE 0
-188 7E0 0 CODE 0
-190 7EA 0 CODE 0
-191 7ED 0 CODE 0
-195 7EF 0 CODE 0
-197 7F9 0 CODE 0
-123 76C 0 CODE 0
-126 76C 0 CODE 0
-128 775 0 CODE 0
-129 778 0 CODE 0
-130 77C 0 CODE 0
-131 77E 0 CODE 0
-126 786 0 CODE 0
-135 74D 0 CODE 0
-138 74D 0 CODE 0
-140 756 0 CODE 0
-141 759 0 CODE 0
-142 75D 0 CODE 0
-143 75F 0 CODE 0
-138 767 0 CODE 0
-mcc_generated_files/mcc.c
-82 706 0 CODE 0
-85 706 0 CODE 0
-86 709 0 CODE 0
-87 70C 0 CODE 0
-88 70E 0 CODE 0
-mcc_generated_files/pin_manager.c
-50 78B 0 CODE 0
-52 78B 0 CODE 0
-53 78D 0 CODE 0
-54 78E 0 CODE 0
-55 78F 0 CODE 0
-56 791 0 CODE 0
-57 792 0 CODE 0
-58 793 0 CODE 0
-59 795 0 CODE 0
-60 797 0 CODE 0
-61 799 0 CODE 0
-62 79C 0 CODE 0
-63 79E 0 CODE 0
-68 7A0 0 CODE 0
-69 7A4 0 CODE 0
-70 7A5 0 CODE 0
-71 7A8 0 CODE 0
-72 7AA 0 CODE 0
-74 7AB 0 CODE 0
-75 7AD 0 CODE 0
-77 7B0 0 CODE 0
-79 7B2 0 CODE 0
-80 7B5 0 CODE 0
-81 7B7 0 CODE 0
-83 7B8 0 CODE 0
-85 7BD 0 CODE 0
-mcc_generated_files/mcc.c
-90 70F 0 CODE 0
-93 70F 0 CODE 0
-95 712 0 CODE 0
-97 713 0 CODE 0
-99 714 0 CODE 0
-101 716 0 CODE 0
-103 717 0 CODE 0
-106 718 0 CODE 0
+180 7D4 0 CODE 0
+183 7D6 0 CODE 0
+185 7DD 0 CODE 0
+190 7E0 0 CODE 0
+192 7EA 0 CODE 0
+193 7ED 0 CODE 0
+197 7EF 0 CODE 0
+199 7F9 0 CODE 0
+127 769 0 CODE 0
+130 769 0 CODE 0
+132 772 0 CODE 0
+133 775 0 CODE 0
+134 779 0 CODE 0
+135 77B 0 CODE 0
+130 783 0 CODE 0
+139 74A 0 CODE 0
+142 74A 0 CODE 0
+144 753 0 CODE 0
+145 756 0 CODE 0
+146 75A 0 CODE 0
+147 75C 0 CODE 0
+142 764 0 CODE 0
+C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+464 72F 0 CODE 0
+533 72F 0 CODE 0
+536 733 0 CODE 0
+541 745 0 CODE 0
+536 749 0 CODE 0
 mcc_generated_files/eusart.c
-55 719 0 CODE 0
-60 719 0 CODE 0
-63 71C 0 CODE 0
-66 71E 0 CODE 0
-69 720 0 CODE 0
-72 722 0 CODE 0
-74 723 0 CODE 0
+111 6D6 0 CODE 0
+113 6D7 0 CODE 0
+114 6DA 0 CODE 0
+97 6DB 0 CODE 0
+101 6DC 0 CODE 0
+99 6DC 0 CODE 0
+103 6DF 0 CODE 0
+104 6E2 0 CODE 0
+mcc_generated_files/mcc.c
+82 6E3 0 CODE 0
+85 6E3 0 CODE 0
+86 6E6 0 CODE 0
+87 6E9 0 CODE 0
+88 6EB 0 CODE 0
+mcc_generated_files/pin_manager.c
+50 788 0 CODE 0
+52 788 0 CODE 0
+53 78A 0 CODE 0
+54 78B 0 CODE 0
+55 78C 0 CODE 0
+56 78E 0 CODE 0
+57 78F 0 CODE 0
+58 790 0 CODE 0
+59 792 0 CODE 0
+60 794 0 CODE 0
+61 796 0 CODE 0
+62 799 0 CODE 0
+63 79B 0 CODE 0
+68 79D 0 CODE 0
+69 7A1 0 CODE 0
+70 7A2 0 CODE 0
+71 7A5 0 CODE 0
+72 7A7 0 CODE 0
+74 7A8 0 CODE 0
+75 7AA 0 CODE 0
+77 7AD 0 CODE 0
+79 7AF 0 CODE 0
+80 7B2 0 CODE 0
+81 7B4 0 CODE 0
+83 7B5 0 CODE 0
+85 7BA 0 CODE 0
+mcc_generated_files/mcc.c
+90 6EC 0 CODE 0
+93 6EC 0 CODE 0
+95 6EF 0 CODE 0
+97 6F0 0 CODE 0
+99 6F1 0 CODE 0
+101 6F3 0 CODE 0
+103 6F4 0 CODE 0
+106 6F5 0 CODE 0
+mcc_generated_files/eusart.c
+55 6F6 0 CODE 0
+60 6F6 0 CODE 0
+63 6F9 0 CODE 0
+66 6FB 0 CODE 0
+69 6FD 0 CODE 0
+72 6FF 0 CODE 0
+74 700 0 CODE 0
 main.c
-94 738 0 CODE 0
-95 738 0 CODE 0
-97 73A 0 CODE 0
-101 740 0 CODE 0
-103 742 0 CODE 0
-107 748 0 CODE 0
-56 724 0 CODE 0
-74 724 0 CODE 0
-75 727 0 CODE 0
-76 728 0 CODE 0
-77 72A 0 CODE 0
-78 72C 0 CODE 0
-79 72D 0 CODE 0
-80 72E 0 CODE 0
-81 72F 0 CODE 0
-82 730 0 CODE 0
-83 731 0 CODE 0
-84 732 0 CODE 0
-85 734 0 CODE 0
-86 735 0 CODE 0
-87 737 0 CODE 0
+98 701 0 CODE 0
+99 701 0 CODE 0
+101 703 0 CODE 0
+105 709 0 CODE 0
+107 70B 0 CODE 0
+111 711 0 CODE 0
+56 716 0 CODE 0
+74 716 0 CODE 0
+75 719 0 CODE 0
+76 71A 0 CODE 0
+77 71C 0 CODE 0
+78 71E 0 CODE 0
+79 71F 0 CODE 0
+80 720 0 CODE 0
+81 721 0 CODE 0
+82 722 0 CODE 0
+83 723 0 CODE 0
+84 724 0 CODE 0
+85 726 0 CODE 0
+86 727 0 CODE 0
+88 729 0 CODE 0
+89 72C 0 CODE 0
+91 72E 0 CODE 0

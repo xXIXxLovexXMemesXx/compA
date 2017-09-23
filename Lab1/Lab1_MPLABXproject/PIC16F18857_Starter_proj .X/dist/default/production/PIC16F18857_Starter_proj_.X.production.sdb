@@ -3,6 +3,8 @@
 [d edition pro ]
 [d chip 16F18857 ]
 [d frameptr 6 ]
+"464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
@@ -13,13 +15,11 @@
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
 "56 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"94
+"98
 [v _ADC_conversion_results ADC_conversion_results `(ui  1 e 2 0 ]
-"111
-[v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
-"123
+"127
 [v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
-"135
+"139
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 "163
 [v _main main `(v  1 e 1 0 ]
@@ -29,6 +29,8 @@
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
 "97
 [v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"111
+[v _putch putch `(v  1 e 1 0 ]
 "82 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "90
@@ -198,25 +200,53 @@
 "163 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"173
-[v main@count count `ui  1 a 2 3 ]
-"172
-[v main@servo_rotates_up servo_rotates_up `uc  1 a 1 5 ]
-"203
+"175
+[v main@count count `ui  1 a 2 9 ]
+"174
+[v main@servo_rotates_up servo_rotates_up `uc  1 a 1 11 ]
+"205
 } 0
-"123
+"127
 [v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
 {
-"125
+"129
 [v servoRotate90@i i `ui  1 a 2 1 ]
-"133
+"137
 } 0
-"135
+"139
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
-"137
+"141
 [v servoRotate180@i i `ui  1 a 2 1 ]
-"145
+"149
+} 0
+"464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"499
+[v printf@c c `c  1 a 1 8 ]
+"466
+[v printf@ap ap `[1]*.1v  1 a 1 7 ]
+"464
+[v printf@f f `*.25DCCuc  1 p 2 2 ]
+"1541
+} 0
+"111 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"113
+[v putch@txData txData `uc  1 a 1 1 ]
+"114
+} 0
+"97
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"104
 } 0
 "82 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -240,13 +270,13 @@
 {
 "74
 } 0
-"94 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+"98 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _ADC_conversion_results ADC_conversion_results `(ui  1 e 2 0 ]
 {
-"109
+"113
 } 0
 "56
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
-"87
+"91
 } 0
