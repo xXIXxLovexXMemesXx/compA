@@ -9,19 +9,23 @@
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"56 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
-[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"98
-[v _ADC_conversion_results ADC_conversion_results `(ui  1 e 2 0 ]
-"127
-[v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
-"139
+"12 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+[v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
+"36
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"163
+"47
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"83
+[v _ADC_conversion_results ADC_conversion_results `(ui  1 e 2 0 ]
+"99
 [v _main main `(v  1 e 1 0 ]
 "55 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -43,7 +47,7 @@
 [v _PORTB PORTB `VEuc  1 e 1 @13 ]
 "595
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
-[s S141 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S140 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -53,8 +57,8 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "612
-[u S150 . 1 `S141 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES150  1 e 1 @17 ]
+[u S149 . 1 `S140 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES149  1 e 1 @17 ]
 "657
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
 "719
@@ -65,10 +69,6 @@
 [v _LATB LATB `VEuc  1 e 1 @23 ]
 "905
 [v _LATC LATC `VEuc  1 e 1 @24 ]
-"1359
-[v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
-"1424
-[v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
 "1542
 [v _ADRESL ADRESL `VEuc  1 e 1 @140 ]
 "1562
@@ -119,14 +119,6 @@
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
 "4094
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-"9113
-[v _T2PR T2PR `VEuc  1 e 1 @653 ]
-"9151
-[v _T2CON T2CON `VEuc  1 e 1 @654 ]
-"9297
-[v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
-"9430
-[v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 [s S45 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
@@ -137,10 +129,6 @@
 "21223
 [u S52 . 1 `S45 1 . 1 0 ]
 [v _PIR3bits PIR3bits `VES52  1 e 1 @1807 ]
-"21258
-[v _PIR4 PIR4 `VEuc  1 e 1 @1808 ]
-"21525
-[v _PIE0 PIE0 `VEuc  1 e 1 @1814 ]
 "23284
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "23424
@@ -168,7 +156,7 @@
 [v _RC6PPS RC6PPS `VEuc  1 e 1 @7974 ]
 "32779
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
-[s S162 . 1 `uc 1 ANSA0 1 0 :1:0 
+[s S161 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 ANSA3 1 0 :1:3 
@@ -178,10 +166,10 @@
 `uc 1 ANSA7 1 0 :1:7 
 ]
 "32796
-[u S171 . 1 `S162 1 . 1 0 ]
+[u S170 . 1 `S161 1 . 1 0 ]
 "32796
 "32796
-[v _ANSELAbits ANSELAbits `VES171  1 e 1 @7992 ]
+[v _ANSELAbits ANSELAbits `VES170  1 e 1 @7992 ]
 "32841
 [v _WPUA WPUA `VEuc  1 e 1 @7993 ]
 "33399
@@ -195,40 +183,48 @@
 "36565
 "36565
 [v _GIE GIE `VEb  1 e 0 @95 ]
-"36567
-[v _GO_nDONE GO_nDONE `VEb  1 e 0 @1176 ]
-"163 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+"354 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+[v _dpowers dpowers `DCC[5]ui  1 s 10 dpowers ]
+"99 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"175
-[v main@count count `ui  1 a 2 9 ]
-"174
-[v main@servo_rotates_up servo_rotates_up `uc  1 a 1 11 ]
-"205
-} 0
-"127
-[v _servoRotate90 servoRotate90 `(v  1 e 1 0 ]
-{
-"129
-[v servoRotate90@i i `ui  1 a 2 1 ]
-"137
-} 0
+"109
+[v main@count count `ui  1 a 2 19 ]
+"108
+[v main@results results `ui  1 a 2 16 ]
+"110
+[v main@servo_direction_clockwise servo_direction_clockwise `uc  1 a 1 18 ]
 "139
+} 0
+"36
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
-"141
+"38
 [v servoRotate180@i i `ui  1 a 2 1 ]
-"149
+"46
+} 0
+"12
+[v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
+{
+"14
+[v servoRotate0@i i `ui  1 a 2 1 ]
+"22
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
 {
+"528
+[v printf@val val `ui  1 a 2 13 ]
 "499
-[v printf@c c `c  1 a 1 8 ]
+[v printf@c c `c  1 a 1 15 ]
+"506
+[v printf@prec prec `c  1 a 1 12 ]
+"508
+[v printf@flag flag `uc  1 a 1 11 ]
 "466
-[v printf@ap ap `[1]*.1v  1 a 1 7 ]
+[v printf@ap ap `[1]*.4v  1 a 1 10 ]
 "464
-[v printf@f f `*.25DCCuc  1 p 2 2 ]
+[v printf@f f `*.25DCCuc  1 p 2 0 ]
 "1541
 } 0
 "111 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/eusart.c
@@ -247,6 +243,28 @@
 [v EUSART_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART_Write@txData txData `uc  1 a 1 0 ]
 "104
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"6
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"26
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"6
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"31
 } 0
 "82 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -270,13 +288,13 @@
 {
 "74
 } 0
-"98 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
+"83 C:\Users\Andrew_MacGregor\Documents\micro2\Lab1\Lab1_MPLABXproject\PIC16F18857_Starter_proj .X\main.c
 [v _ADC_conversion_results ADC_conversion_results `(ui  1 e 2 0 ]
 {
-"113
+"92
 } 0
-"56
+"47
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
-"91
+"81
 } 0

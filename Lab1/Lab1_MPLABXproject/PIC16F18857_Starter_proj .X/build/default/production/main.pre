@@ -17423,79 +17423,6 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 
 # 12 "main.c"
-void timer0Init(void)
-{
-
-T0CON0 = 0b10011111;
-
-T0CON1 = 0b01000000;
-
-PIE0 = 0xFF;
-}
-
-# 23
-void Timer2_Init(void)
-{
-
-
-T2CLKCON = 0x06;
-
-T2HLT = 0x08;
-
-T2PR = 0xFF;
-
-T2CON = 0b01100000 | 0b00001111;
-
-PIR4 &= 0x01;
-
-T2CON |= 0x80;
-}
-
-void PWM_Init(void) {
-
-}
-
-# 56
-void ADC_Init(void) {
-
-# 74
-TRISA = 0b11111110;
-TRISAbits.TRISA1 = 1;
-ANSELAbits.ANSA1 = 1;
-ADCON1 = 0;
-ADCON2 = 0;
-ADCON3 = 0;
-ADACT = 0;
-ADSTAT = 0;
-ADCAP = 0;
-ADPRE = 0;
-ADCON0 = 0b10000101;
-ADREF = 0;
-ADPCH = 0b00000001;
-
-TX1STA = 0b00100000;
-RC1STA = 0b10000000;
-
-}
-
-# 98
-unsigned int ADC_conversion_results() {
-GO_nDONE = 1;
-
-if(ADCON0 & GO_nDONE)
-return;
-
-
-ADPCH = 1;
-
-ADCON0 |= GO_nDONE;
-
-
-
-return ((ADRESH << 8) + ADRESL);
-
-}
-
 void servoRotate0()
 {
 unsigned int i;
@@ -17531,58 +17458,79 @@ PORTB = 0;
 _delay((unsigned long)((19.5)*(1000000/4000.0)));
 }
 }
+void ADC_Init(void) {
 
-# 154
-void testMain(void)
-{
+# 64
+TRISA = 0b11111110;
+TRISAbits.TRISA1 = 1;
+ANSELAbits.ANSA1 = 1;
+ADCON1 = 0;
+ADCON2 = 0;
+ADCON3 = 0;
+ADACT = 0;
+ADSTAT = 0;
+ADCAP = 0;
+ADPRE = 0;
+ADCON0 = 0b10000101;
+ADREF = 0;
+ADPCH = 0b00000001;
 
-while(1)
-{
-printf("Hello world");
+TX1STA = 0b00100000;
+RC1STA = 0b10000000;
+
 }
+
+unsigned int ADC_conversion_results() {
+if(ADCON0 & 1)
+return;
+ADPCH = 1;
+
+ADCON0 |= 1;
+
+while(ADCON0 & 1);
+return ((ADRESH << 8) + ADRESL);
 }
 
+# 99
 void main(void)
 {
 
 SYSTEM_Initialize();
-
-
-printf("hello world");
 ADC_Init();
-TRISA = 0b11111110;
-TRISB = 0;
+TRISA &= !0x01;
+TRISB = 00;
+TRISA = 0;
 
-bool servo_rotates_up = 1;
+unsigned results;
 unsigned count = 0;
-
+bool servo_direction_clockwise = 1;
 while (1)
 {
+
+results = ADC_conversion_results();
+
+printf("ADC says: %d compared to %d\n\r", results, 0x01FF);
+
+if(results > 0x01FF)
+PORTA |= 0x01;
+else
+PORTA &= !0x01;
+
 count++;
-PORTA = 0x00;
 
-
-if(ADC_conversion_results() > 0x0)
+if( count > count && servo_direction_clockwise)
 {
-PORTA = 0x01;
-}
-
-
-
-if(servo_rotates_up && (count >= 10000) )
-{
+count = 0;
 servoRotate180();
-servo_rotates_up = 0;
-
-count = 0;
 }
-else if(!servo_rotates_up && (count >= 10000) )
+else if( count > count && !servo_direction_clockwise)
 {
-servoRotate90();
-servo_rotates_up = 1;
-
 count = 0;
+servoRotate0();
 }
+
 }
+
+
 }
 
