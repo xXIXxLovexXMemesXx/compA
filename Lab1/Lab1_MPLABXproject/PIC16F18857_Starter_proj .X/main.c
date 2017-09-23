@@ -1,10 +1,10 @@
 
 #include "mcc_generated_files/mcc.h" //default library 
 
-#define ADC_CHAN 1
-#define ADC_THRESH 0x7F
 
-#define COUNT_THRESH 100
+#define ADC_THRESH 0x3190
+
+#define COUNT_THRESH 10000
 
 // ====================  prototype functions: ====================
 
@@ -71,9 +71,9 @@ void ADC_Init(void)  {
  * 12. Set ADC result alignment, Enable ADC module, Clock Selection Bit, Disable ADC Continuous Operation, Keep ADC inactive
   
   */
-    TRISA = 0xFF;   //set PORTA to input
-    TRISAbits.TRISA2 = 1;   //set pin A2 to input
-    ANSELAbits.ANSA2 = 1;   //set as analog input
+    TRISA = 0b11111110;   //set PORTA to input except for pin0
+    TRISAbits.TRISA1 = 1;   //set pin A1 to input
+    ANSELAbits.ANSA1 = 1;   //set as analog input
     ADCON1 = 0;
     ADCON2 = 0;
     ADCON3 = 0;
@@ -81,9 +81,9 @@ void ADC_Init(void)  {
     ADSTAT = 0;
     ADCAP = 0;
     ADPRE = 0;
-    ADCON0 = 0b00001001; 
+    ADCON0 = 0b10000101; 
     ADREF = 0;
-
+    ADPCH = 0b00000001;
 }   
 
 
@@ -91,7 +91,22 @@ void ADC_Init(void)  {
  * - set your ADC channel , activate the ADC module , and get the ADC result to a value , then deactivate again the ADC module
  * - Set the appropriate Registers in the right sequence
  */
-uint8_t ADC_conversion_results(unsigned ch) {}
+unsigned int ADC_conversion_results() {
+    GO_nDONE = 1; 
+    
+    if(ADCON0 & GO_nDONE)
+        return;
+  //ADCON0 &= 0xC5;              //Clearing channel selection bits
+  //ADCON0 |= ADC_CHAN<<3;        //Setting channel selection bits
+    ADPCH = 1; 
+           
+    ADCON0 |= GO_nDONE;           //Initializes A/D conversion
+    // __delay_ms(2);               //Acquisition time to charge hold capacitor
+    
+    //while(!ADCON0 & GO_nDONE);             //Waiting for conversion to complete
+    return ((ADRESH << 8) + ADRESL);     //Return result
+//<<8)
+}
 
 void servoRotate0() //0 Degree
 {
@@ -149,11 +164,9 @@ void main(void)
 {
     // Initialize PIC device
     SYSTEM_Initialize();
-    testMain();
     // Initialize the required modules 
-    Timer2_Init(); //starts the timer.
     ADC_Init();
-    TRISA = OUTPUT;
+    TRISA = 0b11111110; //make sure pin A0 is output
     TRISB = 0;
     // **** write your code 
     bool servo_rotates_up = true;
@@ -163,24 +176,27 @@ void main(void)
         count++;
 
         //If the photoresistor is above a certain threshold, turn on the LED (or not))
-        if(ADC_conversion_results(ADC_CHAN) > ADC_THRESH)
+        if(ADC_conversion_results() > ADC_THRESH)
+        {
             PORTA = 0x01;
+        }
         else
             PORTA = 0x00;
+        
         
         //if the timer is done, rotate the servo the right direction
         if(servo_rotates_up && (count >= COUNT_THRESH) )
         {
             servoRotate180();
             servo_rotates_up = false;
-            PORTA = 0x01;
+            //PORTA = 0x00;
             count = 0;
         } 
         else if(!servo_rotates_up && (count >= COUNT_THRESH) )
         {
             servoRotate90();
             servo_rotates_up = true;
-            PORTA = 0x00;
+            //PORTA = 0x01;
             count = 0;
         }        
     } 
