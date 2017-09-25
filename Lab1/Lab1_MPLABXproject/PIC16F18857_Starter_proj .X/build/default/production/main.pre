@@ -17471,7 +17471,7 @@ ADACT = 0;
 ADSTAT = 0;
 ADCAP = 0;
 ADPRE = 0;
-ADCON0 = 0b10000101;
+ADCON0 = 0b10000100;
 ADREF = 0;
 ADPCH = 0b00000001;
 
@@ -17481,17 +17481,16 @@ RC1STA = 0b10000000;
 }
 
 unsigned int ADC_conversion_results() {
-if(ADCON0 & 1)
-return;
 ADPCH = 1;
 
 ADCON0 |= 1;
 
 while(ADCON0 & 1);
-return ((ADRESH << 8) + ADRESL);
+unsigned result = (unsigned)((ADRESH << 8) + ADRESL);
+return result;
 }
 
-# 99
+# 98
 void main(void)
 {
 
@@ -17509,24 +17508,26 @@ while (1)
 
 results = ADC_conversion_results();
 
-printf("ADC says: %d compared to %d\n\r", results, 0x01FF);
 
-if(results > 0x01FF)
+
+if(results > 0x0390)
 PORTA |= 0x01;
 else
 PORTA &= !0x01;
 
 count++;
 
-if( count > count && servo_direction_clockwise)
+if( count > 5000 && servo_direction_clockwise)
 {
 count = 0;
 servoRotate180();
+servo_direction_clockwise = 0;
 }
-else if( count > count && !servo_direction_clockwise)
+else if( count > 5000 && !servo_direction_clockwise)
 {
 count = 0;
-servoRotate0();
+servoRotate90();
+servo_direction_clockwise = 1;
 }
 
 }

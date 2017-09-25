@@ -71,7 +71,7 @@ void ADC_Init(void)  {
     ADSTAT = 0;
     ADCAP = 0;
     ADPRE = 0;
-    ADCON0 = 0b10000101; 
+    ADCON0 = 0b10000100; 
     ADREF = 0;
     ADPCH = 0b00000001;
     // transmit status and control register (UART CABLE)
@@ -81,21 +81,20 @@ void ADC_Init(void)  {
 }   
 
 unsigned int ADC_conversion_results() {  
-    if(ADCON0 & 1) //if the conversion is still busy
-        return;
     ADPCH = 1; 
            
     ADCON0 |= 1;           //Initializes A/D conversion
     
     while(ADCON0 & 1);             //Waiting for conversion to complete
-    return ((ADRESH << 8) + ADRESL);    
+    unsigned result = (unsigned)((ADRESH << 8) + ADRESL);
+    return result;    
 }
  
 /*
 Develop your Application logic below
 */
-#define ADC_THRESHOLD 0x01FF
-#define COUNT_THRESHOLD 50000
+#define ADC_THRESHOLD 0x0390
+#define COUNT_THRESHOLD 5000
 void main(void)
 {
     // Initialize PIC device
@@ -113,7 +112,7 @@ void main(void)
         // ****** write your code 
         results = ADC_conversion_results();
         // Debug your application code using the following statement
-        printf("ADC says: %d compared to %d\n\r", results, ADC_THRESHOLD);
+        //printf("ADC says: %d compared to %d\n\r", results, ADC_THRESHOLD);
         
         if(results > ADC_THRESHOLD)
             PORTA |= 0x01; //turn on LEd
@@ -122,15 +121,17 @@ void main(void)
         
         count++;
         
-        if( count > count && servo_direction_clockwise)
+        if( count > COUNT_THRESHOLD && servo_direction_clockwise)
         {
             count = 0;
             servoRotate180();
+            servo_direction_clockwise = false;
         }
-        else if( count > count && !servo_direction_clockwise)
+        else if( count > COUNT_THRESHOLD && !servo_direction_clockwise)
         {
             count = 0;
-            servoRotate0();
+            servoRotate90();
+            servo_direction_clockwise = true;
         }
            
     }

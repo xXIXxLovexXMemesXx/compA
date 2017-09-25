@@ -56,9 +56,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "657 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
 [v _TRISB `Vuc ~T0 @X0 0 e@18 ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"388 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18857.h
+"388
 [v _PORTA `Vuc ~T0 @X0 0 e@12 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -13313,9 +13311,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 73: ADPRE = 0;
 "73
 [e = _ADPRE -> -> 0 `i `uc ]
-[; ;main.c: 74: ADCON0 = 0b10000101;
+[; ;main.c: 74: ADCON0 = 0b10000100;
 "74
-[e = _ADCON0 -> -> 133 `i `uc ]
+[e = _ADCON0 -> -> 132 `i `uc ]
 [; ;main.c: 75: ADREF = 0;
 "75
 [e = _ADREF -> -> 0 `i `uc ]
@@ -13338,143 +13336,140 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 83: unsigned int ADC_conversion_results() {
 [e :U _ADC_conversion_results ]
 [f ]
-[; ;main.c: 84: if(ADCON0 & 1)
+[; ;main.c: 84: ADPCH = 1;
 "84
-[e $ ! != & -> _ADCON0 `i -> 1 `i -> 0 `i 1572  ]
-[; ;main.c: 85: return;
-"85
-[e $UE 1571  ]
-[e :U 1572 ]
-[; ;main.c: 86: ADPCH = 1;
-"86
 [e = _ADPCH -> -> 1 `i `uc ]
-[; ;main.c: 88: ADCON0 |= 1;
-"88
+[; ;main.c: 86: ADCON0 |= 1;
+"86
 [e =| _ADCON0 -> -> 1 `i `uc ]
-[; ;main.c: 90: while(ADCON0 & 1);
-"90
-[e $U 1573  ]
-[e :U 1574 ]
+[; ;main.c: 88: while(ADCON0 & 1);
+"88
+[e $U 1572  ]
 [e :U 1573 ]
-[e $ != & -> _ADCON0 `i -> 1 `i -> 0 `i 1574  ]
-[e :U 1575 ]
-[; ;main.c: 91: return ((ADRESH << 8) + ADRESL);
-"91
-[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e :U 1572 ]
+[e $ != & -> _ADCON0 `i -> 1 `i -> 0 `i 1573  ]
+[e :U 1574 ]
+"89
+[v _result `ui ~T0 @X0 1 a ]
+[; ;main.c: 89: unsigned result = (unsigned)((ADRESH << 8) + ADRESL);
+[e = _result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[; ;main.c: 90: return result;
+"90
+[e ) _result ]
 [e $UE 1571  ]
-[; ;main.c: 92: }
-"92
+[; ;main.c: 91: }
+"91
 [e :UE 1571 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"99
+"98
 [v _main `(v ~T0 @X0 1 ef ]
-"100
+"99
 {
-[; ;main.c: 99: void main(void)
-[; ;main.c: 100: {
+[; ;main.c: 98: void main(void)
+[; ;main.c: 99: {
 [e :U _main ]
 [f ]
-[; ;main.c: 102: SYSTEM_Initialize();
-"102
+[; ;main.c: 101: SYSTEM_Initialize();
+"101
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 103: ADC_Init();
-"103
+[; ;main.c: 102: ADC_Init();
+"102
 [e ( _ADC_Init ..  ]
-[; ;main.c: 104: TRISA &= !0x01;
-"104
+[; ;main.c: 103: TRISA &= !0x01;
+"103
 [e =& _TRISA -> -> ! != -> 1 `i -> 0 `i `i `uc ]
-[; ;main.c: 105: TRISB = 00;
-"105
+[; ;main.c: 104: TRISB = 00;
+"104
 [e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 106: TRISA = 0;
-"106
+[; ;main.c: 105: TRISA = 0;
+"105
 [e = _TRISA -> -> 0 `i `uc ]
-"108
+"107
 [v _results `ui ~T0 @X0 1 a ]
-"109
+"108
 [v _count `ui ~T0 @X0 1 a ]
-[; ;main.c: 108: unsigned results;
-[; ;main.c: 109: unsigned count = 0;
+[; ;main.c: 107: unsigned results;
+[; ;main.c: 108: unsigned count = 0;
 [e = _count -> -> 0 `i `ui ]
-"110
+"109
 [v _servo_direction_clockwise `uc ~T0 @X0 1 a ]
-[; ;main.c: 110: bool servo_direction_clockwise = 1;
+[; ;main.c: 109: bool servo_direction_clockwise = 1;
 [e = _servo_direction_clockwise -> -> 1 `i `uc ]
-[; ;main.c: 111: while (1)
+[; ;main.c: 110: while (1)
+"110
+[e :U 1577 ]
+[; ;main.c: 111: {
 "111
-[e :U 1578 ]
-[; ;main.c: 112: {
-"112
 {
-[; ;main.c: 114: results = ADC_conversion_results();
-"114
+[; ;main.c: 113: results = ADC_conversion_results();
+"113
 [e = _results ( _ADC_conversion_results ..  ]
-[; ;main.c: 116: printf("ADC says: %d compared to %d\n\r", results, 0x01FF);
-"116
-[e ( _printf , , (. :s 1C _results -> 511 `i ]
-[; ;main.c: 118: if(results > 0x01FF)
+[; ;main.c: 117: if(results > 0x0390)
+"117
+[e $ ! > _results -> -> 912 `i `ui 1579  ]
+[; ;main.c: 118: PORTA |= 0x01;
 "118
-[e $ ! > _results -> -> 511 `i `ui 1580  ]
-[; ;main.c: 119: PORTA |= 0x01;
-"119
 [e =| _PORTA -> -> 1 `i `uc ]
-[e $U 1581  ]
+[e $U 1580  ]
+"119
+[e :U 1579 ]
+[; ;main.c: 119: else
+[; ;main.c: 120: PORTA &= !0x01;
 "120
-[e :U 1580 ]
-[; ;main.c: 120: else
-[; ;main.c: 121: PORTA &= !0x01;
-"121
 [e =& _PORTA -> -> ! != -> 1 `i -> 0 `i `i `uc ]
-[e :U 1581 ]
-[; ;main.c: 123: count++;
-"123
+[e :U 1580 ]
+[; ;main.c: 122: count++;
+"122
 [e ++ _count -> -> 1 `i `ui ]
-[; ;main.c: 125: if( count > count && servo_direction_clockwise)
+[; ;main.c: 124: if( count > 5000 && servo_direction_clockwise)
+"124
+[e $ ! && > _count -> -> 5000 `i `ui != -> _servo_direction_clockwise `i -> -> -> 0 `i `uc `i 1581  ]
+[; ;main.c: 125: {
 "125
-[e $ ! && > _count _count != -> _servo_direction_clockwise `i -> -> -> 0 `i `uc `i 1582  ]
-[; ;main.c: 126: {
-"126
 {
-[; ;main.c: 127: count = 0;
-"127
+[; ;main.c: 126: count = 0;
+"126
 [e = _count -> -> 0 `i `ui ]
-[; ;main.c: 128: servoRotate180();
-"128
+[; ;main.c: 127: servoRotate180();
+"127
 [e ( _servoRotate180 ..  ]
+[; ;main.c: 128: servo_direction_clockwise = 0;
+"128
+[e = _servo_direction_clockwise -> -> 0 `i `uc ]
 "129
 }
 [; ;main.c: 129: }
-[e $U 1583  ]
+[e $U 1582  ]
 "130
-[e :U 1582 ]
-[; ;main.c: 130: else if( count > count && !servo_direction_clockwise)
-[e $ ! && > _count _count ! != -> _servo_direction_clockwise `i -> -> -> 0 `i `uc `i 1584  ]
+[e :U 1581 ]
+[; ;main.c: 130: else if( count > 5000 && !servo_direction_clockwise)
+[e $ ! && > _count -> -> 5000 `i `ui ! != -> _servo_direction_clockwise `i -> -> -> 0 `i `uc `i 1583  ]
 [; ;main.c: 131: {
 "131
 {
 [; ;main.c: 132: count = 0;
 "132
 [e = _count -> -> 0 `i `ui ]
-[; ;main.c: 133: servoRotate0();
+[; ;main.c: 133: servoRotate90();
 "133
-[e ( _servoRotate0 ..  ]
+[e ( _servoRotate90 ..  ]
+[; ;main.c: 134: servo_direction_clockwise = 1;
 "134
+[e = _servo_direction_clockwise -> -> 1 `i `uc ]
+"135
 }
-[e :U 1584 ]
-"136
 [e :U 1583 ]
+"137
+[e :U 1582 ]
 }
-[e :U 1577 ]
-"111
-[e $U 1578  ]
-[e :U 1579 ]
-[; ;main.c: 134: }
-[; ;main.c: 136: }
-[; ;main.c: 139: }
-"139
-[e :UE 1576 ]
+[e :U 1576 ]
+"110
+[e $U 1577  ]
+[e :U 1578 ]
+[; ;main.c: 135: }
+[; ;main.c: 137: }
+[; ;main.c: 140: }
+"140
+[e :UE 1575 ]
 }
-[p f _printf 8388736 ]
-[a 1C 65 68 67 32 115 97 121 115 58 32 37 100 32 99 111 109 112 97 114 101 100 32 116 111 32 37 100 10 13 0 ]
-
