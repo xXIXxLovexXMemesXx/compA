@@ -10,7 +10,7 @@
  * Created on 10/17/2017
  */
 
-
+#include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
@@ -164,11 +164,11 @@ int setGPIODirection(char* gpioDirectory, int direction)
     int n = -1;
     if(direction == GPIO_DIRECTION_IN)
     {
-        n = fputs("in", gpioDirection);
+        n = fputs("in", directionFh);
     }
     else if(direction == GPIO_DIRECTION_OUT)
     {
-        n = fputs("out", gpioDirection);
+        n = fputs("out", directionFh);
     }
 
     if(n < 0)
@@ -220,7 +220,7 @@ void writeNibble(unsigned char data,
 
     //start the bus protocol
     //1: pull strobe low
-    gpioValue(strobe, LOW);
+    writeGPIO(strobe, LOW);
 
     //2: output the nibble to the bus
     writeGPIO(d0, data & 0);
@@ -261,7 +261,7 @@ int readNibble(char* d0,
 
     //start the bus protocol
     //1: pull strobe low to signal the start of the read
-    gpioValue(strobe, LOW);
+    writeGPIO(strobe, LOW);
 
     //2: the PIC should output to the bus now. We give it 10ms
     usleep(10);
@@ -275,7 +275,7 @@ int readNibble(char* d0,
 
     if(data > 0xF)
     {
-        printf("Error reading nibble from the bus")
+        printf("Error reading nibble from the bus");
         return ERROR;
     }
     //4: Pull strobe low again to signal that data has been read
@@ -380,3 +380,23 @@ int main(void)
         writeGPIO(fileHandleGPIO_S, HIGH);
     }
 }
+
+
+//stubs for the command functions
+void reset()
+{}
+
+void ping()
+{}
+
+void adc_value()
+{}
+
+void servo_30()
+{}
+
+void servo_90()
+{}
+
+void servo_120()
+{}
