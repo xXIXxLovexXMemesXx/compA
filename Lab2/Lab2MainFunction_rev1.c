@@ -29,6 +29,8 @@
 #define GPIO_DIRECTION_OUT      (0)//Go LOW (acoording to handout timing diagram))
 #define HIGH                    (1)
 #define LOW                     (0)
+
+#define SUCCESS                 (0)
 #define ERROR                   (-1)
 
 /*User Commands*/
@@ -131,22 +133,51 @@ char* openGPIO(int gpio_handle, int direction )
 //returns ERROR (negative) on failure
 int writeGPIO(char* gpioDirectory, int value)
 {
-  char gpioValue[BUFFER_SIZE];
-  strcpy(gpioValue, gpioDirectory);
-  strcat(gpioValue, "value");
-  FILE* valueFh = fopen(gpioValue, "w");
+    char gpioValue[BUFFER_SIZE];
+    strcpy(gpioValue, gpioDirectory);
+    strcat(gpioValue, "value");
+    FILE* valueFh = fopen(gpioValue, "w");
 
-  char numBuffer[5];
-  snprintf(numBuffer, 5, "%d", value);
+    char numBuffer[5];
+    snprintf(numBuffer, 5, "%d", value);
 
-  int n = fputs(numBuffer, valueFh);
+    int n = fputs(numBuffer, valueFh);
+    if(n < 0)
+    {
+      printf("Error writin to gpio value file in %s", gpioDirectory);
+      return ERROR;
+    }
+
+    return value;
+}
+
+//Sets the GPIO pin specified to a new direction
+//returns the direction set on success
+//returns ERROR(negative) on failure
+int setGPIODirection(char* gpioDirectory, int direction)
+{
+  char gpioDirection[BUFFER_SIZE];
+  strcpy(gpioDirection, gpioDirectory);
+  strcat(gpioDirection, "direction");
+  FILE* directionFh = fopen(gpioDirection, "w");
+
+  int n = -1;
+  if(direction == GPIO_DIRECTION_IN)
+  {
+    n = fputs("in", gpioDirection);
+  }
+  else if(direction == GPIO_DIRECTION_OUT)
+  {
+    n = fputs("out", gpioDirection);
+  }
+
   if(n < 0)
   {
     printf("Error writin to gpio value file in %s", gpioDirectory);
     return ERROR;
   }
 
-  return value;
+  return direction;
 }
 
 //read value (HIGH or LOW) from port specified
@@ -171,7 +202,91 @@ int readGPIO(char* gpioDirectory)
   return atoi(numBuffer);
 }
 
-//tests the GPIO write functions and exits
+//Sends a nibble(4 bytes) along the bus following the Bus Protocol.
+//does not wait for an ACK.
+void writeNibble(unsigned char data,
+                char* d0,
+                char* d1,
+                char* d2,
+                char* d3,
+                char* strobe)
+{
+  //set all the ports to output
+  setGPIODirection(d0, GPIO_DIRECTION_OUT);
+  setGPIODirection(d1, GPIO_DIRECTION_OUT);
+  setGPIODirection(d2, GPIO_DIRECTION_OUT);
+  setGPIODirection(d3, GPIO_DIRECTION_OUT);
+  setGPIODirection(strobe, GPIO_DIRECTION_OUT);
+
+  //start the bus protocol
+  //1: pull strobe low
+  gpioValue(strobe, LOW);
+
+  //2: output the nibble to the bus
+  writeGPIO(d0, data & 0);
+  writeGPIO(d1, (data & 1) >> 1);
+  writeGPIO(d2, (data & 2) >> 2);
+  writeGPIO(d3, (data & 4) >> 3);
+
+  //3: raise strobe and wait at least 10ms
+  writeGPIO(strobe, HIGH);
+  usleep(10);
+
+  //4: Pull strobe low again
+  writeGPIO(strobe, LOW);
+
+  //5: clear the bus
+  writeGPIO(d0, LOW);
+  writeGPIO(d1, LOW);
+  writeGPIO(d2, LOW);
+  writeGPIO(d3, LOW);
+}
+
+//Reads a 4 bit nibble from the bus following the protocol
+//returns the nibble in the lower 4 bits of the return value
+//returns a negative on error
+int readNibble(char* d0,
+                        char* d1,
+                        char* d2,
+                        char* d3,
+                        char* strobe)
+{
+  unsigned char data = 0x00;
+  //set all the data ports to input, but the strobe to output
+  setGPIODirection(d0, GPIO_DIRECTION_IN);
+  setGPIODirection(d1, GPIO_DIRECTION_IN);
+  setGPIODirection(d2, GPIO_DIRECTION_IN);
+  setGPIODirection(d3, GPIO_DIRECTION_IN);
+  setGPIODirection(strobe, GPIO_DIRECTION_OUT);
+
+  //start the bus protocol
+  //1: pull strobe low to signal the start of the read
+  gpioValue(strobe, LOW);
+
+  //2: the PIC should output to the bus now. We give it 10ms
+  usleep(10);
+
+  //3: raise strobe and start reading the value from the data bus
+  writeGPIO(strobe, HIGH);
+  data += readGPIO(d0);
+  data += readGPIO(d1) << 1;
+  data += readGPIO(d2) << 2;
+  data += readGPIO(d3) << 3;
+
+  if(data > 0xF)
+  {
+    printf("Error reading nibble from the bus")
+    return ERROR;
+  }
+  //4: Pull strobe low again to signal that data has been read
+  writeGPIO(strobe, LOW);
+
+  //5: the PIC will clear the bus
+
+  return (int)data;
+}
+
+// tests the GPIO write and exits
 void testGPIO(char * fh)
 {
   //test read and write.
@@ -210,7 +325,6 @@ int main(void)
     
     while(1)
     {
-
            
     writeGPIO(fileHandleGPIO_S, HIGH); 
     /*For line 106, I'm not sure what the best way to handle 
@@ -227,14 +341,14 @@ int main(void)
         printf("Select a number for desired action: \n\n");
         printf("1. Reset\n");
         printf("2. Ping\n");
-        printf("3. Get ADC value")
+        printf("3. Get ADC value");
         printf("4. Turn Servo 30 degrees\n");
         printf("5. Turn Servo 90 degrees\n");
         printf("6. Turn Servo 120 degrees\n");
         printf("7. Exit\n");
         
         scanf("%s", input);
-        
+                
         switch (input)
         {
             case '1' :
