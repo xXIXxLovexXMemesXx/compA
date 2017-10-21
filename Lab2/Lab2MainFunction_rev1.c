@@ -53,79 +53,79 @@
 //returns null ptr on error
 char* openGPIO(int gpio_handle, int direction )
 {
-  int n;
-  //   1. export GPIO
-  FILE* exportFh = fopen(EXPORT_FILE, "w");
-  if(exportFh== NULL)
-  {
-    printf("Couldn't not open export file\n");
-    return NULL;
-  }
-  char numBuffer[5];
-  snprintf(numBuffer, 5, "%d", gpio_handle);
-  n = fputs(numBuffer, exportFh);
-  if(n < 0)
-  {
-    printf("error writing to export file\n");
-    return NULL;
-  }
-  fclose(exportFh);
+    int n;
+    //   1. export GPIO
+    FILE* exportFh = fopen(EXPORT_FILE, "w");
+    if(exportFh== NULL)
+    {
+        printf("Couldn't not open export file\n");
+        return NULL;
+    }
+    char numBuffer[5];
+    snprintf(numBuffer, 5, "%d", gpio_handle);
+    n = fputs(numBuffer, exportFh);
+    if(n < 0)
+    {
+        printf("error writing to export file\n");
+        return NULL;
+    }
+    fclose(exportFh);
 
-  //form the file name of the newly created gpio directory
-  char *gpioDirectory = malloc(BUFFER_SIZE);
+    //form the file name of the newly created gpio directory
+    char *gpioDirectory = malloc(BUFFER_SIZE);
 
-  n = snprintf(gpioDirectory, BUFFER_SIZE, "/sys/class/gpio/gpio%d/", gpio_handle);
-  if(n >= BUFFER_SIZE)
-  {
-    printf("Buffer overflow when creating directory name\n");
-    free(gpioDirectory);
-    return NULL;
-  }
+    n = snprintf(gpioDirectory, BUFFER_SIZE, "/sys/class/gpio/gpio%d/", gpio_handle);
+    if(n >= BUFFER_SIZE)
+    {
+        printf("Buffer overflow when creating directory name\n");
+        free(gpioDirectory);
+        return NULL;
+    }
 
-  //    2.set the direction
-  char gpioDirection[BUFFER_SIZE];
-  strcpy(gpioDirection, gpioDirectory);
-  strcat(gpioDirection, "direction");
-  FILE* directionFh = fopen(gpioDirection, "w");
+    //    2.set the direction
+    char gpioDirection[BUFFER_SIZE];
+    strcpy(gpioDirection, gpioDirectory);
+    strcat(gpioDirection, "direction");
+    FILE* directionFh = fopen(gpioDirection, "w");
 
-  if(directionFh == NULL)
-  {
-    printf("gpio direction file is null %s \n", gpioDirection);
-    free(gpioDirectory);
-    return NULL;
-  }
+    if(directionFh == NULL)
+    {
+        printf("gpio direction file is null %s \n", gpioDirection);
+        free(gpioDirectory);
+        return NULL;
+    }
 
-  if(direction == GPIO_DIRECTION_OUT)
-  {
-    n = fputs("out", directionFh);
-  }
-  else if(direction == GPIO_DIRECTION_IN)
-  {
-    n = fputs("in", directionFh);
-  }
-  if(n < 0)
-  {
-    printf("Error writing to gpio direction file\n");
-    free(gpioDirectory);
-    return NULL;
-  }
-  fclose(directionFh);
+    if(direction == GPIO_DIRECTION_OUT)
+    {
+        n = fputs("out", directionFh);
+    }
+    else if(direction == GPIO_DIRECTION_IN)
+    {
+        n = fputs("in", directionFh);
+    }
+    if(n < 0)
+    {
+        printf("Error writing to gpio direction file\n");
+        free(gpioDirectory);
+        return NULL;
+    }
+    fclose(directionFh);
 
-  //    3.set the votage
-  char gpioValue[BUFFER_SIZE];
-  strcpy(gpioValue, gpioDirectory);
-  strcat(gpioValue, "value");
-  FILE* valueFh = fopen(gpioValue, "w");
-  n = fputs("1", valueFh);
-  if(n < 0)
-  {
-    printf("Error writing to gpio value file\n");
-    free(gpioDirectory);
-    return NULL;
-  }
+    //    3.set the votage
+    char gpioValue[BUFFER_SIZE];
+    strcpy(gpioValue, gpioDirectory);
+    strcat(gpioValue, "value");
+    FILE* valueFh = fopen(gpioValue, "w");
+    n = fputs("1", valueFh);
+    if(n < 0)
+    {
+        printf("Error writing to gpio value file\n");
+        free(gpioDirectory);
+        return NULL;
+    }
 
-  //return the new gpio directory
-  return gpioDirectory;
+    //return the new gpio directory
+    return gpioDirectory;
 }
 
 //write value (HIGH or LOW) to port specified
@@ -144,8 +144,8 @@ int writeGPIO(char* gpioDirectory, int value)
     int n = fputs(numBuffer, valueFh);
     if(n < 0)
     {
-      printf("Error writin to gpio value file in %s", gpioDirectory);
-      return ERROR;
+        printf("Error writin to gpio value file in %s", gpioDirectory);
+        return ERROR;
     }
 
     return value;
@@ -156,28 +156,28 @@ int writeGPIO(char* gpioDirectory, int value)
 //returns ERROR(negative) on failure
 int setGPIODirection(char* gpioDirectory, int direction)
 {
-  char gpioDirection[BUFFER_SIZE];
-  strcpy(gpioDirection, gpioDirectory);
-  strcat(gpioDirection, "direction");
-  FILE* directionFh = fopen(gpioDirection, "w");
+    char gpioDirection[BUFFER_SIZE];
+    strcpy(gpioDirection, gpioDirectory);
+    strcat(gpioDirection, "direction");
+    FILE* directionFh = fopen(gpioDirection, "w");
 
-  int n = -1;
-  if(direction == GPIO_DIRECTION_IN)
-  {
-    n = fputs("in", gpioDirection);
-  }
-  else if(direction == GPIO_DIRECTION_OUT)
-  {
-    n = fputs("out", gpioDirection);
-  }
+    int n = -1;
+    if(direction == GPIO_DIRECTION_IN)
+    {
+        n = fputs("in", gpioDirection);
+    }
+    else if(direction == GPIO_DIRECTION_OUT)
+    {
+        n = fputs("out", gpioDirection);
+    }
 
-  if(n < 0)
-  {
-    printf("Error writin to gpio value file in %s", gpioDirectory);
-    return ERROR;
-  }
+    if(n < 0)
+    {
+        printf("Error writin to gpio value file in %s", gpioDirectory);
+        return ERROR;
+    }
 
-  return direction;
+    return direction;
 }
 
 //read value (HIGH or LOW) from port specified
@@ -186,115 +186,115 @@ int setGPIODirection(char* gpioDirectory, int direction)
 //returns ERROR (negative) on failure
 int readGPIO(char* gpioDirectory)
 {
-  char gpioValue[BUFFER_SIZE];
-  strcpy(gpioValue, gpioDirectory);
-  strcat(gpioValue, "value");
-  FILE* valueFh = fopen(gpioValue, "r");
+    char gpioValue[BUFFER_SIZE];
+    strcpy(gpioValue, gpioDirectory);
+    strcat(gpioValue, "value");
+    FILE* valueFh = fopen(gpioValue, "r");
 
-  char numBuffer[5];
-  char* test = fgets(numBuffer, 5, valueFh);
-  if(test == NULL)
-  {
-    printf("Error reading from gpio value %s", gpioDirectory);
-    return ERROR;
-  }
+    char numBuffer[5];
+    char* test = fgets(numBuffer, 5, valueFh);
+    if(test == NULL)
+    {
+        printf("Error reading from gpio value %s", gpioDirectory);
+        return ERROR;
+    }
 
-  return atoi(numBuffer);
+    return atoi(numBuffer);
 }
 
 //Sends a nibble(4 bytes) along the bus following the Bus Protocol.
 //does not wait for an ACK.
 void writeNibble(unsigned char data,
-                char* d0,
-                char* d1,
-                char* d2,
-                char* d3,
-                char* strobe)
+    char* d0,
+    char* d1,
+    char* d2,
+    char* d3,
+    char* strobe)
 {
-  //set all the ports to output
-  setGPIODirection(d0, GPIO_DIRECTION_OUT);
-  setGPIODirection(d1, GPIO_DIRECTION_OUT);
-  setGPIODirection(d2, GPIO_DIRECTION_OUT);
-  setGPIODirection(d3, GPIO_DIRECTION_OUT);
-  setGPIODirection(strobe, GPIO_DIRECTION_OUT);
+    //set all the ports to output
+    setGPIODirection(d0, GPIO_DIRECTION_OUT);
+    setGPIODirection(d1, GPIO_DIRECTION_OUT);
+    setGPIODirection(d2, GPIO_DIRECTION_OUT);
+    setGPIODirection(d3, GPIO_DIRECTION_OUT);
+    setGPIODirection(strobe, GPIO_DIRECTION_OUT);
 
-  //start the bus protocol
-  //1: pull strobe low
-  gpioValue(strobe, LOW);
+    //start the bus protocol
+    //1: pull strobe low
+    gpioValue(strobe, LOW);
 
-  //2: output the nibble to the bus
-  writeGPIO(d0, data & 0);
-  writeGPIO(d1, (data & 1) >> 1);
-  writeGPIO(d2, (data & 2) >> 2);
-  writeGPIO(d3, (data & 4) >> 3);
+    //2: output the nibble to the bus
+    writeGPIO(d0, data & 0);
+    writeGPIO(d1, (data & 1) >> 1);
+    writeGPIO(d2, (data & 2) >> 2);
+    writeGPIO(d3, (data & 4) >> 3);
 
-  //3: raise strobe and wait at least 10ms
-  writeGPIO(strobe, HIGH);
-  usleep(10);
+    //3: raise strobe and wait at least 10ms
+    writeGPIO(strobe, HIGH);
+    usleep(10);
 
-  //4: Pull strobe low again
-  writeGPIO(strobe, LOW);
+    //4: Pull strobe low again
+    writeGPIO(strobe, LOW);
 
-  //5: clear the bus
-  writeGPIO(d0, LOW);
-  writeGPIO(d1, LOW);
-  writeGPIO(d2, LOW);
-  writeGPIO(d3, LOW);
+    //5: clear the bus
+    writeGPIO(d0, LOW);
+    writeGPIO(d1, LOW);
+    writeGPIO(d2, LOW);
+    writeGPIO(d3, LOW);
 }
 
 //Reads a 4 bit nibble from the bus following the protocol
 //returns the nibble in the lower 4 bits of the return value
 //returns a negative on error
 int readNibble(char* d0,
-                        char* d1,
-                        char* d2,
-                        char* d3,
-                        char* strobe)
+    char* d1,
+    char* d2,
+    char* d3,
+    char* strobe)
 {
-  unsigned char data = 0x00;
-  //set all the data ports to input, but the strobe to output
-  setGPIODirection(d0, GPIO_DIRECTION_IN);
-  setGPIODirection(d1, GPIO_DIRECTION_IN);
-  setGPIODirection(d2, GPIO_DIRECTION_IN);
-  setGPIODirection(d3, GPIO_DIRECTION_IN);
-  setGPIODirection(strobe, GPIO_DIRECTION_OUT);
+    unsigned char data = 0x00;
+    //set all the data ports to input, but the strobe to output
+    setGPIODirection(d0, GPIO_DIRECTION_IN);
+    setGPIODirection(d1, GPIO_DIRECTION_IN);
+    setGPIODirection(d2, GPIO_DIRECTION_IN);
+    setGPIODirection(d3, GPIO_DIRECTION_IN);
+    setGPIODirection(strobe, GPIO_DIRECTION_OUT);
 
-  //start the bus protocol
-  //1: pull strobe low to signal the start of the read
-  gpioValue(strobe, LOW);
+    //start the bus protocol
+    //1: pull strobe low to signal the start of the read
+    gpioValue(strobe, LOW);
 
-  //2: the PIC should output to the bus now. We give it 10ms
-  usleep(10);
+    //2: the PIC should output to the bus now. We give it 10ms
+    usleep(10);
 
-  //3: raise strobe and start reading the value from the data bus
-  writeGPIO(strobe, HIGH);
-  data += readGPIO(d0);
-  data += readGPIO(d1) << 1;
-  data += readGPIO(d2) << 2;
-  data += readGPIO(d3) << 3;
+    //3: raise strobe and start reading the value from the data bus
+    writeGPIO(strobe, HIGH);
+    data += readGPIO(d0);
+    data += readGPIO(d1) << 1;
+    data += readGPIO(d2) << 2;
+    data += readGPIO(d3) << 3;
 
-  if(data > 0xF)
-  {
-    printf("Error reading nibble from the bus")
-    return ERROR;
-  }
-  //4: Pull strobe low again to signal that data has been read
-  writeGPIO(strobe, LOW);
+    if(data > 0xF)
+    {
+        printf("Error reading nibble from the bus")
+        return ERROR;
+    }
+    //4: Pull strobe low again to signal that data has been read
+    writeGPIO(strobe, LOW);
 
-  //5: the PIC will clear the bus
+    //5: the PIC will clear the bus
 
-  return (int)data;
+    return (int)data;
 }
 
 // tests the GPIO write and exits
 void testGPIO(char * fh)
 {
-  //test read and write.
-  int w = writeGPIO(fh, HIGH);
-  assert(w == HIGH && "Write high");
-  w = writeGPIO(fh, LOW);
-  assert(w == LOW && "Write Low");
-  exit(0);
+    //test read and write.
+    int w = writeGPIO(fh, HIGH);
+    assert(w == HIGH && "Write high");
+    w = writeGPIO(fh, LOW);
+    assert(w == LOW && "Write Low");
+    exit(0);
 }
 
 //Functions definitions - for commands
@@ -325,7 +325,7 @@ int main(void)
     
     while(1)
     {
-           
+
     writeGPIO(fileHandleGPIO_S, HIGH); 
     /*For line 106, I'm not sure what the best way to handle 
     the write to of the GPIO is since a #define directive was 
@@ -335,48 +335,48 @@ int main(void)
     
     2.write data... (where the menu selection is used? and a bunch of 
     other stuff?))*/
-            
-    int input;
-    do{
-        printf("Select a number for desired action: \n\n");
-        printf("1. Reset\n");
-        printf("2. Ping\n");
-        printf("3. Get ADC value");
-        printf("4. Turn Servo 30 degrees\n");
-        printf("5. Turn Servo 90 degrees\n");
-        printf("6. Turn Servo 120 degrees\n");
-        printf("7. Exit\n");
-        
-        scanf("%s", input);
-                
-        switch (input)
-        {
-            case '1' :
+
+        int input;
+        do{
+            printf("Select a number for desired action: \n\n");
+            printf("1. Reset\n");
+            printf("2. Ping\n");
+            printf("3. Get ADC value");
+            printf("4. Turn Servo 30 degrees\n");
+            printf("5. Turn Servo 90 degrees\n");
+            printf("6. Turn Servo 120 degrees\n");
+            printf("7. Exit\n");
+
+            scanf("%s", input);
+
+            switch (input)
+            {
+                case '1' :
                 reset();
                 break;
-            case '2'  :
+                case '2'  :
                 ping();
                 break;
-            case '3'  :
+                case '3'  :
                 adc_value();
                 break;
-            case '4'  :
+                case '4'  :
                 servo_30();
                 break;
-            case '5'  :
+                case '5'  :
                 servo_90();
                 break;
-            case '6'  :
+                case '6'  :
                 servo_120();
-            default :
+                default :
                 printf("Please enter a valid number (1 - 6)\n");
                 break;
-        }
+            }
         }while(1); /// probably incorrect
 
            //3.Strobe low because Galileo is done writing to the bus
-           writeGPIO(fileHandleGPIO_S, LOW);
+        writeGPIO(fileHandleGPIO_S, LOW);
            //4.Strobe high
-           writeGPIO(fileHandleGPIO_S, HIGH);
+        writeGPIO(fileHandleGPIO_S, HIGH);
     }
 }
