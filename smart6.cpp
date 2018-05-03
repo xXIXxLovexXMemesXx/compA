@@ -9,7 +9,6 @@ int main ()
 {
   int ii;
   Memory m;
-
   cout << "Smart matrix multiplication (N = " << N << ")\n";
 
   // iterate over cache organization: direct, twoway, fully
@@ -17,7 +16,7 @@ int main ()
     cache_org = ii; // set cache organization 
     printCacheOrg (cache_org);
     resetClock(); // reset clock and numMisses
-    resetCache();
+    m.resetCache();
 
     for ( int i = 0; i < N; i++ )
       for ( int k = 0; k < N; k++ )
@@ -40,6 +39,6 @@ int main ()
     m.showCacheAddress();
     printf ("======================================\n");
   }
-
+  system("pause");
   return 0;
 }

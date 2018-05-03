@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int N = 6, A = 0, B = A+N*N, C = B+N*N;
+const int N = 16, A = 0, B = A+N*N, C = B+N*N;
 
 int main ()
 {
