@@ -18,6 +18,7 @@ int main ()
     cache_org = ii; // set cache organization 
     printCacheOrg (cache_org);
     resetClock(); // reset clock and numMisses
+    resetCache();	  
 
     for ( int i = 0; i < N; i++ )
       for ( int j = 0; j < N; j++ )
