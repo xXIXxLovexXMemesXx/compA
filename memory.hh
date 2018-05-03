@@ -3,18 +3,18 @@
 #include <stdio.h>
 
 /*
-  This file contains basic cache and block structures.
-  It also defines some global constants
-  for use in the classes and main program.
+This file contains basic cache and block structures.
+It also defines some global constants
+for use in the classes and main program.
 */
 
 extern unsigned int clockX;
 extern unsigned int numMisses;
 extern int cache_org;
 
-enum cache_org {DIRECT = 0, FULLY, TWOWAY}; // FULLY=1, TWOWAY=2
+enum cache_org { DIRECT = 0, FULLY, TWOWAY }; // FULLY=1, TWOWAY=2
 
-void printCacheOrg (int org); // print cache org
+void printCacheOrg(int org); // print cache org
 void resetClock(void); // set timer to zero
 
 //=================
@@ -31,18 +31,18 @@ void resetClock(void); // set timer to zero
 //==  Block
 //=================
 class Block{
- public:
-  Block()//constructor
-  {
-    valid = 0;
-    last_used = 0;	  
-  }
-  ~Block(){ }//destructor
-  
-  int tag;
-  int data[WORDS_PER_BLOCK];
-  int last_used;
-  int valid;
+public:
+	Block()//constructor
+	{
+		valid = 0;
+		last_used = 0;
+	}
+	~Block(){ }//destructor
+
+	int tag;
+	int data[WORDS_PER_BLOCK];
+	int last_used;
+	int valid;
 };//class block
 //-------------------------------------
 
@@ -51,12 +51,12 @@ class Block{
 //==  MainMem
 //=================
 class MainMem{
- public:
-  Block blocks[BLOCKS_IN_MEMORY];
-  MainMem(){ }  //constructor
-  ~MainMem(){ }  //destructor
-  //int getData(int);
-  //void putData(int, int);
+public:
+	Block blocks[BLOCKS_IN_MEMORY];
+	MainMem(){ }  //constructor
+	~MainMem(){ }  //destructor
+	//int getData(int);
+	//void putData(int, int);
 };//class MainMem
 //-------------------------------------
 
@@ -65,15 +65,15 @@ class MainMem{
 //==  Cache
 //=================
 class Cache {
- public:
-  Block cblocks[BLOCKS_IN_CACHE];
-  MainMem MainMemory;
+public:
+	Block cblocks[BLOCKS_IN_CACHE];
+	MainMem MainMemory;
 
-  Cache(){ }  //constructor
-  ~Cache(){ }  //destructor
-  //=====================================
-  int getData(int address);
-  void putData( int address, int value );
+	Cache(){ }  //constructor
+	~Cache(){ }  //destructor
+	//=====================================
+	int getData(int address);
+	void putData(int address, int value);
 	int getTwoWay(int address);
 	void putTwoWay(int address, int value);
 	int getFully(int address);
@@ -87,33 +87,38 @@ class Cache {
 class Memory
 {
 private:
-  Cache myCache;
-  
+	Cache myCache;
+
 public:
-  
-  Memory (){}                                   // constructor
-  
-  int  getData ( int address )                // load
-  {
-    return myCache.getData(address);
-  }
-  void putData ( int address, int value )     // store
-  {
-    myCache.putData(address, value);
-  }
-  
-  void showCacheAddress () // show the cache contents
-  {
-    for(int j=0; j<BLOCKS_IN_CACHE; j++) {
-      printf("Address in block %d: ", j);
-      for(int k=0; k<WORDS_PER_BLOCK; k++) {
-	;// print out addresses of each block
-		//int cacheAddr = ((cblocks[blockIndx].tag << 5) + (blockIndx << 2) + wordIndx);
-		printf("%d", ((myCache.cblocks[j].tag << 5) | (j << 2) | k));
-      }
-      printf("\n");
-    }
-  }
+
+	Memory(){}                                   // constructor
+
+	int  getData(int address)                // load
+	{
+		return myCache.getData(address);
+	}
+	void putData(int address, int value)     // store
+	{
+		myCache.putData(address, value);
+	}
+
+	void showCacheAddress() // show the cache contents
+	{
+		for (int j = 0; j<BLOCKS_IN_CACHE; j++) {
+			printf("Address in block %d: ", j);
+			for (int k = 0; k<WORDS_PER_BLOCK; k++) {
+				;// print out addresses of each block
+				//int cacheAddr = ((cblocks[blockIndx].tag << 5) + (blockIndx << 2) + wordIndx);
+				printf("%d", ((myCache.cblocks[j].tag << 5) | (j << 2) | k));
+			}
+			printf("\n");
+		}
+	}
+	void resetCache()
+	{
+		myCache.~Cache();
+		Cache myCache;
+	}
 };
 
 #endif
