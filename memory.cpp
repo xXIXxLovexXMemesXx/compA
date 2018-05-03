@@ -345,79 +345,94 @@ int Cache::getFully(int address)
 	int wordIndx = address & 0x00000003;
 
 	// block number (8 total) - 3 bits
-	int blockIndx = (address & 0x0000001C) >> 2;
+	//int blockIndx = (address & 0x0000001C) >> 2;
 
 	// tag = remaining bits (32-2-3 = 27 bits)
-	int curTag = (address) >> 5;
+	int curTag = (address) >> 2;
 	// --- end of bit manipulations for direct mapping ---
 
 	// find the cached address
-	int cacheAddr0 = ((cblocks[0].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr1 = ((cblocks[1].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr2 = ((cblocks[2].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr3 = ((cblocks[3].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr4 = ((cblocks[4].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr5 = ((cblocks[5].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr6 = ((cblocks[6].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr7 = ((cblocks[7].tag << 5) | (blockIndx << 2) | wordIndx);
+	int cacheAddr0 = ((cblocks[0].tag << 2) |  wordIndx);
+	int cacheAddr1 = ((cblocks[1].tag << 2) |  wordIndx);
+	int cacheAddr2 = ((cblocks[2].tag << 2) |  wordIndx);
+	int cacheAddr3 = ((cblocks[3].tag << 2) |  wordIndx);
+	int cacheAddr4 = ((cblocks[4].tag << 2) |  wordIndx);
+	int cacheAddr5 = ((cblocks[5].tag << 2) |  wordIndx);
+	int cacheAddr6 = ((cblocks[6].tag << 2) |  wordIndx);
+	int cacheAddr7 = ((cblocks[7].tag << 2) |  wordIndx);
 
 	int value; // value in block line
 	if (address == cacheAddr0)
 	{
 		clockX += 2;// cache access for read
 		value = cblocks[0].data[wordIndx];
+		cblocks[0].last_used++;
 	}
 	else if (address == cacheAddr1)
 	{
 		clockX += 4;// cache access for read
 		value = cblocks[1].data[wordIndx];
+		cblocks[1].last_used++;
 	}
 	else if (address == cacheAddr2)
 	{
 		clockX += 6;// cache access for read
 		value = cblocks[2].data[wordIndx];
+		cblocks[2].last_used++;
 	}
 	else if (address == cacheAddr3)
 	{
 		clockX += 8;// cache access for read
 		value = cblocks[3].data[wordIndx];
+		cblocks[3].last_used++;
 	}
 	else if (address == cacheAddr4)
 	{
 		clockX += 10;// cache access for read
 		value = cblocks[4].data[wordIndx];
+		cblocks[4].last_used++;
 	}
 	else if (address == cacheAddr5)
 	{
 		clockX += 12;// cache access for read
 		value = cblocks[5].data[wordIndx];
+		cblocks[5].last_used++;
 	}
 	else if (address == cacheAddr6)
 	{
 		clockX += 14;// cache access for read
 		value = cblocks[6].data[wordIndx];
+		cblocks[6].last_used++;
 	}
 	else if (address == cacheAddr7)
 	{
 		clockX += 16;// cache access for read
 		value = cblocks[7].data[wordIndx];
+		cblocks[7].last_used++;
 	}
 	else
 	{
 		numMisses++;
 		clockX += 16; //cache accessed for read x8
-
+		int tempLast = cblocks[0].last_used;
+		int tempLastIndex = 0;
+		for (int i = 0; i < 8; i++)
+		{
+			if (cblocks[i].last_used < tempLast)
+				tempLastIndex = i;
+		}
 
 		//move the correct address block from MainMemory to cache
 		MainMemory.blocks[temp].tag = curTag;
 		MainMemory.blocks[temp].valid = 1;
 
-		cblocks[blockIndx].tag = MainMemory.blocks[temp].tag;
-		cblocks[blockIndx].valid = MainMemory.blocks[temp].valid;
+		cblocks[tempLastIndex].tag = MainMemory.blocks[temp].tag;
+		cblocks[tempLastIndex].valid = MainMemory.blocks[temp].valid;
+		cblocks[tempLastIndex].last_used++;
 
 		for (int i = 0; i<WORDS_PER_BLOCK; i++)
 		{
-			cblocks[blockIndx].data[i] = MainMemory.blocks[temp].data[i];
+			cblocks[tempLastIndex].data[i] = MainMemory.blocks[temp].data[i];
 		}
 		// both cache and main memory were accessed to copy from MainMemory to cache
 		clockX += 2;
@@ -425,7 +440,7 @@ int Cache::getFully(int address)
 
 
 		//then read value
-		value = cblocks[blockIndx].data[wordIndx];
+		value = cblocks[tempLastIndex].data[wordIndx];
 		clockX += 2; //cache accessed for read
 	}
 
@@ -440,21 +455,28 @@ void Cache::putFully(int address, int value)
 	int wordIndx = address & 0x00000003;
 
 	// block number (8 total) - 3 bits
-	int blockIndx = (address & 0x0000001C) >> 2;
+	//int blockIndx = (address & 0x0000001C) >> 2;
 
 	// tag = remaining bits (32-2-3 = 27 bits)
-	int curTag = (address) >> 5;
+	int curTag = (address) >> 2;
 	// --- end of bit manipulations for direct mapping ---
 
-	int cacheAddr0 = ((cblocks[0].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr1 = ((cblocks[1].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr2 = ((cblocks[2].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr3 = ((cblocks[3].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr4 = ((cblocks[4].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr5 = ((cblocks[5].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr6 = ((cblocks[6].tag << 5) | (blockIndx << 2) | wordIndx);
-	int cacheAddr7 = ((cblocks[7].tag << 5) | (blockIndx << 2) | wordIndx);
+	int cacheAddr0 = ((cblocks[0].tag << 2) |  wordIndx);
+	int cacheAddr1 = ((cblocks[1].tag << 2) |  wordIndx);
+	int cacheAddr2 = ((cblocks[2].tag << 2) |  wordIndx);
+	int cacheAddr3 = ((cblocks[3].tag << 2) |  wordIndx);
+	int cacheAddr4 = ((cblocks[4].tag << 2) |  wordIndx);
+	int cacheAddr5 = ((cblocks[5].tag << 2) |  wordIndx);
+	int cacheAddr6 = ((cblocks[6].tag << 2) |  wordIndx);
+	int cacheAddr7 = ((cblocks[7].tag << 2) |  wordIndx);
 
+	int tempLast = cblocks[0].last_used;
+	int tempLastIndex = 0;
+	for (int i = 0; i < 8; i++)
+	{
+		if (cblocks[i].last_used < tempLast)
+			tempLastIndex = i;
+	}
 	if (address == cacheAddr0)
 	{
 		clockX += 2;//access Cache
@@ -462,7 +484,7 @@ void Cache::putFully(int address, int value)
 		cblocks[0].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[0].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -473,7 +495,7 @@ void Cache::putFully(int address, int value)
 		cblocks[1].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[1].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -484,7 +506,7 @@ void Cache::putFully(int address, int value)
 		cblocks[2].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[2].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -495,7 +517,7 @@ void Cache::putFully(int address, int value)
 		cblocks[3].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[3].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -506,7 +528,7 @@ void Cache::putFully(int address, int value)
 		cblocks[4].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[4].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -517,7 +539,7 @@ void Cache::putFully(int address, int value)
 		cblocks[5].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[5].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -528,7 +550,7 @@ void Cache::putFully(int address, int value)
 		cblocks[6].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[6].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -539,7 +561,7 @@ void Cache::putFully(int address, int value)
 		cblocks[7].data[wordIndx] = value;
 
 		// Update MainMemory block with all the Cache Memory block info
-		MainMemory.blocks[temp].data[wordIndx] = cblocks[blockIndx].data[wordIndx];
+		MainMemory.blocks[temp].data[wordIndx] = cblocks[7].data[wordIndx];
 		// MainMemory accessed
 		clockX += 100;
 	}
@@ -557,11 +579,12 @@ void Cache::putFully(int address, int value)
 		MainMemory.blocks[temp].last_used++;
 
 		// then move the block to the cached block
-		cblocks[blockIndx].tag = MainMemory.blocks[temp].tag;
-		cblocks[blockIndx].valid = MainMemory.blocks[temp].valid;
+		cblocks[tempLastIndex].tag = MainMemory.blocks[temp].tag;
+		cblocks[tempLastIndex].valid = MainMemory.blocks[temp].valid;
+		cblocks[tempLastIndex].last_used++;
 		for (int i = 0; i<WORDS_PER_BLOCK; i++)
 		{
-			cblocks[blockIndx].data[i] = MainMemory.blocks[temp].data[i];
+			cblocks[tempLastIndex].data[i] = MainMemory.blocks[temp].data[i];
 		}
 		// both cache and main memory were accessed to copy from MainMemory to cache
 		clockX += 2;
