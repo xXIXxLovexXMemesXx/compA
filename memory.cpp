@@ -8,6 +8,7 @@ void resetClock()
 {
 	clockX = 0;
 	numMisses = 0;
+
 }
 
 void printCacheOrg(int org)
@@ -87,7 +88,7 @@ int Cache::getDirect(int address)
 		clockX += 2; //cache accessed for read
 
 
-					 //move the correct address block from MainMemory to cache
+		//move the correct address block from MainMemory to cache
 		MainMemory.blocks[temp].tag = curTag;
 		MainMemory.blocks[temp].valid = 1;
 
@@ -142,7 +143,7 @@ void Cache::putDirect(int address, int value)
 		numMisses++;
 		clockX += 2;//Cache was accessed to check for it
 
-					//write to the correct address from MainMemory to caches
+		//write to the correct address from MainMemory to caches
 		clockX += 100; //access MainMemory
 		MainMemory.blocks[temp].data[wordIndx] = value;
 		MainMemory.blocks[temp].tag = curTag;
@@ -248,7 +249,7 @@ int Cache::getTwoWay(int address)
 }
 void Cache::putTwoWay(int address, int value)
 {
-//--- Start by applying bit manipulations to address ---
+	//--- Start by applying bit manipulations to address ---
 	int tempAddr = address;
 	tempAddr = tempAddr % 512;
 	// word number (4 total) - 2 bits
@@ -333,7 +334,7 @@ void Cache::putTwoWay(int address, int value)
 			clockX += 100;
 		}
 	}
-	
+
 }
 int Cache::getFully(int address)
 {
@@ -548,7 +549,7 @@ void Cache::putFully(int address, int value)
 		numMisses++;
 		clockX += 16;//Cache was accessed to check for it
 
-					 //write to the correct address from MainMemory to caches
+		//write to the correct address from MainMemory to caches
 		clockX += 100; //access MainMemory
 		MainMemory.blocks[temp].data[wordIndx] = value;
 		MainMemory.blocks[temp].tag = curTag;
