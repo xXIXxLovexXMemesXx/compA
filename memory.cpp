@@ -370,50 +370,50 @@ int Cache::getFully(int address)
 	}
 	else if (address == cacheAddr1)
 	{
-		clockX += 4;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[1].data[wordIndx];
 		cblocks[1].last_used++;
 	}
 	else if (address == cacheAddr2)
 	{
-		clockX += 6;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[2].data[wordIndx];
 		cblocks[2].last_used++;
 	}
 	else if (address == cacheAddr3)
 	{
-		clockX += 8;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[3].data[wordIndx];
 		cblocks[3].last_used++;
 	}
 	else if (address == cacheAddr4)
 	{
-		clockX += 10;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[4].data[wordIndx];
 		cblocks[4].last_used++;
 	}
 	else if (address == cacheAddr5)
 	{
-		clockX += 12;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[5].data[wordIndx];
 		cblocks[5].last_used++;
 	}
 	else if (address == cacheAddr6)
 	{
-		clockX += 14;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[6].data[wordIndx];
 		cblocks[6].last_used++;
 	}
 	else if (address == cacheAddr7)
 	{
-		clockX += 16;// cache access for read
+		clockX += 2;// cache access for read
 		value = cblocks[7].data[wordIndx];
 		cblocks[7].last_used++;
 	}
 	else
 	{
 		numMisses++;
-		clockX += 16; //cache accessed for read x8
+		clockX += 2; //cache accessed for read x8
 		int tempLast = cblocks[0].last_used;
 		int tempLastIndex = 0;
 		for (int i = 0; i < 8; i++)
@@ -490,7 +490,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr1)
 	{
-		clockX += 4;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[1].data[wordIndx] = value;
 
@@ -501,7 +501,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr2)
 	{
-		clockX += 6;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[2].data[wordIndx] = value;
 
@@ -512,7 +512,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr3)
 	{
-		clockX += 8;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[3].data[wordIndx] = value;
 
@@ -523,7 +523,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr4)
 	{
-		clockX += 10;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[4].data[wordIndx] = value;
 
@@ -534,7 +534,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr5)
 	{
-		clockX += 12;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[5].data[wordIndx] = value;
 
@@ -545,7 +545,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr6)
 	{
-		clockX += 14;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[6].data[wordIndx] = value;
 
@@ -556,7 +556,7 @@ void Cache::putFully(int address, int value)
 	}
 	else if (address == cacheAddr7)
 	{
-		clockX += 16;//access Cache
+		clockX += 2;//access Cache
 
 		cblocks[7].data[wordIndx] = value;
 
@@ -569,7 +569,7 @@ void Cache::putFully(int address, int value)
 	else
 	{
 		numMisses++;
-		clockX += 16;//Cache was accessed to check for it
+		clockX += 2;//Cache was accessed to check for it
 
 		//write to the correct address from MainMemory to caches
 		clockX += 100; //access MainMemory
